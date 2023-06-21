@@ -540,7 +540,7 @@ contactMAP: function (){
 			},
 			marker: {
 				latLng: [40.712775, -74.005973],
-				options: { icon: 'assets/img/map.png' }
+				options: { icon: 'genius/img/map.png' }
 
 			}
 		});

@@ -1184,7 +1184,7 @@ use App\Functions\Helper;
 						</div>
 
 						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('geniusts/img/teacher/ts-1.jpg')?>" alt="">
+							<img src="<?= asset('genius/img/teacher/ts-1.jpg')?>" alt="">
 							<div class="teacher-cntent">
 								<div class="teacher-social-name ul-li-block">
 									<ul>
