@@ -205,8 +205,8 @@
 						<nav class="navbar-menu float-left">
 							<div class="nav-menu ul-li">
 								<ul class="quick-menu">
-									<li><a  href="#slide">Home</a></li>
-									<li><a  href="#search-course">Learning</a></li>
+									<li><a  href="{{url('/')}}">Home</a></li>
+									<li><a  href="{{route('learning')}}">Learning</a></li>
 									<li><a  href="#about-us">Webinar</a></li>
 									<li><a  href="#genius-teacher-2">FAQ</a></li>
 									<li><a  href="#best-product">News</a></li>

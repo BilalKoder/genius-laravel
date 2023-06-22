@@ -29,6 +29,12 @@ class HomeController extends Controller
         $data['page_title'] = 'Home';
         return view('front.home',$data);
     }
+    
+    public function learning()
+    {
+        $data['page_title'] = 'Learning';
+        return view('front.learning',$data);
+    }
 
     public function knowYourCustomer($package_id = null){
         $data['package_id'] = $package_id;

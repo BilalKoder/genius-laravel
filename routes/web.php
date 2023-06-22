@@ -24,6 +24,7 @@ Route::post('/register', 'MyAuthController@store');
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('landing','HomeController@landing');
+Route::get('/learning', 'HomeController@learning')->name('learning');
 Route::get('/know-your-customer/{id}', 'HomeController@knowYourCustomer')->name('know-your-customer');
 // Route::get('/home', 'HomeController@index')->name('home');
 
