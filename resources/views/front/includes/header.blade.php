@@ -14,7 +14,7 @@
     <!-- Page Title -->
     <title>{{ env('APP_NAME') }}  | {{$page_title??''}}</title>
     <!-- Favicon -->
-    <!-- <link href="<?= asset('above/images/favicon.ico') ?>" rel="icon"> -->
+    <link href="<?= asset('genius/img/fav.png') ?>" rel="icon"> 
     <!-- Bundle -->
     
 	<link rel="stylesheet" href="<?= asset('genius/css/owl.carousel.css') ?>">
