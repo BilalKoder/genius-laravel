@@ -206,13 +206,13 @@
 							<div class="nav-menu ul-li">
 								<ul class="quick-menu">
 									<li><a  href="#slide">Home</a></li>
-									<li><a  href="#search-course">Course</a></li>
-									<li><a  href="#about-us">About Us</a></li>
-									<li><a  href="#genius-teacher-2">Teachers</a></li>
-									<li><a  href="#best-product">Shop</a></li>
-									<li><a  href="#faq">faq</a></li>
-									<li><a  href="#latest-area">BLOG</a></li>
-									<li><a  href="#contact-form">Contact Us</a></li>
+									<li><a  href="#search-course">Learning</a></li>
+									<li><a  href="#about-us">Webinar</a></li>
+									<li><a  href="#genius-teacher-2">FAQ</a></li>
+									<li><a  href="#best-product">News</a></li>
+									<li><a  href="#faq">Events</a></li>
+									<!-- <li><a  href="#latest-area">BLOG</a></li>
+									<li><a  href="#contact-form">Contact Us</a></li> -->
 								</ul>
 							</div>
 						</nav>
