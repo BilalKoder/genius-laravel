@@ -26,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('front.home');
+        $data['page_title'] = 'Home';
+        return view('front.home',$data);
     }
 
     public function knowYourCustomer($package_id = null){

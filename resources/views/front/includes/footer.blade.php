@@ -12,7 +12,7 @@
                     <div class="col-md-3">
                         <div class="footer-widget">
                             <div class="footer-logo mb35">
-                                <img src="<?= asset('genius/img/logo/f-logo.png')?>" alt="">
+                                <img src="<?= asset('genius/img/logo/RHMC-logo.png')?>" alt="">
                             </div>
                             <div class="footer-about-text">
                                 <p>We take our mission of increasing global access to quality education seriously. We

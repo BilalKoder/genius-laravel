@@ -12,7 +12,7 @@
     <!-- keywords -->
     <meta name="keywords" content="Genius">
     <!-- Page Title -->
-    <title>Genius</title>
+    <title>{{ env('APP_NAME') }}  | {{$page_title??''}}</title>
     <!-- Favicon -->
     <!-- <link href="<?= asset('above/images/favicon.ico') ?>" rel="icon"> -->
     <!-- Bundle -->
@@ -44,7 +44,7 @@
 <div id="preloader"></div>
 
 
-	<div id="switch-color" class="color-switcher">
+	{{-- <div id="switch-color" class="color-switcher">
 		<div class="open"><i class="fas fa-cog fa-spin"></i></div>
 		<h4>COLOR OPTION</h4>
 		<ul>
@@ -60,7 +60,7 @@
 		<button class="switcher-light">WIDE </button>
 		<button class="switcher-dark">BOX </button>
 		<a class="rtl-v" href="RTL_Genius/index.html">RTL </a>
-	</div>
+	</div> --}}
 
 <!-- Start of Header section
 		============================================= -->
@@ -68,7 +68,7 @@
 			<div class="container">
 				<div class="navbar-default">
 					<div class="navbar-header float-left">
-						<a class="navbar-brand text-uppercase" href="#"><img src="<?= asset('genius/img/logo/logo-2.png')?>" alt="logo"></a>
+						<a class="navbar-brand text-uppercase" href="{{route('home')}}"><img src="<?= asset('genius/img/logo/RHMC-logo.png')?>" alt="logo"></a>
 					</div><!-- /.navbar-header -->
 					<div class="header-info ul-li">
 						<ul>
@@ -78,7 +78,7 @@
 										<i class="text-gradiant fas fa-envelope"></i>
 									</div>
 									<div class="info-content">
-										<span class="info-id">info@genius.com</span>
+										<span class="info-id">info.rhmc.ae</span>
 										<span class="info-text">Email Us For Free Registration</span>
 									</div>
 								</div>
@@ -89,7 +89,7 @@
 										<i class="text-gradiant fas fa-phone-square"></i>
 									</div>
 									<div class="info-content">
-										<span class="info-id">(100) 2443 900</span>
+										<span class="info-id">+97143967462</span>
 										<span class="info-text">Call Us For Free Registration</span>
 									</div>
 								</div>
@@ -115,7 +115,7 @@
 
 					<div class="nav-menu-4">
 						<div class="login-cart-lang float-right ul-li">
-							<ul class="search_cart">
+							{{-- <ul class="search_cart">
 								<li>
 									<div class="cart_search">
 										<a href="#">
@@ -142,18 +142,9 @@
 										</div>
 									</div>
 								</li>
-							</ul>
+							</ul> --}}
 							<ul class="lang-login">
-								<li>
-									<div class="select-lang">
-										<select>
-											<option value="9" selected="">English</option>
-											<option value="10">Bangla</option>
-											<option value="11">Arabia</option>
-											<option value="12">Dutch</option>
-										</select>
-									</div>
-								</li>
+								
 								<li>
 									<div class="login">
 										<a data-toggle="modal" data-target="#myModal" href="#">LogIn</a>
@@ -249,7 +240,7 @@
 							<ul>
 								<li><a data-toggle="modal" data-target="#myModal-2"  href="#"><i class="fas fa-user"></i></a>
 								</li>
-								<li><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+								{{-- <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li> --}}
 							</ul>
 							<div class="modal fade" id="myModal-2" tabindex="-1" role="dialog" aria-hidden="true">
 								<div class="modal-dialog">
