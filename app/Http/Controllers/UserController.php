@@ -27,6 +27,7 @@ class UserController extends Controller
     public function index()
     {
         $data['users'] = User::where('role_id','!=',1)->get();
+        $data['page_title']= "Users";
         $data['countries'] = Country::all();
         return view('admin.users.list', $data);
     }

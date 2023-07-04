@@ -18,7 +18,7 @@ class UserTableSeeder extends Seeder
             [
                 'role_id' => 1,
                 'name' => 'Admin',
-                'email' => 'admin@admin.com',
+                'email' => 'admin@rhmc.com',
                 'password' => Hash::make('click123'),
                 'phone' => '123456789',
                 'address' => 'ABC Road, XYZ Street',

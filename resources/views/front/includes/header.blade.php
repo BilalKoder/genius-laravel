@@ -147,7 +147,12 @@
 								
 								<li>
 									<div class="login">
-										<a data-toggle="modal" data-target="#myModal" href="#">LogIn</a>
+										<!-- <a data-toggle="modal" data-target="#myModal" href="#">LogIn</a> -->
+										@auth
+										<a href="{{url('/dasboard')}}">Dashboard</a>
+										@else
+										<a href="{{url('/login')}}">Login</a>
+										@endauth
 									</div>
 									<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 										<div class="modal-dialog">

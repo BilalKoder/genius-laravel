@@ -6,7 +6,7 @@
         {{-- Copyright --}}
         <div class="text-dark order-2 order-md-1">
             <span class="text-muted font-weight-bold mr-2">{{ date("Y") }} &copy;</span>
-        <a href="{{route('home')}}" target="_blank" class="text-dark-75 text-hover-primary">AAbove</a>
+        <a href="{{route('home')}}" target="_blank" class="text-dark-75 text-hover-primary">RHMC</a>
         </div>
 
         {{-- Nav --}}

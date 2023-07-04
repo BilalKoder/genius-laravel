@@ -17,12 +17,12 @@ class MyAuthController extends Controller
     use EmailTrait;
 
     public function login(){
-        $data['title'] = 'Login | Eat, Drink and Enjoy';
+        $data['title'] = 'Login | Management Consultants';
         return view('auth.login', $data);
     }
 
     public function register(){
-        $data['title'] = 'Register | Eat, Drink and Enjoy';
+        $data['title'] = 'Register | Management Consultants';
         $data['roles'] = Role::where('id', '!=', 1)->get();
         return view('auth.basic-register', $data);
     }

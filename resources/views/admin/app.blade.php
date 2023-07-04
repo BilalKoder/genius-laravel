@@ -2,15 +2,7 @@
 
 @section('content')
 <style>
-    .bg-light-info{
-        background-color: #292a2d !important;
-    }
-    .text-muted {
-        color: #dcc57c !important;
-    }
-    .text-dark-75{
-        color: #dcc57c !important;
-    }
+   
 
 </style>
 
@@ -29,7 +21,7 @@
         </div>
         <!--end::Stats Widget 26-->
     </div>
-    <div class="col-xl-3">
+  {{--  <div class="col-xl-3">
         <!--begin::Stats Widget 27-->
         <div class="card card-custom bg-light-info card-stretch gutter-b">
             <!--begin::Body-->
@@ -69,7 +61,7 @@
         </div>
         <!--end::Stat: Widget 28-->
     </div> 
-</div>
+</div> --}}
 {{-- 
 <div class="row mb-5">
     <div class="col-12">
