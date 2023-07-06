@@ -53,6 +53,24 @@
                         <span class="menu-text">Users</span>
                     </a>
                 </li>
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'blogs' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('blogs')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">Blogs</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'categories' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('categories')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">Categories</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'faqs' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('faqs')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">FAQ's</span>
+                    </a>
+                </li>
            
                 {{-- <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'settings' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{route('settings')}}" class="menu-link">

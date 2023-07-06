@@ -53,13 +53,31 @@ Route::middleware(['auth'])->group(function () {
     Route::post('users/store', 'UserController@store')->name('users.store');
     Route::post('users/{user}/update', 'UserController@update')->name('users.update');
     Route::get('users/{user}/delete', 'UserController@destroy')->name('users.delete');
-    Route::get('users', 'UserController@index')->name('users');
+    
 
-
+    Route::get('categories', 'CategoriesController@index')->name('categories');
+    Route::get('categories/add', 'CategoriesController@create')->name('categories.add');
+    Route::post('categories/store', 'CategoriesController@store')->name('categories.store');
+    Route::get('categories/{id}/edit', 'CategoriesController@edit')->name('categories.edit');
+    Route::post('categories/{id}/update', 'CategoriesController@update')->name('categories.update');
+    Route::get('categories/{id}/destroy', 'CategoriesController@destroy')->name('categories.delete');
+    
+    Route::get('blogs', 'BlogsController@index')->name('blogs');
+    Route::get('blogs/add', 'BlogsController@create')->name('blogs.add');
+    Route::post('blogs/store', 'BlogsController@store')->name('blogs.store');
+    Route::get('blogs/{id}/edit', 'BlogsController@show')->name('blogs.edit');
+    Route::post('blogs/{id}/update', 'BlogsController@update')->name('blogs.update');
+    Route::get('blogs/{id}/destroy', 'BlogsController@destroy')->name('blogs.delete');
+    
+    Route::get('faqs', 'FaqsController@index')->name('faqs');
+    Route::get('faqs/add', 'FaqsController@create')->name('faqs.add');
+    Route::post('faqs/store', 'FaqsController@store')->name('faqs.store');
+    Route::get('faqs/{id}/edit', 'FaqsController@show')->name('faqs.edit');
+    Route::post('faqs/{id}/update', 'FaqsController@update')->name('faqs.update');
+    Route::get('faqs/{id}/destroy', 'FaqsController@destroy')->name('faqs.delete');
 
     Route::get('interviews', 'PagesController@interviews')->name('interviews');
     Route::get('interview-status/{id}/{status}', 'PagesController@interview_status')->name('interview.status');
-
    
     Route::get('packages', 'PackageController@index')->name('packages');
     Route::get('packages/add', 'PackageController@create')->name('packages.create');
