@@ -70,7 +70,7 @@ use App\Functions\Helper;
                                 </div>
                             </td>
                             <td>{{$blog->slug??''}}</td>
-                            <td> {{ Str::limit($blog->description, 50) }}</td>
+                            <td>   {!! $blog->description !!}</td>
                             <td>
                                     @foreach($blog->categories as $category)
                                         {{ $category->category->name??'' }}

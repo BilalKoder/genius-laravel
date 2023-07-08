@@ -53,6 +53,12 @@
                         <span class="menu-text">Users</span>
                     </a>
                 </li>
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'courses' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('courses')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">Courses</span>
+                    </a>
+                </li>
                 <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'blogs' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{route('blogs')}}" class="menu-link">
                         <i class="menu-icon flaticon2-user"></i>

@@ -37,15 +37,7 @@ use App\Functions\Helper;
 				<div class="row">
 					<div class="col-md-9">
 						<div class="short-filter-tab">
-							<div class="shorting-filter  float-left">
-								<span><b>View</b> By</span>
-								<select>
-									<option value="9" selected="">9 Course</option>
-									<option value="10">7 Course</option>
-									<option value="11">2 Course</option>
-									<option value="12">0 Course</option>
-								</select>
-							</div>
+							
 							<div class="tab-button blog-button ul-li text-center float-right">
 								<ul class="product-tab">
 									<li class="active" rel="tab1"><i class="fas fa-th"></i></li>
@@ -68,16 +60,22 @@ use App\Functions\Helper;
 								<div id="tab1" class="tab-content-1 pt35">
 									<div class="best-course-area best-course-v2">
 										<div class="row">
+
+											@if(!empty($courses))
+											@foreach($courses as $key => $value)
+
 											<div class="col-md-4">
 												<div class="best-course-pic-text relative-position">
 													<div class="best-course-pic relative-position">
-														<img src="<?= asset('genius/img/course/bc-1.jpg')?>" alt="">
+														<img src="<?= asset($value->media)?>" alt="">
+														@if($value->is_featured == 1)
 														<div class="trend-badge-2 text-center text-uppercase">
 															<i class="fas fa-bolt"></i>
-															<span>Trending</span>
+															<span>Featured</span>
 														</div>
+														@endif
 														<div class="course-price text-center gradient-bg">
-															<span>$99.00</span>
+															<span>${{$value->price??''}}</span>
 														</div>
 														<div class="course-rate ul-li">
 															<ul>
@@ -89,298 +87,24 @@ use App\Functions\Helper;
 															</ul>
 														</div>
 														<div class="course-details-btn">
-															<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+															<a href="{{ route('learning.detail', ['id' => $value->id]) }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 														</div>
 														<div class="blakish-overlay"></div>
 													</div>
 													<div class="best-course-text">
 														<div class="course-title mb20 headline relative-position">
-															<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
+															<h3><a href="{{ route('learning.detail', ['id' => $value->id]) }}">{{$value->title??''}}</a></h3>
 														</div>
 														<div class="course-meta">
-															<span class="course-category"><a href="#">Web Design</a></span>
-															<span class="course-author"><a href="#">250 Students</a></span>
+															<span class="course-category"><a href="{{ route('learning.detail', ['id' => $value->id]) }}">Web Design</a></span>
 														</div>
 													</div>
 												</div>
 											</div>
 											<!-- /course -->
 
-											<div class="col-md-4">
-												<div class="best-course-pic-text relative-position">
-													<div class="best-course-pic relative-position">
-														<img src="<?= asset('genius/img/course/bc-2.jpg')?>" alt="">
-														<div class="course-price text-center gradient-bg">
-															<span>$99.00</span>
-														</div>
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>
-														</div>
-														<div class="course-details-btn">
-															<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-														</div>
-														<div class="blakish-overlay"></div>
-													</div>
-													<div class="best-course-text">
-														<div class="course-title mb20 headline relative-position">
-															<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-														</div>
-														<div class="course-meta">
-															<span class="course-category"><a href="#">Web Design</a></span>
-															<span class="course-author"><a href="#">250 Students</a></span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /course -->
-
-											<div class="col-md-4">
-												<div class="best-course-pic-text relative-position">
-													<div class="best-course-pic relative-position">
-														<img src="<?= asset('genius/img/course/bc-3.jpg')?>" alt="">
-														<div class="course-price text-center gradient-bg">
-															<span>$99.00</span>
-														</div>
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>
-														</div>
-														<div class="course-details-btn">
-															<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-														</div>
-														<div class="blakish-overlay"></div>
-													</div>
-													<div class="best-course-text">
-														<div class="course-title mb20 headline relative-position">
-															<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-														</div>
-														<div class="course-meta">
-															<span class="course-category"><a href="#">Web Design</a></span>
-															<span class="course-author"><a href="#">250 Students</a></span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /course -->
-
-											<div class="col-md-4">
-												<div class="best-course-pic-text relative-position">
-													<div class="best-course-pic relative-position">
-														<img src="<?= asset('genius/img/course/bc-4.jpg')?>" alt="">
-														<div class="course-price text-center gradient-bg">
-															<span>$99.00</span>
-														</div>
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>
-														</div>
-														<div class="course-details-btn">
-															<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-														</div>
-														<div class="blakish-overlay"></div>
-													</div>
-													<div class="best-course-text">
-														<div class="course-title mb20 headline relative-position">
-															<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-														</div>
-														<div class="course-meta">
-															<span class="course-category"><a href="#">Web Design</a></span>
-															<span class="course-author"><a href="#">250 Students</a></span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /course -->
-
-											<div class="col-md-4">
-												<div class="best-course-pic-text relative-position">
-													<div class="best-course-pic relative-position">
-														<img src="<?= asset('genius/img/course/bc-5.jpg')?>" alt="">
-														<div class="course-price text-center gradient-bg">
-															<span>$99.00</span>
-														</div>
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>
-														</div>
-														<div class="course-details-btn">
-															<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-														</div>
-														<div class="blakish-overlay"></div>
-													</div>
-													<div class="best-course-text">
-														<div class="course-title mb20 headline relative-position">
-															<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-														</div>
-														<div class="course-meta">
-															<span class="course-category"><a href="#">Web Design</a></span>
-															<span class="course-author"><a href="#">250 Students</a></span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /course -->
-
-											<div class="col-md-4">
-												<div class="best-course-pic-text relative-position">
-													<div class="best-course-pic relative-position">
-														<img src="<?= asset('genius/img/course/bc-6.jpg')?>" alt="">
-														<div class="trend-badge-2 text-center text-uppercase">
-															<i class="fas fa-bolt"></i>
-															<span>Trending</span>
-														</div>
-														<div class="course-price text-center gradient-bg">
-															<span>$99.00</span>
-														</div>
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>
-														</div>
-														<div class="course-details-btn">
-															<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-														</div>
-														<div class="blakish-overlay"></div>
-													</div>
-													<div class="best-course-text">
-														<div class="course-title mb20 headline relative-position">
-															<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-														</div>
-														<div class="course-meta">
-															<span class="course-category"><a href="#">Web Design</a></span>
-															<span class="course-author"><a href="#">250 Students</a></span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /course -->
-
-											<div class="col-md-4">
-												<div class="best-course-pic-text relative-position">
-													<div class="best-course-pic relative-position">
-														<img src="<?= asset('genius/img/course/bc-7.jpg')?>" alt="">
-														<div class="course-price text-center gradient-bg">
-															<span>$99.00</span>
-														</div>
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>
-														</div>
-														<div class="course-details-btn">
-															<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-														</div>
-														<div class="blakish-overlay"></div>
-													</div>
-													<div class="best-course-text">
-														<div class="course-title mb20 headline relative-position">
-															<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-														</div>
-														<div class="course-meta">
-															<span class="course-category"><a href="#">Web Design</a></span>
-															<span class="course-author"><a href="#">250 Students</a></span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /course -->
-
-											<div class="col-md-4">
-												<div class="best-course-pic-text relative-position">
-													<div class="best-course-pic relative-position">
-														<img src="<?= asset('genius/img/course/bc-8.jpg')?>" alt="">
-														<div class="course-price text-center gradient-bg">
-															<span>$99.00</span>
-														</div>
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>
-														</div>
-														<div class="course-details-btn">
-															<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-														</div>
-														<div class="blakish-overlay"></div>
-													</div>
-													<div class="best-course-text">
-														<div class="course-title mb20 headline relative-position">
-															<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-														</div>
-														<div class="course-meta">
-															<span class="course-category"><a href="#">Web Design</a></span>
-															<span class="course-author"><a href="#">250 Students</a></span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /course -->
-
-											<div class="col-md-4">
-												<div class="best-course-pic-text relative-position">
-													<div class="best-course-pic relative-position">
-														<img src="<?= asset('genius/img/course/bc-4.jpg')?>" alt="">
-														<div class="course-price text-center gradient-bg">
-															<span>$99.00</span>
-														</div>
-														<div class="course-rate ul-li">
-															<ul>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-																<li><i class="fas fa-star"></i></li>
-															</ul>
-														</div>
-														<div class="course-details-btn">
-															<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-														</div>
-														<div class="blakish-overlay"></div>
-													</div>
-													<div class="best-course-text">
-														<div class="course-title mb20 headline relative-position">
-															<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-														</div>
-														<div class="course-meta">
-															<span class="course-category"><a href="#">Web Design</a></span>
-															<span class="course-author"><a href="#">250 Students</a></span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- /course -->
+											@endforeach
+											@endif
 										</div>
 									</div>
 								</div><!-- /tab-1 -->
@@ -391,19 +115,21 @@ use App\Functions\Helper;
 											<tr class="list-head">
 												<th>COURSE NAME</th>
 												<th>COURSE TYPE</th>
-												<th>STARTS</th>
+												<th>PUBLISHED</th>
 												<th>LENGTH</th>
 											</tr>
+											@if(!empty($courses))
+											@foreach($courses as $key => $value)
 											<tr>
 												<td>
 													<div class="course-list-img-text">
 														<div class="course-list-img">
-															<img src="<?= asset('genius/img/course/cl-1.jpg')?>" alt="">
+															<img src="<?= asset($value->media)?>" alt="">
 														</div>
 														<div class="course-list-text">
-															<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
+															<h3><a href="{{ route('learning.detail', ['id' => $value->id]) }}">{{$value->title??''}}</a></h3>
 															<div class="course-meta">
-																<span class="course-category bold-font"><a href="#">$120.25</a></span>
+																<span class="course-category bold-font"><a href="{{ route('learning.detail', ['id' => $value->id]) }}">${{$value->price??''}}</a></span>
 																<div class="course-rate ul-li">
 																	<ul>
 																		<li><i class="fas fa-star"></i></li>
@@ -419,167 +145,17 @@ use App\Functions\Helper;
 												</td>
 												<td>
 													<div class="course-type-list">
-														<span>Graphic Design & 3D</span>
+														@foreach($value->categories as $cat)
+														<span>{{$cat->category->name??''}}</span>
+														@endforeach
 													</div>
 												</td>
-												<td>6-06-2018</td>
-												<td>3 Months</td>
+												<td>{{ \Carbon\Carbon::parse($value->created_at)->format('d F Y') }}</td>
+												<td>{{$value->duration??''}} Months</td>
 											</tr>
-											<tr>
-												<td>
-													<div class="course-list-img-text">
-														<div class="course-list-img">
-															<img src="<?= asset('genius/img/course/cl-2.jpg')?>" alt="">
-														</div>
-														<div class="course-list-text">
-															<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-															<div class="course-meta">
-																<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																<div class="course-rate ul-li">
-																	<ul>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-													</div>
-												</td>
-												<td>
-													<div class="course-type-list">
-														<span>Graphic Design & 3D</span>
-													</div>
-												</td>
-												<td>6-06-2018</td>
-												<td>3 Months</td>
-											</tr>
-											<tr>
-												<td>
-													<div class="course-list-img-text">
-														<div class="course-list-img">
-															<img src="<?= asset('genius/img/course/cl-3.jpg')?>" alt="">
-														</div>
-														<div class="course-list-text">
-															<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-															<div class="course-meta">
-																<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																<div class="course-rate ul-li">
-																	<ul>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-													</div>
-												</td>
-												<td>
-													<div class="course-type-list">
-														<span>Graphic Design & 3D</span>
-													</div>
-												</td>
-												<td>6-06-2018</td>
-												<td>3 Months</td>
-											</tr>
-											<tr>
-												<td>
-													<div class="course-list-img-text">
-														<div class="course-list-img">
-															<img src="<?= asset('genius/img/course/cl-4.jpg')?>" alt="">
-														</div>
-														<div class="course-list-text">
-															<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-															<div class="course-meta">
-																<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																<div class="course-rate ul-li">
-																	<ul>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-													</div>
-												</td>
-												<td>
-													<div class="course-type-list">
-														<span>Graphic Design & 3D</span>
-													</div>
-												</td>
-												<td>6-06-2018</td>
-												<td>3 Months</td>
-											</tr>
-											<tr>
-												<td>
-													<div class="course-list-img-text">
-														<div class="course-list-img">
-															<img src="<?= asset('genius/img/course/cl-5.jpg')?>" alt="">
-														</div>
-														<div class="course-list-text">
-															<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-															<div class="course-meta">
-																<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																<div class="course-rate ul-li">
-																	<ul>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-													</div>
-												</td>
-												<td>
-													<div class="course-type-list">
-														<span>Graphic Design & 3D</span>
-													</div>
-												</td>
-												<td>6-06-2018</td>
-												<td>3 Months</td>
-											</tr>
-											<tr>
-												<td>
-													<div class="course-list-img-text">
-														<div class="course-list-img">
-															<img src="<?= asset('genius/img/course/cl-1.jpg')?>" alt="">
-														</div>
-														<div class="course-list-text">
-															<h3><a href="#">Fully Responsive Web Design & Development.</a></h3>
-															<div class="course-meta">
-																<span class="course-category bold-font"><a href="#">$120.25</a></span>
-																<div class="course-rate ul-li">
-																	<ul>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																		<li><i class="fas fa-star"></i></li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-													</div>
-												</td>
-												<td>
-													<div class="course-type-list">
-														<span>Graphic Design & 3D</span>
-													</div>
-												</td>
-												<td>6-06-2018</td>
-												<td>3 Months</td>
-											</tr>
+											
+											@endforeach
+											@endif
 										</table>
 									</div>
 								</div><!-- /tab-2 -->
@@ -606,62 +182,25 @@ use App\Functions\Helper;
 							<div class="side-bar-widget  first-widget">
 								<h2 class="widget-title text-capitalize"><span>Find </span>Your Course.</h2>
 								<div class="listing-filter-form pb30">
-									<form action="#" method="get">
+									<form id="filterForm" action="{{ route('learning') }}" method="get">
 										<div class="filter-select mb20">
 											<label>COURSE TYPE</label>
-											<select>
-												<option value="9" selected="">All Categories </option>
-												<option value="10">Default Listing</option>
-												<option value="11">Category Listing</option>
-												<option value="12">Orderly Listing</option>
+											<select name="category" required>
+											@if(!empty($categories))
+											<option value="" selected="">All Categories </option>
+                                            @foreach ($categories as $key => $category)
+												<option value="{{$category->id}}">{{$category->name}}</option>
+                                            @endforeach
+                                            @endif
 											</select>
-										</div>
-
-										<div class="filter-select mb20">
-											<label>STUDY LAVEL</label>
-											<select>
-												<option value="9" selected="">All Locations</option>
-												<option value="10">Default Listing</option>
-												<option value="11">Category Listing</option>
-												<option value="12">Orderly Listing</option>
-											</select>
-										</div>
-										<div class="filter-search mb20">
-											<label>FULL TEXT</label>
-											<input type="text" class="" placeholder="Looking for?">
 										</div>
 										<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-											<a href="#">FIND COURSES <i class="fas fa-caret-right"></i></a>
+											<a href="#" onclick="event.preventDefault(); document.getElementById('filterForm').submit();">FIND COURSES <i class="fas fa-caret-right"></i></a>
 										</div>
 									</form>
 
 								</div>
 							</div>
-
-							
-							<!-- <div class="side-bar-widget">
-								<h2 class="widget-title text-capitalize"><span>Featured</span> Course.</h2>
-								<div class="featured-course">
-									<div class="best-course-pic-text relative-position">
-										<div class="best-course-pic relative-position">
-											<img src="assets/img/blog/fb-1.jpg" alt="">
-											<div class="trend-badge-2 text-center text-uppercase">
-												<i class="fas fa-bolt"></i>
-												<span>Trending</span>
-											</div>
-										</div>
-										<div class="best-course-text">
-											<div class="course-title mb20 headline relative-position">
-												<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-											</div>
-											<div class="course-meta">
-												<span class="course-category"><a href="#">Web Design</a></span>
-												<span class="course-author"><a href="#">250 Students</a></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div> -->
 						</div>
 					</div>
 				</div>
@@ -671,7 +210,7 @@ use App\Functions\Helper;
 		============================================= -->
 
 
-		<section id="best-course" class="best-course-section">
+		{{-- <section id="best-course" class="best-course-section">
 			<div class="container">
 				<div class="section-title mb45 headline text-center">
 					<span class="subtitle text-uppercase">SEARCH OUR COURSES</span>
@@ -679,14 +218,26 @@ use App\Functions\Helper;
 				</div>
 				<div class="best-course-area mb45">
 					<div class="row">
+
+					@if (auth()->check())
+					@foreach (session('recently_viewed_courses', []) as $courseId)
+						<li>{{ $courseId }}</li> 
+					@endforeach
+					@else
+						@foreach (request()->cookie('recently_viewed_courses', []) as $courseId)
+							<li>{{ $courseId }}</li> 
+						@endforeach
+					@endif
 						<div class="col-md-3">
 							<div class="best-course-pic-text relative-position">
 								<div class="best-course-pic relative-position">
 									<img src="<?= asset('genius/img/course/bc-1.jpg')?>" alt="">
-									<div class="trend-badge-2 text-center text-uppercase">
-										<i class="fas fa-bolt"></i>
-										<span>Trending</span>
-									</div>
+									@if($value->is_featured == 1)
+														<div class="trend-badge-2 text-center text-uppercase">
+															<i class="fas fa-bolt"></i>
+															<span>Featured</span>
+														</div>
+														@endif
 									<div class="course-price text-center gradient-bg">
 										<span>$99.00</span>
 									</div>
@@ -717,111 +268,14 @@ use App\Functions\Helper;
 						</div>
 						<!-- /course -->
 
-						<div class="col-md-3">
-							<div class="best-course-pic-text relative-position">
-								<div class="best-course-pic relative-position">
-									<img src="<?= asset('genius/img/course/bc-2.jpg')?>" alt="">
-									<div class="course-price text-center gradient-bg">
-										<span>$99.00</span>
-									</div>
-									<div class="course-rate ul-li">
-										<ul>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="course-details-btn">
-										<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-									</div>
-									<div class="blakish-overlay"></div>
-								</div>
-								<div class="best-course-text">
-									<div class="course-title mb20 headline relative-position">
-										<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-									</div>
-									<div class="course-meta">
-										<span class="course-category"><a href="#">Web Design</a></span>
-										<span class="course-author"><a href="#">250 Students</a></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /course -->
+						
+						
 
-						<div class="col-md-3">
-							<div class="best-course-pic-text relative-position">
-								<div class="best-course-pic relative-position">
-									<img src="<?= asset('genius/img/course/bc-3.jpg')?>" alt="">
-									<div class="course-price text-center gradient-bg">
-										<span>$99.00</span>
-									</div>
-									<div class="course-rate ul-li">
-										<ul>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="course-details-btn">
-										<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-									</div>
-									<div class="blakish-overlay"></div>
-								</div>
-								<div class="best-course-text">
-									<div class="course-title mb20 headline relative-position">
-										<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-									</div>
-									<div class="course-meta">
-										<span class="course-category"><a href="#">Web Design</a></span>
-										<span class="course-author"><a href="#">250 Students</a></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /course -->
-
-						<div class="col-md-3">
-							<div class="best-course-pic-text relative-position">
-								<div class="best-course-pic relative-position">
-									<img src="<?= asset('genius/img/course/bc-4.jpg')?>" alt="">
-									<div class="course-price text-center gradient-bg">
-										<span>$99.00</span>
-									</div>
-									<div class="course-rate ul-li">
-										<ul>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="course-details-btn">
-										<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-									</div>
-									<div class="blakish-overlay"></div>
-								</div>
-								<div class="best-course-text">
-									<div class="course-title mb20 headline relative-position">
-										<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-									</div>
-									<div class="course-meta">
-										<span class="course-category"><a href="#">Web Design</a></span>
-										<span class="course-author"><a href="#">250 Students</a></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /course -->
+						
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 
 
 @endsection

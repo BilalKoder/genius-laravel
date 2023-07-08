@@ -213,8 +213,8 @@
 									<li><a  href="{{url('/')}}">Home</a></li>
 									<li><a  href="{{route('learning')}}">Learning</a></li>
 									<li><a  href="#about-us">Webinar</a></li>
-									<li><a  href="#genius-teacher-2">FAQ</a></li>
-									<li><a  href="#best-product">News</a></li>
+									<li><a  href="{{route('front.faqs')}}">FAQ</a></li>
+									<li><a  href="{{route('front.blogs')}}">Blogs</a></li>
 									<li><a  href="#faq">Events</a></li>
 									<!-- <li><a  href="#latest-area">BLOG</a></li>
 									<li><a  href="#contact-form">Contact Us</a></li> -->

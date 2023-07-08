@@ -1407,7 +1407,7 @@ use App\Functions\Helper;
 
 	<!-- Start of best product section
 		============================================= -->
-		<section id="best-product" class="best-product-section home-third-best-product">
+		<!-- <section id="best-product" class="best-product-section home-third-best-product">
 			<div class="container">
 				<div class="section-title-2 mb65 headline text-left">
 					<h2>Genius <span>Best Products.</span></h2>
@@ -1549,7 +1549,7 @@ use App\Functions\Helper;
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 	<!-- End  of best product section
 		============================================= -->
 
@@ -1927,7 +1927,7 @@ use App\Functions\Helper;
 
 	<!-- Start of sponsor section
 		============================================= -->
-		<section id="sponsor" class="sponsor-section">
+		<!-- <section id="sponsor" class="sponsor-section">
 			<div class="container">
 				<div class="section-title-2 mb65 headline text-left">
 					<h2>Genius <span>Sponsors.</span></h2>
@@ -1962,7 +1962,7 @@ use App\Functions\Helper;
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 	<!-- End of sponsor section
 		============================================= -->
 

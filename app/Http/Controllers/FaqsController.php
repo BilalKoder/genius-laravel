@@ -26,6 +26,14 @@ class FaqsController extends Controller
 
         return view('admin.faq.list',$data);
     }
+   
+    public function fronFaq()
+    {
+        $data['faqs'] = Faqs::orderBy('id','DESC')->get();
+        $data['page_title'] = "FAQ's";
+
+        return view('front.faqs',$data);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -82,7 +90,7 @@ class FaqsController extends Controller
 
         }
        
-        return redirect('faqs')->with($notification);
+        return redirect('admin/faqs')->with($notification);
 
     }
 
@@ -130,7 +138,7 @@ class FaqsController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect('faqs')->with($notification);
+        return redirect('admin/faqs')->with($notification);
     }
 
     /**

@@ -25,6 +25,7 @@ Route::post('/register', 'MyAuthController@store');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('landing','HomeController@landing');
 Route::get('/learning', 'HomeController@learning')->name('learning');
+Route::get('/course-details/{id}', 'HomeController@courseDetail')->name('learning.detail');
 Route::get('/know-your-customer/{id}', 'HomeController@knowYourCustomer')->name('know-your-customer');
 // Route::get('/home', 'HomeController@index')->name('home');
 
@@ -38,12 +39,17 @@ Route::get('/deposit-successfull','PagesController@deposit_successfull')->name('
 Route::get('/send-interview-invitation/{id}','PagesController@sendInterviewInvitation')->name('send-interview-invitation');
 Route::post('submit/interview','PagesController@submitInterviewInvitation')->name('submit.interview-invitation');
 
-Route::get('/faqs', 'PagesController@faqs')->name('faqs');
+Route::get('/faqs', 'FaqsController@fronFaq')->name('front.faqs');
+// Route::get('categories', 'CategoriesController@index')->name('categories');
+Route::get('blogs', 'BlogsController@frontBlogs')->name('front.blogs');
+Route::get('blogs/{id}', 'BlogsController@frontBlogsSingle')->name('front.blogs.solo');
+
 Route::get('/privacy-policy','PagesController@privacy_policy')->name('privacy-policy');
 Route::get('/terms-and-conditions','PagesController@terms_and_conditions')->name('terms-and-conditions');
 
 
-Route::middleware(['auth'])->group(function () {
+
+Route::middleware(['auth'])->prefix('admin')->group(function () {
 
     Route::get('/dashboard', 'PagesController@index')->name('dashboard');
     Route::get('users', 'UserController@index')->name('users');
@@ -54,7 +60,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('users/{user}/update', 'UserController@update')->name('users.update');
     Route::get('users/{user}/delete', 'UserController@destroy')->name('users.delete');
     
-
     Route::get('categories', 'CategoriesController@index')->name('categories');
     Route::get('categories/add', 'CategoriesController@create')->name('categories.add');
     Route::post('categories/store', 'CategoriesController@store')->name('categories.store');
@@ -68,8 +73,16 @@ Route::middleware(['auth'])->group(function () {
     Route::get('blogs/{id}/edit', 'BlogsController@show')->name('blogs.edit');
     Route::post('blogs/{id}/update', 'BlogsController@update')->name('blogs.update');
     Route::get('blogs/{id}/destroy', 'BlogsController@destroy')->name('blogs.delete');
+
     
-    Route::get('faqs', 'FaqsController@index')->name('faqs');
+    Route::get('courses', 'CoursesController@index')->name('courses');
+    Route::get('courses/add', 'CoursesController@create')->name('courses.add');
+    Route::post('courses/store', 'CoursesController@store')->name('courses.store');
+    Route::get('courses/{id}/edit', 'CoursesController@show')->name('courses.edit');
+    Route::post('courses/{id}/update', 'CoursesController@update')->name('courses.update');
+    Route::get('courses/{id}/destroy', 'CoursesController@destroy')->name('courses.delete');
+    
+    Route::get('/faqs', 'FaqsController@index')->name('faqs');
     Route::get('faqs/add', 'FaqsController@create')->name('faqs.add');
     Route::post('faqs/store', 'FaqsController@store')->name('faqs.store');
     Route::get('faqs/{id}/edit', 'FaqsController@show')->name('faqs.edit');

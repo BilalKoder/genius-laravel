@@ -59,6 +59,7 @@ class CategoriesController extends Controller
       
             $category = new Categories;
             $category->name = $input['name']??'';
+            $category->type = $input['type']??'';
             $category->slug = $this->slugify($input['name']);
             $category->save();
 
@@ -116,9 +117,10 @@ class CategoriesController extends Controller
      */
     public function update(Request $request,$category)
     {
-        //
         $category = Categories::where('id',$category)->first();
+        // dd($category);
         $category->name = $request->name;
+        $category->type = $request->type;
         $category->slug = $this->slugify($request->name);
         $category->save();
 
@@ -143,6 +145,6 @@ class CategoriesController extends Controller
             'message' => 'Category deleted!',
             'alert-type' => 'success'
         );
-        return redirect('categories')->with($notification);
+        return redirect('admin/categories')->with($notification);
     }
 }

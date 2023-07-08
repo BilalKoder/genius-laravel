@@ -18,7 +18,7 @@ use App\Functions\Helper;
                             
                             <i class="flaticon-user-ok"></i>
                         </span>
-                        <span class="nav-text font-size-lg">Blogs</span>
+                        <span class="nav-text font-size-lg">Courses</span>
                     </a>
                 </li>
                 <!--end::Item-->  
@@ -29,7 +29,7 @@ use App\Functions\Helper;
     <!--end::Card header-->
     <!--begin::Card body-->
     <div class="card-body px-0">
-        <form class="form" id="kt_form" method="post" action="{{($blog->id === null)?route('blogs.store'):route('blogs.update', $blog->id)}}" autocomplete="off" enctype="multipart/form-data">
+        <form class="form" id="kt_form" method="post" action="{{($course->id === null)?route('courses.store'):route('courses.update', $course->id)}}" autocomplete="off" enctype="multipart/form-data">
             @csrf
             <div class="tab-content">
                 <!--begin::Tab-->
@@ -42,21 +42,21 @@ use App\Functions\Helper;
                             <div class="row">
                                 <label class="col-3"></label>
                                 <div class="col-9">
-                                    <h6 class="text-dark font-weight-bold mb-10">Blog Info:</h6>
+                                    <h6 class="text-dark font-weight-bold mb-10">Course Info:</h6>
                                 </div>
                             </div>
                             <!--end::Row-->
                              <!--begin::Group-->
                              @php
-                             if($blog->id === null){
+                             if($course->id === null){
                                 $image = asset('media/users/blank.png');
                                 }
                                 else{
-                                $image = (Helper::ifUserHasImage($blog->media))?asset(Helper::ifUserHasImage($blog->media)):asset('media/users/blank.png');
+                                $image = (Helper::ifUserHasImage($course->media))?asset(Helper::ifUserHasImage($course->media)):asset('media/users/blank.png');
                                 }
                              @endphp
                              <div class="form-group row" id="banner-image">
-                                 <label class="col-form-label col-3 text-lg-right text-left">Blog Image <span
+                                 <label class="col-form-label col-3 text-lg-right text-left">Featured Image <span
                                          class="text-danger">*</span></label>
                                  <div class="col-9">
                                      <div class="image-input image-input-empty image-input-outline blah" id="blah"
@@ -88,9 +88,9 @@ use App\Functions\Helper;
                              <!--end::Group-->
                             <!--begin::Group-->
                             <div class="form-group row">
-                                <label class="col-form-label col-3 text-lg-right text-left">Name<span class="text-danger">*</span></label>
+                                <label class="col-form-label col-3 text-lg-right text-left">Title<span class="text-danger">*</span></label>
                                 <div class="col-9">
-                                    <input class="form-control form-control-lg form-control-solid" type="text" name="name" value="{{($blog->id === null)?old('name'):$blog->name}}" placeholder="Name" required />
+                                    <input class="form-control form-control-lg form-control-solid" type="text" name="title" value="{{($course->id === null)?old('title'):$course->title}}" placeholder="Course Title" required />
                                 </div>
                             </div>
                             <!--begin::Group-->
@@ -99,8 +99,20 @@ use App\Functions\Helper;
                                 <div class="col-9">
                                     <div class="input-group input-group-lg input-group-solid">
                                         <select name="status" id="status" class="form-control form-control-lg form-control-solid" required>
-                                            <option value="1" {{($blog->status == '1')?'selected':''}}>Active</option>
-                                            <option value="0" {{($blog->status == '0')?'selected':''}}>Inactive</option>
+                                            <option value="1" {{($course->status == '1')?'selected':''}}>Active</option>
+                                            <option value="0" {{($course->status == '0')?'selected':''}}>Inactive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Group-->
+                            <div class="form-group row">
+                                <label class="col-form-label col-3 text-lg-right text-left">Featured<span class="text-danger">*</span></label>
+                                <div class="col-9">
+                                    <div class="input-group input-group-lg input-group-solid">
+                                        <select name="is_featured" id="is_featured" class="form-control form-control-lg form-control-solid" required>
+                                            <option value="1" {{($course->is_featured == '1')?'selected':''}}>YES</option>
+                                            <option value="0" {{($course->is_featured == '0')?'selected':''}}>NO</option>
                                         </select>
                                     </div>
                                 </div>
@@ -110,55 +122,102 @@ use App\Functions\Helper;
                             <div class="form-group row">
                                 <label class="col-form-label col-3 text-lg-right text-left">Description<span class="text-danger">*</span></label>
                                 <div class="col-9">
-                                    <textarea name="description" id="summernote" class="form-control" cols="30" rows="10">{{($blog->id === null)?old('description'):$blog->description}}</textarea>
+                                    <textarea name="description" id="summernote" class="form-control" cols="30" rows="10">{{($course->id === null)?old('description'):$course->description}}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-form-label col-3 text-lg-right text-left">Meta Title</label>
+                                    <label class="col-form-label col-3 text-lg-right text-left"> Price </Pre> <span class="text-danger">*</span></label>
+                                    <div class="col-9">
+                                        <div class="input-group input-group-lg input-group-solid">
+                                            <input type="number"  min = "1" step="0.01" name="price" value="{{($course->id === null)?old('price'):$course->price}}" class="form-control form-control-lg form-control-solid semester_lesson_inputs" required placeholder="69.01">
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="form-group row">
+                                    <label class="col-form-label col-3 text-lg-right text-left"> Duration <span class="text-danger">*</span></label>
+                                    <div class="col-9">
+                                        <div class="input-group input-group-lg input-group-solid">
+                                            <input type="number"  min = "1" step="1" name="duration" value="{{($course->id === null)?old('duration'):$course->duration}}" class="form-control form-control-lg form-control-solid semester_lesson_inputs" required placeholder="2">
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                    <label class="col-form-label col-3 text-lg-right text-left"> Lectures <span class="text-danger">*</span></label>
+                                    <div class="col-9">
+                                        <div class="input-group input-group-lg input-group-solid">
+                                            <input type="number"  min = "1" step="1" name="lectures" value="{{($course->id === null)?old('lectures'):$course->lectures}}" class="form-control form-control-lg form-control-solid semester_lesson_inputs" required placeholder="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                    <label class="col-form-label col-3 text-lg-right text-left"> Video <span class="text-danger">*</span></label>
+                                    <div class="col-9">
+                                        <div class="input-group input-group-lg input-group-solid">
+                                            <input type="number"  min = "1" step="1" name="video" value="{{($course->id === null)?old('video'):$course->video}}" class="form-control form-control-lg form-control-solid semester_lesson_inputs" required placeholder="1">
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                    <label class="col-form-label col-3 text-lg-right text-left"> Includes <span class="text-danger">*</span></label>
+                                    <div class="col-9">
+                                        <div class="input-group input-group-lg input-group-solid">
+                                            <input class="form-control form-control-lg form-control-solid tags" type="text" id="tags1" name="includes[]"  value="{{($course->id === null)?old('includes'):$course->includes}}"  placeholder="Type and press tab..." required />
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                    <label class="col-form-label col-3 text-lg-right text-left"> Languages <span class="text-danger">*</span></label>
+                                    <div class="col-9">
+                                        <div class="input-group input-group-lg input-group-solid">
+                                            <input class="form-control form-control-lg form-control-solid" type="text" name="languages[]" id="tags2" value="{{($course->id === null)?old('languages'):$course->languages}}" placeholder="Type and press tab..." required />
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-3 text-lg-right text-left">Meta Title<span class="text-danger">*</span></label>
                                 <div class="col-9">
-                                    <input class="form-control form-control-lg form-control-solid" type="text" name="meta_title" value="{{($blog->id === null)?old('meta_title'):$blog->meta_title}}" placeholder="Meta Title" />
+                                    <input class="form-control form-control-lg form-control-solid" type="text" name="meta_title" value="{{($course->id === null)?old('meta_title'):$course->meta_title}}" placeholder="Meta Title" />
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-form-label col-3 text-lg-right text-left">Meta Description</label>
+                                <label class="col-form-label col-3 text-lg-right text-left">Meta Description<span class="text-danger">*</span></label>
                                 <div class="col-9">
-                                    <textarea name="meta_description" class="form-control" cols="30" rows="10">{{($blog->id === null)?old('meta_description'):$blog->meta_description}}</textarea>
+                                    <textarea name="meta_description" class="form-control" cols="30" rows="10">{{($course->id === null)?old('meta_description'):$course->meta_description}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-form-label col-3 text-lg-right text-left">Select Categories</label>
+                                <label class="col-form-label col-3 text-lg-right text-left">Select Categories<span class="text-danger">*</span></label>
                                 <div class="col-9">
 
-                                @if($blog->id === null)
+                                @if($course->id === null)
                                 <select name="categories[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true" required>
-                                    @if(!empty($categories))
-                                        @foreach($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name ?? '' }}</option>
-                                        @endforeach
-                                    @endif
-                                </select>
+                                @if(!empty($categories))
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name ?? '' }}</option>
+                                    @endforeach
+                                @endif
+                                    </select>
+
                                 @else
                                 <select name="categories[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true" required>
                                      @if(!empty($categories))
                                      @foreach($categories as $category)
                                     
-                                        @php
-                                            $array = ["1"];
-                                            $checkCondition = Helper::ifAlreadySelected($category->id, $blog->categories->pluck('category_id')->toArray())
-                                        @endphp
+                                     @php
+                                        $array = ["1"];
+                                        $checkCondition = Helper::ifAlreadySelected($category->id, $course->categories->pluck('category_id')->toArray())
+                                     @endphp
                                              <option {{$checkCondition ? 'selected' : ''}} value="{{ $category->id }}">{{ $category->name ?? '' }}</option>
+
                                          @endforeach
                                      @endif
                                     </select>
                                 @endif
-
-                            
-                                <a  href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal" class="btn btn-light-primary font-weight-bold mt-2">Add New Category</a>
                                    
                                 </div>
-
                             </div>
                             <!--end::Group-->
                             </div>
@@ -173,7 +232,7 @@ use App\Functions\Helper;
                                         <div class="col-3"></div>
                                         <div class="col-9">
                                             <input type="submit" class="btn btn-light-primary font-weight-bold" value="Save changes">
-                                            <a href="{{route('blogs')}}" class="btn btn-clean font-weight-bold">Cancel</a>
+                                            <a href="{{route('courses')}}" class="btn btn-clean font-weight-bold">Cancel</a>
                                         </div>
                                     </div>
                                 </div>
@@ -188,108 +247,17 @@ use App\Functions\Helper;
         <!--begin::Card body-->
     </div>
     <!--end::Card-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Categories</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-                    
-                        <label for="recipient-name" class="form-control-label">Category Name<span class="text-danger">*</span></label>
-                        <input type="text" class="form-control" name="category_name" id="category_name">
-                    
-                    </div>
-                    <label >Category Type<span class="text-danger">*</span></label>
-                          <div class="form-group row">
-                                <div class="col-12">
-                                    <select class="form-control selectpicker" tabindex="null" name="category_type" id="category_type" required>
-                                            <option value ='BLOGS'> BLOGS</option>
-                                            <option value ='COURSES'> COURSES</option>
-									</select>
-                                </div>
-                            </div>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary submit editSubmissionButton">Save changes</button>
-                </div>
-            </div>
-            </div>
-        </div>
     @endsection
     
     @section('scripts')
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script> -->
 
     <script src="{{asset('genius/js/multiselect-dropdown.js')}}"></script>
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <script src="{{asset('genius/js/tags.js')}}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script type="text/javascript">
-            $(document).ready(function () {
-             $('.editSubmissionButton').on('click', function () {
-
-                var category_name = $("#category_name").val();
-                var category_type = $("#category_type").val();
-
-                if(category_name == null || category_name == ""){
-                    Swal.fire({
-                        title: 'Error',
-                        text: 'Category Name can not be empty!',
-                        type: 'warning'
-                    });
-
-                    return false;
-                }
-                if(category_type == null || category_type == ""){
-                    Swal.fire({
-                        title: 'Error',
-                        text: 'Category Type can not be empty!',
-                        type: 'warning'
-                    });
-                    return false;
-                }
-
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-
-                $.ajax({
-                        type: 'POST',
-                        url: '/admin/categories/store/',
-                        dataType: "JSON",
-                        data: {
-                            "_token": "{{ csrf_token() }}",
-                            "name": category_name,
-                            "type": category_type,
-                        },
-
-                        success: function (data) {  
-
-                            Swal.fire({
-                                title: 'Success',
-                                text: 'Submitted Successfully',
-                                type: 'success'
-                            });
-
-                        $('#exampleModal').modal('hide');
-
-                        setTimeout(() => {
-                            location.reload();
-                        }, 2000);
-                        },
-                    })
-
-            });
-            });
 
 
        

@@ -35,7 +35,8 @@ use App\Functions\Helper;
                         <tr>
                             <th title="Field #1">#</th>
                             <th title="Field #2">Name</th>
-                            <th title="Field #3">slug</th>
+                            <th title="Field #3">Slug</th>
+                            <th title="Field #3">Type</th>
                             <th title="Field #5">Created At</th>
                             <th title="Field #6">Action</th>
                         </tr>
@@ -61,20 +62,18 @@ use App\Functions\Helper;
                                     @endif
                                     <div class="ml-4">
                                         <div class="text-dark-75 font-weight-bolder font-size-lg mb-0">
-                                            {{$category->name}}
+                                            {{$category->name??''}}
                                         </div>
-                                        {{-- <a href="#" class="text-muted font-weight-bold text-hover-primary">{{$user->email}}</a> --}}
                                     </div>
                                 </div>
                             </td>
-                            <td>{{$category->slug}}</td>
+                            <td>{{$category->slug??''}}</td>
+                            <td>{{$category->type??''}}</td>
                         
                             <td>{{ ($category->created_at != ''|| $category->created_at != null)?$category->created_at->format('Y-m-d'): '' }}</td>
                             <td>
-                                {{-- <a href="javascript:;"  data-href="{{route('users.detail', $user->id)}}" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon">
-                                    <i class="flaticon-eye"></i>
-                                </a> --}}
-                                <a href="javascript:void(0)" data-toggle="modal" data-target="#updateModal" data-id="{{$category->id}}" data-name="{{$category->name}}" class=" updateSubmissionButtonModal btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon">
+                             
+                                <a href="javascript:void(0)" data-toggle="modal" data-target="#updateModal" data-id="{{$category->id}}" data-name="{{$category->name}}" data-type="{{$category->type}}" class=" updateSubmissionButtonModal btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon">
                                     <i class="flaticon-edit"></i>
                                 </a>
                                 <a href="javascript:;" data-url="{{route('categories.delete', $category->id)}}" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon delete">
@@ -103,9 +102,19 @@ use App\Functions\Helper;
                     <div class="form-group">
                         <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                     
-                        <label for="recipient-name" class="form-control-label">Category Name:</label>
+                        <label for="recipient-name" class="form-control-label">Category Name<span class="text-danger">*</span></label>
                         <input type="text" class="form-control" name="category_name" id="category_name">
+                    
                     </div>
+                    <label >Category Type<span class="text-danger">*</span></label>
+                          <div class="form-group row">
+                                <div class="col-12">
+                                    <select class="form-control selectpicker" tabindex="null" name="category_type" id="category_type" required>
+                                            <option value ='BLOGS'> BLOGS</option>
+                                            <option value ='COURSES'> COURSES</option>
+									</select>
+                                </div>
+                            </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -132,6 +141,15 @@ use App\Functions\Helper;
                         <input type="text" class="form-control" name="edit_category_name" id="edit_category_name">
                         <input type="hidden" class="form-control" id="category_id">
                     </div>
+                    <label >Category Type<span class="text-danger">*</span></label>
+                          <div class="form-group row">
+                                <div class="col-12">
+                                    <select class="form-control selectpicker" tabindex="null" name="edit_category_type" id="edit_category_type" required>
+                                            <option value ='BLOGS'> BLOGS</option>
+                                            <option value ='COURSES'> COURSES</option>
+									</select>
+                                </div>
+                            </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -153,6 +171,7 @@ use App\Functions\Helper;
              $('.editSubmissionButton').on('click', function () {
 
                 var category_name = $("#category_name").val();
+                var category_type = $("#category_type").val();
 
                 if(category_name == null || category_name == ""){
                     Swal.fire({
@@ -161,6 +180,14 @@ use App\Functions\Helper;
                         type: 'warning'
                     });
 
+                    return false;
+                }
+                if(category_type == null || category_type == ""){
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Category Type can not be empty!',
+                        type: 'warning'
+                    });
                     return false;
                 }
 
@@ -172,11 +199,12 @@ use App\Functions\Helper;
 
                 $.ajax({
                         type: 'POST',
-                        url: '/categories/store/',
+                        url: '/admin/categories/store/',
                         dataType: "JSON",
                         data: {
                             "_token": "{{ csrf_token() }}",
-                            "name": category_name
+                            "name": category_name,
+                            "type": category_type,
                         },
 
                         success: function (data) {  
@@ -202,7 +230,9 @@ use App\Functions\Helper;
               
                 var id = $(this).data('id');
                 var name = $(this).data('name');
+                var type = $(this).data('type');
                 var category_name = $("#edit_category_name").val(name);
+                var category_type = $("#edit_category_type").val(type);
                 $("#category_id").val(id)
             });
 
@@ -210,11 +240,21 @@ use App\Functions\Helper;
 
                 var id =  $("#category_id").val();
                 var category_name = $("#edit_category_name").val();
+                var category_type = $("#edit_category_type").val();
                 
                 if(category_name == null || category_name == ""){
                     Swal.fire({
                         title: 'Error',
                         text: 'Category Name can not be empty!',
+                        type: 'warning'
+                    });
+
+                    return false;
+                }
+                if(category_type == null || category_type == ""){
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Category Type can not be empty!',
                         type: 'warning'
                     });
 
@@ -229,18 +269,19 @@ use App\Functions\Helper;
 
                 $.ajax({
                         type: 'POST',
-                        url: 'categories/'+id+'/update',
+                        url: 'admin/categories/'+id+'/update',
                         dataType: "JSON",
                         data: {
                             "_token": "{{ csrf_token() }}",
-                            "name": category_name
+                            "name": category_name,
+                            "type": category_type,
                         },
 
                         success: function (data) {  
 
                             Swal.fire({
                                 title: 'Success',
-                                text: 'Submitted Successfully',
+                                text: 'Updated Successfully',
                                 type: 'success'
                             });
 
