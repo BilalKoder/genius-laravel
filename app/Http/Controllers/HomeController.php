@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Blogs;
 use App\CourseCategories;
 use App\Courses;
 use App\Categories;
+use App\Faqs;
 use Carbon\Carbon;
 use App\User;
 use App\Advertisement;
@@ -30,6 +32,9 @@ class HomeController extends Controller
     public function index()
     {
         $data['page_title'] = 'Home';
+        $data['courses'] = Courses::where('status',1)->limit(4)->get();
+        $data['blogs'] = Blogs::where('status',1)->limit(2)->get();
+        $data['faqs'] = Faqs::limit(4)->get();
         return view('front.home',$data);
     }
     
@@ -50,6 +55,8 @@ class HomeController extends Controller
                 $query->whereIn('id', $blogIds);
             }
 
+            $query->where('status',1);
+
         $data['courses'] = $query->orderBy('id', 'DESC')->get();
 
         $data['categories'] = Categories::where('type', "COURSES")->orderBy('id', 'DESC')->get();
@@ -58,7 +65,7 @@ class HomeController extends Controller
 
     public function courseDetail($id){
         // Store the course ID in the session or cookie
-        $data['course'] = Courses::where('id',$id)->first();
+        $course = Courses::where('id',$id)->first();
         if (auth()->check()) {
             // For authenticated users, you can store the course ID in the session
             session()->push('recently_viewed_courses', $id);
@@ -68,6 +75,13 @@ class HomeController extends Controller
             $recentlyViewedCourses[] = $id;
             cookie()->queue('recently_viewed_courses', $recentlyViewedCourses, 1440); // 1440 minutes = 24 hours
         }
+
+        $data = [
+            'course' => $course,
+            'page_title' => $course->meta_title??'',
+            // 'categories' => $categories,
+            'meta_description' =>  $course->meta_description??''
+        ];
 
         return view('front.learning-detail',$data);
     }

@@ -28,6 +28,11 @@ class Courses extends Model
         'is_featured'
     ];
 
+
+    public function user(){
+        return $this->belongsTo('App\User', 'created_by');
+    }
+
     public function categories(){
         return $this->hasMany('App\CourseCategories', 'course_id');
     }

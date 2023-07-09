@@ -64,11 +64,11 @@ use Illuminate\Support\Str;
 							</div> -->
 							<div class="next-prev-post">
 								<div class="next-post-item float-left">
-									<a href="#"><i class="fas fa-arrow-circle-left"></i>Previous Post</a>
+								@if($previousBlog)	<a href="{{route('front.blogs.solo', $previousBlog->id)}}"><i class="fas fa-arrow-circle-left"></i>Previous Post</a>@endif
 								</div>
 
 								<div class="next-post-item float-right">
-									<a href="#">Next Post<i class="fas fa-arrow-circle-right"></i></a>
+									@if($nextBlog)<a href="{{route('front.blogs.solo', $nextBlog->id)}}">Next Post<i class="fas fa-arrow-circle-right"></i></a> @endif
 								</div>
 							</div>
 						</div>

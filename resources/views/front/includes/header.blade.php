@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <!-- Author -->
-    <meta name="author" content="Mubassir Ahmed">
+    <meta name="author" content="RHMC">
     <!-- description -->
-    <meta name="description" content="Genius">
+    <meta name="description" content="{{$meta_description??''}}">
     <!-- keywords -->
     <meta name="keywords" content="Genius">
     <!-- Page Title -->

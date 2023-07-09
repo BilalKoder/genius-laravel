@@ -48,6 +48,9 @@ class BlogsController extends Controller
                 $query->whereIn('id', $blogIds);
             }
 
+
+            $query->where('status',1);
+
             $data['blogs'] = $query->orderBy('id', 'DESC')->get();
             $data['categories'] = Categories::where('type', "BLOGS")->orderBy('id', 'DESC')->get();
             $data['page_title'] = "Blogs";
@@ -57,9 +60,26 @@ class BlogsController extends Controller
 
         public function frontBlogsSingle($id){
          
-            $data['blog'] = Blogs::findOrFail($id);
-            $data['categories'] = Categories::where('type', "BLOGS")->orderBy('id', 'DESC')->get();
-            $data['page_title'] = "Blogs";
+            $currentBlog = Blogs::findOrFail($id);
+    
+            $previousBlog = Blogs::where('id', '<', $currentBlog->id)
+                ->orderBy('id', 'desc')
+                ->first();
+            
+            $nextBlog = Blogs::where('id', '>', $currentBlog->id)
+                ->orderBy('id', 'asc')
+                ->first();
+            
+            $categories = Categories::where('type', "BLOGS")->orderBy('id', 'DESC')->get();
+
+            $data = [
+                'blog' => $currentBlog,
+                'previousBlog' => $previousBlog,
+                'nextBlog' => $nextBlog,
+                'page_title' => $currentBlog->meta_title??'',
+                'categories' => $categories,
+                'meta_description' =>  $currentBlog->meta_description??''
+            ];
 
             return view('front.blog-detail', $data);
         }

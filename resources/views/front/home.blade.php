@@ -21,7 +21,7 @@ use App\Functions\Helper;
 						<div class="layer-1-4">
 							<div id="course-btn">
 								<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
-									<a href="#">Our Courses <i class="fas fa-caret-right"></i></a>
+									<a href="{{route('learning')}}">Our Courses <i class="fas fa-caret-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -196,20 +196,29 @@ use App\Functions\Helper;
 					<h2><span>Popular</span> Courses.</h2>
 				</div>
 				<div id="course-slide-item" class="course-slide">
+
+				@php
+				$counter = 0;
+				@endphp
+				@if(!empty($courses))
+				@foreach($courses as $key => $course)
+				
 					<div class="course-item-pic-text">
 						<div class="course-pic relative-position mb25">
-							<img src="<?= asset('genius/img/course/c-1.jpg')?>" alt="">
+							<img src="<?= asset($course->media)?>" alt="">
 							<div class="course-price text-center gradient-bg">
-								<span>$99.00</span>
+								<span>${{$course->price??'0'}}</span>
 							</div>
 							<div class="course-details-btn">
-								<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+								<a href="{{ route('learning.detail', ['id' => $course->id]) }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 							</div>
 						</div>
 						<div class="course-item-text">
 							<div class="course-meta">
-								<span class="course-category bold-font"><a href="#">Web Design</a></span>
-								<span class="course-author bold-font"><a href="#">John Luis Fernandes</a></span>
+								<span class="course-category bold-font"><a href="{{ route('learning.detail', ['id' => $course->id]) }}">@foreach($course->categories as $cat)
+														{{$cat->category->name??''}}
+														@endforeach</a></span>
+								<span class="course-author bold-font"><a href="{{ route('learning.detail', ['id' => $course->id]) }}">{{$course->user->name??''}}</a></span>
 								<div class="course-rate ul-li">
 									<ul>
 										<li><i class="fas fa-star"></i></li>
@@ -221,208 +230,25 @@ use App\Functions\Helper;
 								</div>
 							</div>
 							<div class="course-title mt10 headline pb45 relative-position">
-								<h3><a href="#">Fully Responsive Web Design & Development.</a> <span class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> TRENDING</span></h3>
+								<h3><a href="{{ route('learning.detail', ['id' => $course->id]) }}">{{$course->title??''}}</a>
+								@if($course->is_featured == 1) <span class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> FEATURED</span>@endif</h3>
 							</div>
-							<div class="course-viewer ul-li">
+							<!-- <div class="course-viewer ul-li">
 								<ul>
 									<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
 									<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
 									<li><a href="">125k Unrolled</a></li>
 								</ul>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<!-- /item -->
 
-					<div class="course-item-pic-text">
-						<div class="course-pic relative-position mb25">
-							<img src="<?= asset('genius/img/course/c-2.jpg')?>" alt="">
-							<div class="course-price text-center gradient-bg">
-								<span>$99.00</span>
-							</div>
-							<div class="course-details-btn">
-								<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-							</div>
-						</div>
-						<div class="course-item-text">
-							<div class="course-meta">
-								<span class="course-category bold-font"><a href="#">Mobile Apps</a></span>
-								<span class="course-author bold-font"><a href="#">Fernando Torres</a></span>
-								<div class="course-rate ul-li">
-									<ul>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-								</div>
-							</div>
-							<div class="course-title mt10 headline pb45 relative-position">
-								<h3><a href="#">Introduction to Mobile Application Development.</a></h3>
-							</div>
-							<div class="course-viewer ul-li">
-								<ul>
-									<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-									<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-									<li><a href="">125k Unrolled</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /item -->
+					
 
-					<div class="course-item-pic-text">
-						<div class="course-pic relative-position mb25">
-							<img src="<?= asset('genius/img/course/c-3.jpg')?>" alt="">
-							<div class="course-price text-center gradient-bg">
-								<span>$99.00</span>
-							</div>
-							<div class="course-details-btn">
-								<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-							</div>
-						</div>
-						<div class="course-item-text">
-							<div class="course-meta">
-								<span class="course-category bold-font"><a href="#">Motion Graphic </a></span>
-								<span class="course-author bold-font"><a href="#">enny Garcias</a></span>
-								<div class="course-rate ul-li">
-									<ul>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-								</div>
-							</div>
-							<div class="course-title mt10 headline pb45 relative-position">
-								<h3><a href="#">Learning IOS Apps Programming & Development.</a></h3>
-							</div>
-							<div class="course-viewer ul-li">
-								<ul>
-									<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-									<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-									<li><a href="">125k Unrolled</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /item -->
-
-					<div class="course-item-pic-text">
-						<div class="course-pic relative-position mb25">
-							<img src="<?= asset('genius/img/course/c-2.jpg')?>" alt="">
-							<div class="course-price text-center gradient-bg">
-								<span>$99.00</span>
-							</div>
-							<div class="course-details-btn">
-								<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-							</div>
-						</div>
-						<div class="course-item-text">
-							<div class="course-meta">
-								<span class="course-category bold-font"><a href="#">Web Design</a></span>
-								<span class="course-author bold-font"><a href="#">John Luis Fernandes</a></span>
-								<div class="course-rate ul-li">
-									<ul>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-								</div>
-							</div>
-							<div class="course-title mt10 headline pb45 relative-position">
-								<h3><a href="#">Fully Responsive Web Design & Development.</a> <span class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> TRENDING</span></h3>
-							</div>
-							<div class="course-viewer ul-li">
-								<ul>
-									<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-									<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-									<li><a href="">125k Unrolled</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /item -->
-
-					<div class="course-item-pic-text">
-						<div class="course-pic relative-position mb25">
-							<img src="<?= asset('genius/img/course/c-3.jpg')?>" alt="">
-							<div class="course-price text-center gradient-bg">
-								<span>$99.00</span>
-							</div>
-							<div class="course-details-btn">
-								<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-							</div>
-						</div>
-						<div class="course-item-text">
-							<div class="course-meta">
-								<span class="course-category bold-font"><a href="#">Web Design</a></span>
-								<span class="course-author bold-font"><a href="#">John Luis Fernandes</a></span>
-								<div class="course-rate ul-li">
-									<ul>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-								</div>
-							</div>
-							<div class="course-title mt10 headline pb45 relative-position">
-								<h3><a href="#">Fully Responsive Web Design & Development.</a> <span class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> TRENDING</span></h3>
-							</div>
-							<div class="course-viewer ul-li">
-								<ul>
-									<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-									<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-									<li><a href="">125k Unrolled</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /item -->
-
-					<div class="course-item-pic-text">
-						<div class="course-pic relative-position mb25">
-							<img src="<?= asset('genius/img/course/c-1.jpg')?>" alt="">
-							<div class="course-price text-center gradient-bg">
-								<span>$99.00</span>
-							</div>
-							<div class="course-details-btn">
-								<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-							</div>
-						</div>
-						<div class="course-item-text">
-							<div class="course-meta">
-								<span class="course-category bold-font"><a href="#">Web Design</a></span>
-								<span class="course-author bold-font"><a href="#">John Luis Fernandes</a></span>
-								<div class="course-rate ul-li">
-									<ul>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-										<li><i class="fas fa-star"></i></li>
-									</ul>
-								</div>
-							</div>
-							<div class="course-title mt10 headline pb45 relative-position">
-								<h3><a href="#">Fully Responsive Web Design & Development.</a> <span class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> TRENDING</span></h3>
-							</div>
-							<div class="course-viewer ul-li">
-								<ul>
-									<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-									<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-									<li><a href="">125k Unrolled</a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /item -->
+					@endforeach
+				@endif
+					
 				</div>
 			</div>
 		</section>
@@ -676,16 +502,25 @@ use App\Functions\Helper;
 				</div>
 				<div class="best-course-area mb45">
 					<div class="row">
+
+					@php
+					$countert = 0;
+					@endphp
+					@if(!empty($courses))
+					@foreach($courses as $key => $value)
+
 						<div class="col-md-3">
 							<div class="best-course-pic-text relative-position">
 								<div class="best-course-pic relative-position">
-									<img src="<?= asset('genius/img/course/bc-1.jpg')?>" alt="">
+									<img src="<?= asset($value->media)?>" alt="">
+									@if($value->is_featured == 1)
 									<div class="trend-badge-2 text-center text-uppercase">
 										<i class="fas fa-bolt"></i>
-										<span>Trending</span>
+										<span>FEATURED</span>
 									</div>
+									@endif
 									<div class="course-price text-center gradient-bg">
-										<span>$99.00</span>
+										<span>${{$value->price??'0'}}</span>
 									</div>
 									<div class="course-rate ul-li">
 										<ul>
@@ -697,124 +532,28 @@ use App\Functions\Helper;
 										</ul>
 									</div>
 									<div class="course-details-btn">
-										<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+										<a href="{{ route('learning.detail', ['id' => $value->id]) }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 									</div>
 									<div class="blakish-overlay"></div>
 								</div>
 								<div class="best-course-text">
 									<div class="course-title mb20 headline relative-position">
-										<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
+										<h3><a href="{{ route('learning.detail', ['id' => $value->id]) }}">{{$value->title??''}}</a></h3>
 									</div>
 									<div class="course-meta">
-										<span class="course-category"><a href="#">Web Design</a></span>
-										<span class="course-author"><a href="#">250 Students</a></span>
+										<span class="course-category"><a href="{{ route('learning.detail', ['id' => $value->id]) }}">	
+														@foreach($value->categories as $cat)
+															{{$cat->category->name??''}}
+														@endforeach
+													</a></span>
 									</div>
 								</div>
 							</div>
 						</div>
 						<!-- /course -->
-
-						<div class="col-md-3">
-							<div class="best-course-pic-text relative-position">
-								<div class="best-course-pic relative-position">
-									<img src="<?= asset('genius/img/course/bc-2.jpg')?>" alt="">
-									<div class="course-price text-center gradient-bg">
-										<span>$99.00</span>
-									</div>
-									<div class="course-rate ul-li">
-										<ul>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="course-details-btn">
-										<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-									</div>
-									<div class="blakish-overlay"></div>
-								</div>
-								<div class="best-course-text">
-									<div class="course-title mb20 headline relative-position">
-										<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-									</div>
-									<div class="course-meta">
-										<span class="course-category"><a href="#">Web Design</a></span>
-										<span class="course-author"><a href="#">250 Students</a></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /course -->
-
-						<div class="col-md-3">
-							<div class="best-course-pic-text relative-position">
-								<div class="best-course-pic relative-position">
-									<img src="<?= asset('genius/img/course/bc-3.jpg')?>" alt="">
-									<div class="course-price text-center gradient-bg">
-										<span>$99.00</span>
-									</div>
-									<div class="course-rate ul-li">
-										<ul>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="course-details-btn">
-										<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-									</div>
-									<div class="blakish-overlay"></div>
-								</div>
-								<div class="best-course-text">
-									<div class="course-title mb20 headline relative-position">
-										<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-									</div>
-									<div class="course-meta">
-										<span class="course-category"><a href="#">Web Design</a></span>
-										<span class="course-author"><a href="#">250 Students</a></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /course -->
-
-						<div class="col-md-3">
-							<div class="best-course-pic-text relative-position">
-								<div class="best-course-pic relative-position">
-									<img src="<?= asset('genius/img/course/bc-4.jpg')?>" alt="">
-									<div class="course-price text-center gradient-bg">
-										<span>$99.00</span>
-									</div>
-									<div class="course-rate ul-li">
-										<ul>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-											<li><i class="fas fa-star"></i></li>
-										</ul>
-									</div>
-									<div class="course-details-btn">
-										<a href="#">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
-									</div>
-									<div class="blakish-overlay"></div>
-								</div>
-								<div class="best-course-text">
-									<div class="course-title mb20 headline relative-position">
-										<h3><a href="#">Fully Responsive Web Design &amp; Development.</a></h3>
-									</div>
-									<div class="course-meta">
-										<span class="course-category"><a href="#">Web Design</a></span>
-										<span class="course-author"><a href="#">250 Students</a></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<!-- /course -->
+					
+						@endforeach
+					@endif
 					</div>
 				</div>
 				
@@ -913,90 +652,6 @@ use App\Functions\Helper;
 				<div class="teacher-third-slide">
 					<div class="teacher-double">
 						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-1.jpg')?>" alt="">
-							<div class="teacher-cntent">
-								<div class="teacher-social-name ul-li-block">
-									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-									<div class="teacher-name">
-										<span>Daniel
-										Alvares</span>
-									</div>
-								</div>
-							</div>
-							<div class="teacher-category float-right">
-								<span class="st-name">Mobile Apps </span>
-							</div>
-						</div>
-
-						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-1.jpg')?>" alt="">
-							<div class="teacher-cntent">
-								<div class="teacher-social-name ul-li-block">
-									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-									<div class="teacher-name">
-										<span>Daniel
-										Alvares</span>
-									</div>
-								</div>
-							</div>
-							<div class="teacher-category float-right">
-								<span class="st-name">Mobile Apps </span>
-							</div>
-						</div>
-					</div>
-
-					<div class="teacher-double">
-						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-2.jpg')?>" alt="">
-							<div class="teacher-cntent">
-								<div class="teacher-social-name ul-li-block">
-									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-									<div class="teacher-name">
-										<span>Daniel
-										Alvares</span>
-									</div>
-								</div>
-							</div>
-							<div class="teacher-category float-right">
-								<span class="st-name">Mobile Apps </span>
-							</div>
-						</div>
-
-						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-3.jpg')?>" alt="">
-							<div class="teacher-cntent">
-								<div class="teacher-social-name ul-li-block">
-									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-									<div class="teacher-name">
-										<span>Daniel
-										Alvares</span>
-									</div>
-								</div>
-							</div>
-							<div class="teacher-category float-right">
-								<span class="st-name">Mobile Apps </span>
-							</div>
-						</div>
-					</div>
-
-					<div class="teacher-double">
-						<div class="teacher-img-content relative-position">
 							<img src="<?= asset('genius/img/teacher/ts-4.jpg')?>" alt="">
 							<div class="teacher-cntent">
 								<div class="teacher-social-name ul-li-block">
@@ -1016,108 +671,6 @@ use App\Functions\Helper;
 							</div>
 						</div>
 
-						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-5.jpg')?>" alt="">
-							<div class="teacher-cntent">
-								<div class="teacher-social-name ul-li-block">
-									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-									<div class="teacher-name">
-										<span>Daniel
-										Alvares</span>
-									</div>
-								</div>
-							</div>
-							<div class="teacher-category float-right">
-								<span class="st-name">Mobile Apps </span>
-							</div>
-						</div>
-					</div>
-
-					<div class="teacher-double">
-						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-6.jpg')?>" alt="">
-							<div class="teacher-cntent">
-								<div class="teacher-social-name ul-li-block">
-									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-									<div class="teacher-name">
-										<span>Daniel
-										Alvares</span>
-									</div>
-								</div>
-							</div>
-							<div class="teacher-category float-right">
-								<span class="st-name">Mobile Apps </span>
-							</div>
-						</div>
-						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-2.jpg')?>" alt="">
-							<div class="teacher-cntent">
-								<div class="teacher-social-name ul-li-block">
-									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-									<div class="teacher-name">
-										<span>Daniel
-										Alvares</span>
-									</div>
-								</div>
-							</div>
-							<div class="teacher-category float-right">
-								<span class="st-name">Mobile Apps </span>
-							</div>
-						</div>
-					</div>
-
-					<div class="teacher-double">
-						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-3.jpg')?>"alt="">
-							<div class="teacher-cntent">
-								<div class="teacher-social-name ul-li-block">
-									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-									<div class="teacher-name">
-										<span>Daniel
-										Alvares</span>
-									</div>
-								</div>
-							</div>
-							<div class="teacher-category float-right">
-								<span class="st-name">Mobile Apps </span>
-							</div>
-						</div>
-
-						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-4.jpg')?>" alt="">
-							<div class="teacher-cntent">
-								<div class="teacher-social-name ul-li-block">
-									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-									<div class="teacher-name">
-										<span>Daniel
-										Alvares</span>
-									</div>
-								</div>
-							</div>
-							<div class="teacher-category float-right">
-								<span class="st-name">Mobile Apps </span>
-							</div>
-						</div>
 					</div>
 
 					<div class="teacher-double">
@@ -1141,6 +694,33 @@ use App\Functions\Helper;
 							</div>
 						</div>
 
+					
+					</div>
+
+					<div class="teacher-double">
+						<div class="teacher-img-content relative-position">
+							<img src="<?= asset('genius/img/teacher/ts-4.jpg')?>" alt="">
+							<div class="teacher-cntent">
+								<div class="teacher-social-name ul-li-block">
+									<ul>
+										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+									</ul>
+									<div class="teacher-name">
+										<span>Daniel
+										Alvares</span>
+									</div>
+								</div>
+							</div>
+							<div class="teacher-category float-right">
+								<span class="st-name">Mobile Apps </span>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="teacher-double">
 						<div class="teacher-img-content relative-position">
 							<img src="<?= asset('genius/img/teacher/ts-6.jpg')?>" alt="">
 							<div class="teacher-cntent">
@@ -1160,11 +740,12 @@ use App\Functions\Helper;
 								<span class="st-name">Mobile Apps </span>
 							</div>
 						</div>
+					
 					</div>
 
 					<div class="teacher-double">
 						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-1.jpg')?>" alt="">
+							<img src="<?= asset('genius/img/teacher/ts-5.jpg')?>"alt="">
 							<div class="teacher-cntent">
 								<div class="teacher-social-name ul-li-block">
 									<ul>
@@ -1183,30 +764,11 @@ use App\Functions\Helper;
 							</div>
 						</div>
 
-						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-1.jpg')?>" alt="">
-							<div class="teacher-cntent">
-								<div class="teacher-social-name ul-li-block">
-									<ul>
-										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									</ul>
-									<div class="teacher-name">
-										<span>Daniel
-										Alvares</span>
-									</div>
-								</div>
-							</div>
-							<div class="teacher-category float-right">
-								<span class="st-name">Mobile Apps </span>
-							</div>
-						</div>
 					</div>
 
 					<div class="teacher-double">
 						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-1.jpg')?>" alt="">
+							<img src="<?= asset('genius/img/teacher/ts-5.jpg')?>" alt="">
 							<div class="teacher-cntent">
 								<div class="teacher-social-name ul-li-block">
 									<ul>
@@ -1224,8 +786,13 @@ use App\Functions\Helper;
 								<span class="st-name">Mobile Apps </span>
 							</div>
 						</div>
+
+						
+					</div>
+
+					<div class="teacher-double">
 						<div class="teacher-img-content relative-position">
-							<img src="<?= asset('genius/img/teacher/ts-1.jpg')?>" alt="">
+							<img src="<?= asset('genius/img/teacher/ts-4.jpg')?>" alt="">
 							<div class="teacher-cntent">
 								<div class="teacher-social-name ul-li-block">
 									<ul>
@@ -1243,6 +810,31 @@ use App\Functions\Helper;
 								<span class="st-name">Mobile Apps </span>
 							</div>
 						</div>
+
+						
+					</div>
+
+					<div class="teacher-double">
+						<div class="teacher-img-content relative-position">
+							<img src="<?= asset('genius/img/teacher/ts-6.jpg')?>" alt="">
+							<div class="teacher-cntent">
+								<div class="teacher-social-name ul-li-block">
+									<ul>
+										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+									</ul>
+									<div class="teacher-name">
+										<span>Daniel
+										Alvares</span>
+									</div>
+								</div>
+							</div>
+							<div class="teacher-category float-right">
+								<span class="st-name">Mobile Apps </span>
+							</div>
+						</div>
+					
 					</div>
 				</div>
 			</div>
@@ -1265,52 +857,41 @@ use App\Functions\Helper;
 								<h2>Latest <span>News.</span></h2>
 							</div>
 							<div class="latest-news-posts">
+
+							@php
+							$counter3 = 0;
+							@endphp
+
+							@if(!empty($blogs))
+							@foreach($blogs as $key => $blog)
+
 								<div class="latest-news-area">
 									<div class="latest-news-thumbnile relative-position">
-										<img src="<?= asset('genius/img/blog/lb-1.jpg')?>" alt="">
+										<img src="<?= asset($blog->media)?>" alt="">
 										<div class="hover-search">
 											<i class="fas fa-search"></i>
 										</div>
 										<div class="blakish-overlay"></div>
 									</div>
 									<div class="date-meta">
-										<i class="fas fa-calendar-alt"></i> 26 April 2018
+										<i class="fas fa-calendar-alt"></i> {{ \Carbon\Carbon::parse($blog->created_at)->format('d F Y') }}
 									</div>
-									<h3 class="latest-title bold-font"><a href="#">Affiliate Marketing A Beginner’s Guide.</a></h3>
-									<div class="course-viewer ul-li">
+									<h3 class="latest-title bold-font"><a href="#">{{$blog->name??''}}</a></h3>
+									<!-- <div class="course-viewer ul-li">
 										<ul>
 											<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
 											<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
 										</ul>
-									</div>
+									</div> -->
 								</div>
 								<!-- /post -->
 
-								<div class="latest-news-posts">
-									<div class="latest-news-area">
-										<div class="latest-news-thumbnile relative-position">
-											<img src="<?= asset('genius/img/blog/lb-2.jpg')?>" alt="">
-											<div class="hover-search">
-												<i class="fas fa-search"></i>
-											</div>
-											<div class="blakish-overlay"></div>
-										</div>
-										<div class="date-meta">
-											<i class="fas fa-calendar-alt"></i> 26 April 2018
-										</div>
-										<h3 class="latest-title bold-font"><a href="#">No.1 The Best Online Course 2018.</a></h3>
-										<div class="course-viewer ul-li">
-											<ul>
-												<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
-												<li><a href=""><i class="fas fa-comment-dots"></i> 1.015</a></li>
-											</ul>
-										</div>
-									</div>
-									<!-- /post -->
-								</div>
+								
+								@endforeach
+							@endif
 
 								<div class="view-all-btn bold-font">
-									<a href="#">View All News <i class="fas fa-chevron-circle-right"></i></a>
+									<a href="{{route('front.blogs')}}">View All News <i class="fas fa-chevron-circle-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -1633,10 +1214,6 @@ use App\Functions\Helper;
 						<div class="tab-button text-center mb65">
 							<ul class="product-tab">
 								<li class="active" rel="tab1">GENERAL </li>
-								<li rel="tab2"> COURSES </li>
-								<li rel="tab3"> TEACHERS </li>
-								<li rel="tab4">  EVENTS  </li>
-								<li rel="tab5">  OTHERS  </li>
 							</ul>
 						</div>
 						<!-- /tab-head -->
@@ -1709,155 +1286,6 @@ use App\Functions\Helper;
 							</div>
 							<!-- #tab1 -->
 
-							<div id="tab2" class="tab-content-1 pt35">
-								<div id="accordion-2" class="panel-group">
-									<div class="panel">
-										<div class="panel-title" id="headingSix">
-											<h3 class="mb-0">
-												<button class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-													How to Register or Make An Account in Genius?
-												</button>
-											</h3>
-										</div>
-										<div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordion-2">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-											</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="headingSeven">
-											<h3 class="mb-0">
-												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-													What is Genius Courses?
-												</button>
-											</h3>
-										</div>
-										<div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion-2">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-											</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="headingEight">
-											<h3 class="mb-0">
-												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-													What Lorem Ipsum Dolor Sit Amet Consectuerer?
-												</button>
-											</h3>
-										</div>
-										<div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion-2">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-											</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="headingNine">
-											<h3 class="mb-0">
-												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-													Adipiscing Diamet Nonnumy Nibh Euismod?
-												</button>
-											</h3>
-										</div>
-										<div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion-2">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-											</div>
-										</div>
-									</div>
-								</div>
-								<!-- end of #accordion -->
-							</div>
-							<!-- #tab2 -->
-
-							<div id="tab3" class="tab-content-1 pt35">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="ques-ans mb45 headline">
-											<h3> What is Genius Courses?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-
-										<div class="ques-ans mb45 headline">
-											<h3> What Lorem Ipsum Dolor Sit Amet Consectuerer?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-									</div>
-
-									<div class="col-md-6">
-										<div class="ques-ans mb45 headline">
-											<h3> How to Register or Make An Account in Genius?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-
-										<div class="ques-ans mb45 headline">
-											<h3> Adipiscing Diamet Nonnumy Nibh Euismod?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- #tab3 -->
-
-							<div id="tab4" class="tab-content-1 pt35">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="ques-ans mb45 headline">
-											<h3> What is Genius Courses?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-
-										<div class="ques-ans mb45 headline">
-											<h3> What Lorem Ipsum Dolor Sit Amet Consectuerer?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-									</div>
-
-									<div class="col-md-6">
-										<div class="ques-ans mb45 headline">
-											<h3> How to Register or Make An Account in Genius?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-
-										<div class="ques-ans mb45 headline">
-											<h3> Adipiscing Diamet Nonnumy Nibh Euismod?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- #tab3 -->
-
-							<div id="tab5" class="tab-content-1 pt35">
-								<div class="row">
-									<div class="col-md-6">
-										<div class="ques-ans mb45 headline">
-											<h3> What is Genius Courses?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-
-										<div class="ques-ans mb45 headline">
-											<h3> What Lorem Ipsum Dolor Sit Amet Consectuerer?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-									</div>
-
-									<div class="col-md-6">
-										<div class="ques-ans mb45 headline">
-											<h3> How to Register or Make An Account in Genius?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-
-										<div class="ques-ans mb45 headline">
-											<h3> Adipiscing Diamet Nonnumy Nibh Euismod?</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- #tab3 -->
 						</div>
 					</div>
 				</div>

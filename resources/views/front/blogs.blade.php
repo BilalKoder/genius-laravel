@@ -68,7 +68,7 @@ use Illuminate\Support\Str;
 													<div class="blog-post-img-content">
 														<div class="blog-img-date relative-position">
 															<div class="blog-thumnile">
-																<img src="{{asset('genius/img/blog/bp-1.jpg')}}" alt="">
+																<img src="{{asset($blog->media)}}" alt="">
 															</div>
 															<div class="course-price text-center gradient-bg">
 																<span>{{ \Carbon\Carbon::parse($blog->created_at)->format('d F Y') }}</span>
