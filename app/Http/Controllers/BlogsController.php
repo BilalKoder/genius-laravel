@@ -161,7 +161,7 @@ class BlogsController extends Controller
 
 
         } catch (\Throwable $th) {
-            dd($th->getMessage());
+            // dd($th->getMessage());
 
            
             $notification = array(
@@ -263,7 +263,7 @@ class BlogsController extends Controller
             DB::commit();
 
         } catch (\Throwable $th) {
-            dd($th->getMessage());
+            // dd($th->getMessage());
             $notification = array(
                 // 'message' => $th->getMessage(),
                 'message' => $th->getMessage(),

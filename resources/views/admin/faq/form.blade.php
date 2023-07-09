@@ -51,7 +51,7 @@ use App\Functions\Helper;
                             <div class="form-group row">
                                 <label class="col-form-label col-3 text-lg-right text-left">Question<span class="text-danger">*</span></label>
                                 <div class="col-9">
-                                    <input class="form-control form-control-lg form-control-solid" type="text" name="question" value="{{($faq->id === null)?old('question'):$faq->question}}" placeholder="Question" required />
+                                    <input class="form-control form-control-lg form-control-solid @error('question') is-invalid @enderror" type="text" name="question" value="{{($faq->id === null)?old('question'):$faq->question}}" placeholder="Question" required />
                                 </div>
                             </div>
                          
@@ -59,7 +59,7 @@ use App\Functions\Helper;
                             <div class="form-group row">
                                 <label class="col-form-label col-3 text-lg-right text-left">Answer</label>
                                 <div class="col-9">
-                                    <textarea name="answer" class="form-control" cols="30" rows="10">{{($faq->id === null)?old('answer'):$faq->answer}}</textarea>
+                                    <textarea name="answer" class="form-control form-control-lg form-control-solid @error('answer') is-invalid @enderror" cols="30" rows="10">{{($faq->id === null)?old('answer'):$faq->answer}}</textarea>
                                 </div>
                             </div>
                             <!--end::Group-->
@@ -96,7 +96,30 @@ use App\Functions\Helper;
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script type="text/javascript">
+
+        $('#kt_form').validate({ 
+                rules: {
+                question: {
+                        required: true,
+                    },
+                    answer:{
+                        required: true,
+                    }
+                },
+                errorElement: 'span',
+                errorPlacement: function (error, element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).removeClass('is-invalid');
+                }
+            });
         $('#summernote').summernote({
             height: 400
         });

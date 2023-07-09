@@ -118,9 +118,9 @@ class CategoriesController extends Controller
     public function update(Request $request,$category)
     {
         $category = Categories::where('id',$category)->first();
-        // dd($category);
-        $category->name = $request->name;
-        $category->type = $request->type;
+       
+        $category->name = $request->name ? $request->name : $category->name ;
+        $category->type = $request->type ? $request->type : $category->type;
         $category->slug = $this->slugify($request->name);
         $category->save();
 

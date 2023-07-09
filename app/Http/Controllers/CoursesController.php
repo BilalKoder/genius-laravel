@@ -121,7 +121,6 @@ class CoursesController extends Controller
                     }
                 }
 
-
             DB::commit();
 
             $notification = array(
@@ -131,7 +130,7 @@ class CoursesController extends Controller
 
 
         } catch (\Throwable $th) {
-            dd($th->getMessage());
+            // dd($th->getMessage());
 
            
             $notification = array(
@@ -244,7 +243,7 @@ class CoursesController extends Controller
             DB::commit();
 
         } catch (\Throwable $th) {
-            dd($th->getMessage());
+            // dd($th->getMessage());
             $notification = array(
                 // 'message' => $th->getMessage(),
                 'message' => $th->getMessage(),

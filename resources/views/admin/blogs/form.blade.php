@@ -67,8 +67,8 @@ use App\Functions\Helper;
                                              data-action="change" data-toggle="tooltip" title=""
                                              data-original-title="Change avatar">
                                              <i class="fa fa-pen icon-sm text-muted"></i>
-                                             <input type="file" name="profile_avatar" id="profile_avatar"
-                                                 class="upload-img" data-width="200" data-height="200" />
+                                             <input type="file"  name="profile_avatar" id="profile_avatar"
+                                                 class="upload-img @error('profile_avatar') is-invalid @enderror" data-width="200" data-height="200" />
                                              <input type="hidden" name="profile_avatar_remove" />
                                          </label>
                                          <span
@@ -90,7 +90,7 @@ use App\Functions\Helper;
                             <div class="form-group row">
                                 <label class="col-form-label col-3 text-lg-right text-left">Name<span class="text-danger">*</span></label>
                                 <div class="col-9">
-                                    <input class="form-control form-control-lg form-control-solid" type="text" name="name" value="{{($blog->id === null)?old('name'):$blog->name}}" placeholder="Name" required />
+                                    <input class="form-control form-control-lg form-control-solid @error('name') is-invalid @enderror" type="text" name="name" value="{{($blog->id === null)?old('name'):$blog->name}}" placeholder="Name" required />
                                 </div>
                             </div>
                             <!--begin::Group-->
@@ -98,7 +98,7 @@ use App\Functions\Helper;
                                 <label class="col-form-label col-3 text-lg-right text-left">Status<span class="text-danger">*</span></label>
                                 <div class="col-9">
                                     <div class="input-group input-group-lg input-group-solid">
-                                        <select name="status" id="status" class="form-control form-control-lg form-control-solid" required>
+                                        <select name="status" id="status" class="form-control form-control-lg form-control-solid @error('status') is-invalid @enderror" required>
                                             <option value="1" {{($blog->status == '1')?'selected':''}}>Active</option>
                                             <option value="0" {{($blog->status == '0')?'selected':''}}>Inactive</option>
                                         </select>
@@ -110,29 +110,29 @@ use App\Functions\Helper;
                             <div class="form-group row">
                                 <label class="col-form-label col-3 text-lg-right text-left">Description<span class="text-danger">*</span></label>
                                 <div class="col-9">
-                                    <textarea name="description" id="summernote" class="form-control" cols="30" rows="10">{{($blog->id === null)?old('description'):$blog->description}}</textarea>
+                                    <textarea name="description" id="summernote" class="form-control @error('description') is-invalid @enderror" cols="30" rows="10">{{($blog->id === null)?old('description'):$blog->description}}</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label class="col-form-label col-3 text-lg-right text-left">Meta Title</label>
                                 <div class="col-9">
-                                    <input class="form-control form-control-lg form-control-solid" type="text" name="meta_title" value="{{($blog->id === null)?old('meta_title'):$blog->meta_title}}" placeholder="Meta Title" />
+                                    <input class="form-control form-control-lg form-control-solid @error('meta_title') is-invalid @enderror" type="text" name="meta_title" value="{{($blog->id === null)?old('meta_title'):$blog->meta_title}}" placeholder="Meta Title" />
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-form-label col-3 text-lg-right text-left">Meta Description</label>
+                                <label class="col-form-label col-3 text-lg-right text-left">Meta Description<span class="text-danger">*</span></label>
                                 <div class="col-9">
-                                    <textarea name="meta_description" class="form-control" cols="30" rows="10">{{($blog->id === null)?old('meta_description'):$blog->meta_description}}</textarea>
+                                    <textarea name="meta_description" class="form-control @error('meta_description') is-invalid @enderror" cols="30" rows="10">{{($blog->id === null)?old('meta_description'):$blog->meta_description}}</textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-form-label col-3 text-lg-right text-left">Select Categories</label>
+                                <label class="col-form-label col-3 text-lg-right text-left">Select Categories<span class="text-danger">*</span></label>
                                 <div class="col-9">
 
                                 @if($blog->id === null)
-                                <select name="categories[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true" required>
+                                <select name="categories[]" id="field1" class="@error('categories') is-invalid @enderror" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true" required>
                                     @if(!empty($categories))
                                         @foreach($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name ?? '' }}</option>
@@ -140,7 +140,7 @@ use App\Functions\Helper;
                                     @endif
                                 </select>
                                 @else
-                                <select name="categories[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true" required>
+                                <select name="categories[]" id="field1" class="@error('categories') is-invalid @enderror" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true" required>
                                      @if(!empty($categories))
                                      @foreach($categories as $category)
                                     
@@ -231,8 +231,60 @@ use App\Functions\Helper;
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
     <script type="text/javascript">
             $(document).ready(function () {
+
+                $('#kt_form').validate({ 
+                    rules: {
+                        name: {
+                            required: true,
+                        },
+                        // profile_avatar: {
+                        //     required: true,
+                        // },
+                        description: {
+                            required: true,
+                        },
+                        // categories: {
+                        //     required: true,
+                        // },
+                        // categories:{
+                        //     required: {
+                        //         depends: function(element){
+                        //             if('none' == $('#field1').val()){
+                        //                 //Set predefined value to blank.
+                        //                 $('#field1').val('');
+                        //             }
+                        //             return true;
+                        //         }
+                        //     }
+                        // },
+                        meta_title:{
+                             required: true,
+                        },
+                        meta_description:{
+                             required: true,
+                        },
+                        profile_avatar:{
+                            required: true,
+                            accept: "jpg|jpeg|png|JPG|JPEG|PNG",
+                        },
+                    },
+                    errorElement: 'span',
+                    errorPlacement: function (error, element) {
+                        error.addClass('invalid-feedback');
+                        element.closest('.form-group').append(error);
+                    },
+                    highlight: function (element, errorClass, validClass) {
+                        $(element).addClass('is-invalid');
+                    },
+                    unhighlight: function (element, errorClass, validClass) {
+                        $(element).removeClass('is-invalid');
+                    }
+                });
+                
              $('.editSubmissionButton').on('click', function () {
 
                 var category_name = $("#category_name").val();
