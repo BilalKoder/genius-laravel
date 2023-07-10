@@ -192,30 +192,32 @@ use App\Functions\Helper;
                                 <label class="col-form-label col-3 text-lg-right text-left">Select Categories<span class="text-danger">*</span></label>
                                 <div class="col-9">
 
-                                @if($course->id === null)
-                                <select name="categories[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true" required>
-                                @if(!empty($categories))
-                                    @foreach($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name ?? '' }}</option>
-                                    @endforeach
-                                @endif
-                                    </select>
-
-                                @else
-                                <select name="categories[]" id="field1" multiple onchange="console.log(Array.from(this.selectedOptions).map(x=>x.value??x.text))" multiselect-hide-x="true" required>
-                                     @if(!empty($categories))
-                                     @foreach($categories as $category)
-                                    
-                                     @php
-                                        $array = ["1"];
-                                        $checkCondition = Helper::ifAlreadySelected($category->id, $course->categories->pluck('category_id')->toArray())
-                                     @endphp
-                                             <option {{$checkCondition ? 'selected' : ''}} value="{{ $category->id }}">{{ $category->name ?? '' }}</option>
-
-                                         @endforeach
+                                    @if($course->id === null)
+                                    <div class=" col-lg-12 col-md-9 col-sm-12" style="border: 1px solid #E5EAEE;border-radius: 0.42rem;padding-top: 5px;">
+                                             <select class="form-control kt-select2 select2"placeholder="ascasc" id="kt_select2_1" name="categories[]" multiple>
+                                             @if(!empty($categories))
+                                             @foreach($categories as $category)
+                                                 <option value="{{ $category->id }}">{{ $category->name ?? '' }}</option>
+                                             @endforeach
+                                         @endif
+                                     </select>
+                                         </div>
+                                     @else
+                                    <div class=" col-lg-12 col-md-9 col-sm-12" style="border: 1px solid #E5EAEE;border-radius: 0.42rem;padding-top: 5px;">
+                                             <select class="form-control kt-select2 select2"placeholder="ascasc" id="kt_select2_1" name="categories[]" multiple>
+                                                 @if(!empty($categories))
+                                          @foreach($categories as $category)
+                                         
+                                             @php
+                                                 $array = ["1"];
+                                                 $checkCondition = Helper::ifAlreadySelected($category->id, $course->categories->pluck('category_id')->toArray())
+                                             @endphp
+                                                  <option {{$checkCondition ? 'selected' : ''}} value="{{ $category->id }}">{{ $category->name ?? '' }}</option>
+                                              @endforeach
+                                          @endif
+                                         </select>
+                                         </div>
                                      @endif
-                                    </select>
-                                @endif
                                    
                                 </div>
                             </div>
@@ -252,13 +254,17 @@ use App\Functions\Helper;
     @section('scripts')
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script> -->
 
-    <script src="{{asset('genius/js/multiselect-dropdown.js')}}"></script>
+    {{-- <script src="{{asset('genius/js/multiselect-dropdown.js')}}"></script> --}}
     <script src="{{asset('genius/js/tags.js')}}"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script type="text/javascript">
+
+$('.select2').select2({
+                        placeholder: "Select a state",
+                    });
 
                 $('#kt_form').validate({ 
                     rules: {
@@ -295,10 +301,10 @@ use App\Functions\Helper;
                         meta_description:{
                              required: true,
                         },
-                        profile_avatar:{
-                            required: true,
-                            accept: "jpg|jpeg|png|JPG|JPEG|PNG",
-                        },
+                        // profile_avatar:{
+                        //     required: true,
+                        //     accept: "jpg|jpeg|png|JPG|JPEG|PNG",
+                        // },
                     },
                     errorElement: 'span',
                     errorPlacement: function (error, element) {

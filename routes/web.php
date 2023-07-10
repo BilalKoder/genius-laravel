@@ -48,8 +48,16 @@ Route::get('/privacy-policy','PagesController@privacy_policy')->name('privacy-po
 Route::get('/terms-and-conditions','PagesController@terms_and_conditions')->name('terms-and-conditions');
 
 
+//login for ajax
+Route::post('admin/login', 'UserController@loginAjax')->name('login.ajax');
+//signup for ajax
+Route::post('admin/register', 'UserController@registerAjax')->name('register.ajax');
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
+
+    Route::post('/enroll-course', 'EnrolledCoursesController@enrollCourseAjax')->name('enroll.course');
+    Route::get('/all/enrolled-courses', 'EnrolledCoursesController@index')->name('enrolled.all');
+    
 
     Route::get('/dashboard', 'PagesController@index')->name('dashboard');
     Route::get('users', 'UserController@index')->name('users');

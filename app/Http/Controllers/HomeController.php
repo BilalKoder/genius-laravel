@@ -66,15 +66,15 @@ class HomeController extends Controller
     public function courseDetail($id){
         // Store the course ID in the session or cookie
         $course = Courses::where('id',$id)->first();
-        if (auth()->check()) {
-            // For authenticated users, you can store the course ID in the session
-            session()->push('recently_viewed_courses', $id);
-        } else {
-            // For unauthorized users, you can store the course ID in a cookie
-            $recentlyViewedCourses = request()->cookie('recently_viewed_courses', []);
-            $recentlyViewedCourses[] = $id;
-            cookie()->queue('recently_viewed_courses', $recentlyViewedCourses, 1440); // 1440 minutes = 24 hours
-        }
+        // if (auth()->check()) {
+        //     // For authenticated users, you can store the course ID in the session
+        //     session()->push('recently_viewed_courses', $id);
+        // } else {
+        //     // For unauthorized users, you can store the course ID in a cookie
+        //     $recentlyViewedCourses = request()->cookie('recently_viewed_courses', []);
+        //     $recentlyViewedCourses[] = $id;
+        //     cookie()->queue('recently_viewed_courses', $recentlyViewedCourses, 1440); // 1440 minutes = 24 hours
+        // }
 
         $data = [
             'course' => $course,

@@ -52,7 +52,7 @@ use App\Functions\Helper;
 						</div>
 						<!-- /course-details -->
 
-						<div class="affiliate-market-guide mb65">
+						<!-- <div class="affiliate-market-guide mb65">
 							<div class="section-title-2 mb20 headline text-left">
 								<h2><span>Affiliate Marketing</span> A Begginer's Guide</h2>
 							</div>
@@ -147,7 +147,7 @@ use App\Functions\Helper;
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<!-- /market guide -->
 
 						<!-- <div class="course-review">
@@ -339,7 +339,8 @@ use App\Functions\Helper;
 							<div class="course-side-bar-widget">
 								<h3>Price <span>${{$course->price}}</span></h3>
 								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a href="#">Enroll THis course <i class="fas fa-caret-right"></i></a>
+									<a class="checkAuth" data-course="{{$course->id}}" href="javascript:void(0)">Enroll THis course <i class="fas fa-caret-right"></i></a>
+									<input type="hidden" id="courseId" value="{{$course->id}}">
 								</div>
 								<div class="like-course">
 									<a href="#"><i class="fas fa-heart"></i></a>
@@ -398,6 +399,5 @@ use App\Functions\Helper;
 				</div>
 			</div>
 		</section>
-
 
 @endsection

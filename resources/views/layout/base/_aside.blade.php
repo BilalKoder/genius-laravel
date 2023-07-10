@@ -46,13 +46,13 @@
                         <i class="menu-icon flaticon2-user"></i>
                         <span class="menu-text">Profile</span>
                     </a>
-                </li> --}}
+                </li> 
                 <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'users' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{route('users')}}" class="menu-link">
                         <i class="menu-icon flaticon2-user"></i>
                         <span class="menu-text">Users</span>
                     </a>
-                </li>
+                </li>--}}
                 <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'courses' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{route('courses')}}" class="menu-link">
                         <i class="menu-icon flaticon2-user"></i>
@@ -85,6 +85,12 @@
                     </a>
                 </li> --}}
                 @endif
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'enrolled.all' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('enrolled.all')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">Enrolled Courses</span>
+                    </a>
+                </li>
             </ul>
             <!--end::Menu Nav-->
         </div>
