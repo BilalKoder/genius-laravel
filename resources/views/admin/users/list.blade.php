@@ -49,105 +49,105 @@ use App\Functions\Helper;
             </thead>
             <tbody>
                 @foreach ($users as $key => $user)
-                @php
-                $image = Helper::ifUserHasImage($user->image);
-                @endphp
-                <tr>
-                    <td>{{ $key + 1 }}</td>
-                    <td>
-                        <div class="d-flex align-items-center">
-                            <div class="ml-4">
-                                <div class="text-dark-75 font-weight-bolder font-size-lg mb-0">
-                                    {{ $user->name }}
+                    @php
+                    $image = Helper::ifUserHasImage($user->image);
+                    @endphp
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="ml-4">
+                                    <div class="text-dark-75 font-weight-bolder font-size-lg mb-0">
+                                        {{ $user->name }}
+                                    </div>
+                                    <a href="#" class="text-muted font-weight-bold text-hover-primary">({{ $user->reference_id }})</a>
+                                    <a href="#" class="text-muted font-weight-bold text-hover-primary">{{ $user->email }}</a>
+                                    <a href="#" class="text-muted font-weight-bold text-hover-primary">{{ $user->phone }}</a>
+                                    <a href="#" class="text-muted font-weight-bold text-hover-primary">{{ $user->address??''.' '.$user->city??''.''.$user->state??''.''.$user->country??'' }}</a>
                                 </div>
-                                <a href="#" class="text-muted font-weight-bold text-hover-primary">({{ $user->reference_id }})</a>
-                                <a href="#" class="text-muted font-weight-bold text-hover-primary">{{ $user->email }}</a>
-                                <a href="#" class="text-muted font-weight-bold text-hover-primary">{{ $user->phone }}</a>
-                                <a href="#" class="text-muted font-weight-bold text-hover-primary">{{ $user->address??''.' '.$user->city??''.''.$user->state??''.''.$user->country??'' }}</a>
                             </div>
-                        </div>
-                    </td>
-                    <td>
-                        @if($user->package_id == 1)
-                            {{"€ 1,000 - € 10,000"}}
-                        @else
-                            {{"€ 1M - € 10M"}}
-                        @endif
+                        </td>
+                        <td>
+                            @if($user->package_id == 1)
+                                {{"€ 1,000 - € 10,000"}}
+                            @else
+                                {{"€ 1M - € 10M"}}
+                            @endif
 
-                    </td>
-                    
-                    <td>{{ $user->address??''.' '.$user->city??''.''.$user->state??''.''.$user->country??''}}</td>
-                    <td>{{ $user->passport_number??''}}</td>
-                    <td>{{ $user->invested_amount??''}}</td>
-                    <td><a target="_blank" href="{{asset($user->document_image??'')}}"
-                            class="btn btn-sm btn-default btn-hover-danger btn-icon">
-                            <i class="flaticon-download-1"></i>
-                        </a>
-                    </td>
-                   <td>
-                        @if($user->package_id == 1 )
-                            <span class="label label-lg  {{ $user->is_signed_doc == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                Investment Document Signed :  {{ $user->is_signed_doc == 0 ? 'No' : 'Yes' }} 
-                            </span>
-                        @elseif($user->package_id == 2)
-                            <span class="label label-lg  {{ $user->is_signed_deposit_doc == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                Deposit Document Signed :  {{ $user->is_signed_deposit_doc == 0 ? 'No' : 'Yes' }} 
-                            </span>
-                            <span class="label label-lg  {{ $user->is_signed_doc == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                Investment Document Signed :  {{ $user->is_signed_doc == 0 ? 'No' : 'Yes' }} 
-                            </span>
-                        @endif
-
-                    </td>
-
-                    <td>
-                        @if($user->package_id == 1 )
-                            <span class="label label-lg  {{ $user->is_payment_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                Investment Payment Captured :  {{ $user->is_payment_done == 0 ? 'No' : 'Yes' }} 
-                            </span>
-                        @elseif($user->package_id == 2)
-                            <span class="label label-lg  {{ $user->is_deposit_payment_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                Deposit Payment Captured :  {{ $user->is_deposit_payment_done == 0 ? 'No' : 'Yes' }} 
-                            </span>
-                            <span class="label label-lg  {{ $user->is_payment_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                Investment Payment Captured :  {{ $user->is_payment_done == 0 ? 'No' : 'Yes' }} 
-                            </span>
-                        @endif
-
-                    </td>
-
-                    <td>
-                        @if($user->package_id == 2 && $user->interview_link_send == 0)
-                            <span class="label label-lg  {{ $user->is_interview_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                {{ $user->is_interview_done == 0 ? 'Not Taken' : 'Taken' }} 
-                            </span>
-                        @elseif($user->package_id == 2 && $user->interview_link_send == 1 && $user->is_interview_done == 0)
-                            <span class="label label-lg  label-light-danger label-inline">
-                                Invitation Sent
-                            </span>
-                        @elseif($user->package_id == 2 && $user->interview_link_send == 1 && $user->is_interview_done == 1)
-                            <span class="label label-lg  label-light-success label-inline">
-                                Taken
-                            </span>
-                        @endif
-
-                    </td>
-            
-                    <td>
-                        @if($user->package_id == 2 && $user->interview_link_send == 0  && $user->is_deposit_payment_done == 1)
-                            <a title="Send Interview Invitation" href="{{ route('send-interview-invitation', $user->id) }}"
-                                class="btn btn-sm btn-primary btn-hover-info btn-icon">
-                                <i class="flaticon2-bell"></i>
+                        </td>
+                        
+                        <td>{{ $user->address??''.' '.$user->city??''.''.$user->state??''.''.$user->country??''}}</td>
+                        <td>{{ $user->passport_number??''}}</td>
+                        <td>{{ $user->invested_amount??''}}</td>
+                        <td><a target="_blank" href="{{asset($user->document_image??'')}}"
+                                class="btn btn-sm btn-default btn-hover-danger btn-icon">
+                                <i class="flaticon-download-1"></i>
                             </a>
-                        @endif
-                    </td>
-        </tr>
-        @endforeach
-        
-    </tbody>
-</table>
-<!--end: Datatable-->
-</div>
+                        </td>
+                    <td>
+                            @if($user->package_id == 1 )
+                                <span class="label label-lg  {{ $user->is_signed_doc == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
+                                    Investment Document Signed :  {{ $user->is_signed_doc == 0 ? 'No' : 'Yes' }} 
+                                </span>
+                            @elseif($user->package_id == 2)
+                                <span class="label label-lg  {{ $user->is_signed_deposit_doc == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
+                                    Deposit Document Signed :  {{ $user->is_signed_deposit_doc == 0 ? 'No' : 'Yes' }} 
+                                </span>
+                                <span class="label label-lg  {{ $user->is_signed_doc == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
+                                    Investment Document Signed :  {{ $user->is_signed_doc == 0 ? 'No' : 'Yes' }} 
+                                </span>
+                            @endif
+
+                        </td>
+
+                        <td>
+                            @if($user->package_id == 1 )
+                                <span class="label label-lg  {{ $user->is_payment_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
+                                    Investment Payment Captured :  {{ $user->is_payment_done == 0 ? 'No' : 'Yes' }} 
+                                </span>
+                            @elseif($user->package_id == 2)
+                                <span class="label label-lg  {{ $user->is_deposit_payment_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
+                                    Deposit Payment Captured :  {{ $user->is_deposit_payment_done == 0 ? 'No' : 'Yes' }} 
+                                </span>
+                                <span class="label label-lg  {{ $user->is_payment_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
+                                    Investment Payment Captured :  {{ $user->is_payment_done == 0 ? 'No' : 'Yes' }} 
+                                </span>
+                            @endif
+
+                        </td>
+
+                        <td>
+                            @if($user->package_id == 2 && $user->interview_link_send == 0)
+                                <span class="label label-lg  {{ $user->is_interview_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
+                                    {{ $user->is_interview_done == 0 ? 'Not Taken' : 'Taken' }} 
+                                </span>
+                            @elseif($user->package_id == 2 && $user->interview_link_send == 1 && $user->is_interview_done == 0)
+                                <span class="label label-lg  label-light-danger label-inline">
+                                    Invitation Sent
+                                </span>
+                            @elseif($user->package_id == 2 && $user->interview_link_send == 1 && $user->is_interview_done == 1)
+                                <span class="label label-lg  label-light-success label-inline">
+                                    Taken
+                                </span>
+                            @endif
+
+                        </td>
+                
+                        <td>
+                            @if($user->package_id == 2 && $user->interview_link_send == 0  && $user->is_deposit_payment_done == 1)
+                                <a title="Send Interview Invitation" href="{{ route('send-interview-invitation', $user->id) }}"
+                                    class="btn btn-sm btn-primary btn-hover-info btn-icon">
+                                    <i class="flaticon2-bell"></i>
+                                </a>
+                            @endif
+                        </td>
+                    </tr>
+                @endforeach
+                
+            </tbody>
+        </table>
+        <!--end: Datatable-->
+    </div>
 </div>
 
 @include('admin.users.modal')

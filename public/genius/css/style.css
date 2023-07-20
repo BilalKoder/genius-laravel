@@ -3338,14 +3338,17 @@ ul.product-tab li.active:after {
   line-height: 80px;
   font-size: 40px;
   float: left;
-  margin-right: 25px; }
+  margin-right: 25px; 
+}
   .features-icon i {
-    color: #009051; }
+    color: #009051; 
+  }
 
 .features-text-title h3 {
-  font-size: 22px;
+  -size: 22px;
   font-weight: 700;
-  color: #fff; }
+  color: #fff; 
+}
 
 .features-text {
   overflow: hidden;
