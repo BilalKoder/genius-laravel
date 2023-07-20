@@ -88,10 +88,15 @@
                             </div>
                             <!--end::Form group-->
                             <!--begin::Action-->
-                            <div class="pb-lg-0 pb-5">
-                                <button type="submit" style="background: #009051 !important;border-color: #fff;display: flex; justify-content: center; align-items: center;" id="kt_login_signin_submit"
+                            <div class="pb-lg-0 pb-5" >
+                                <button type="submit" style="background: #009051 !important;border-color: #fff; justify-content: center; align-items: center;" id="kt_login_signin_submit"
                                     class="btn btn-danger font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Sign
                                     In</button>
+                                    <a href="{{ url('/') }}"
+                                    class="btn btn-light-success font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</a><br>
+                                    <a href="{{ url('register') }}"
+                                        class="text-danger font-size-h6 font-weight-bolder text-hover-primary pt-5"
+                                        style="color: #00000080 !important;"id="kt_login_forgot">Don't have an account? REGISTER</a>
                                 {{-- <button type="button"
                                     class="btn btn-light-primary font-weight-bolder px-8 py-4 my-3 font-size-lg">
                                     <span class="svg-icon svg-icon-md">

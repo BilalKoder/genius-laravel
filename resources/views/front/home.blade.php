@@ -261,8 +261,8 @@ use App\Functions\Helper;
 		<section id="why-choose" class="why-choose-section version-four backgroud-style">
 			<div class="container">
 				<div class="section-title mb20 headline text-center">
-					<span class="subtitle text-uppercase">GENIUS ADVANTAGES</span>
-					<h2>Reason <span>Why Choose Genius.</span></h2>
+					<span class="subtitle text-uppercase">RHMC ADVANTAGES</span>
+					<h2>Reason <span>Why Choose RHMC.</span></h2>
 				</div>
 				<div class="extra-features-content">
 					<div class="row">
@@ -460,7 +460,7 @@ use App\Functions\Helper;
 						<div class="about-us-text">
 							<div class="section-title relative-position mb20 headline text-left">
 								<span class="subtitle ml42 text-uppercase">SORT ABOUT US</span>
-								<h2>We are <span>Genius Course</span>
+								<h2>We are <span>RHMC Course</span>
 								work since 1980.</h2>
 								<p>We take our mission of increasing global access to quality education seriously. We connect learners to the best universities and institutions from around the world.</p>
 							</div>

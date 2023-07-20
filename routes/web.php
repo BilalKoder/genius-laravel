@@ -18,8 +18,9 @@ Auth::routes(['register' => false]);
 // Auth Routes =======================================================
 // Auth::routes();
 Route::get('/login', 'MyAuthController@login')->name('login');
+Route::get('/signup', 'MyAuthController@register');
 Route::get('/register', 'MyAuthController@register');
-Route::post('/register', 'MyAuthController@store');
+Route::post('/register', 'MyAuthController@store')->name('register');
 // Auth Routes =======================================================
 
 Route::get('/', 'HomeController@index')->name('home');

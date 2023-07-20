@@ -36,7 +36,7 @@ use App\Functions\Helper;
                             <th title="Field #1">#</th>
                             <th title="Field #2">Title</th>
                             <th title="Field #3">Slug</th>
-                            <th title="Field #3">Description</th>
+                            {{-- <th title="Field #3">Description</th> --}}
                             <th title="Field #3">Categories</th>
                             <th title="Field #3">Status</th>
                             <th title="Field #3">Featured</th>
@@ -71,7 +71,7 @@ use App\Functions\Helper;
                                 </div>
                             </td>
                             <td>{{$course->slug??''}}</td>
-                            <td> {!! $course->description !!}</td>
+                            {{-- <td> {!! $course->description !!}</td> --}}
                             <td>
                                     @foreach($course->categories as $category)
                                         {{ $category->category->name??'' }}

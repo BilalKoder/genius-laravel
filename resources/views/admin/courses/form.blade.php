@@ -162,7 +162,7 @@ use App\Functions\Helper;
                             <div class="form-group row">
                                     <label class="col-form-label col-3 text-lg-right text-left"> Includes <span class="text-danger">*</span></label>
                                     <div class="col-9">
-                                        <div class="input-group input-group-lg input-group-solid">
+                                        <div class="input-group input-group-lg input-group-solid"style="padding-bottom: 15px;">
                                             <input class="form-control form-control-lg form-control-solid tags @error('includes') is-invalid @enderror" type="text" id="tags1" name="includes[]"  value="{{($course->id === null)?old('includes'):$course->includes}}"  placeholder="Type and press tab..." required />
                                         </div>
                                     </div>
@@ -170,7 +170,7 @@ use App\Functions\Helper;
                             <div class="form-group row">
                                     <label class="col-form-label col-3 text-lg-right text-left"> Languages <span class="text-danger">*</span></label>
                                     <div class="col-9">
-                                        <div class="input-group input-group-lg input-group-solid">
+                                        <div class="input-group input-group-lg input-group-solid" style="padding-bottom: 15px;">
                                             <input class="form-control form-control-lg form-control-solid @error('languages') is-invalid @enderror" type="text" name="languages[]" id="tags2" value="{{($course->id === null)?old('languages'):$course->languages}}" placeholder="Type and press tab..." required />
                                         </div>
                                     </div>

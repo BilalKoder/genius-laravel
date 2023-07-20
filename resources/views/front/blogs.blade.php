@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 			<div class="container">
 				<div class="page-breadcrumb-content text-center">
 					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">Genius <span>Blog</span></h2>
+						<h2 class="breadcrumb-head black bold">RHMC <span>Blog</span></h2>
 					</div>
 					<div class="page-breadcrumb-item ul-li">
 						<ul class="breadcrumb text-uppercase black">

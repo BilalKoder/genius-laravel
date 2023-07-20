@@ -12,7 +12,7 @@ use App\Functions\Helper;
                 <div class="text-muted pt-2 font-size-sm">All Users List</div>
             </h3>
         </div>
-        <div class="card-toolbar">
+        {{-- <div class="card-toolbar">
             
             <!--begin::Button-->
              <a href="{{ route('users.create') }}" class="btn btn-primary font-weight-bolder">
@@ -31,7 +31,7 @@ use App\Functions\Helper;
                 <!--end::Svg Icon-->
             </span>New Record</a> 
             <!--end::Button-->
-        </div>
+        </div> --}}
     </div>
     <div class="card-body">
         <!--begin: Datatable-->
@@ -45,8 +45,8 @@ use App\Functions\Helper;
                     <th title="Field #6">Status</th>
                     <th title="Field #7">User Type</th>
                     <th title="Field #5">Joined At</th>
-                     <th title="Field #5">Subscription</th>
-                    <th title="Field #8">Action</th>
+                     {{-- <th title="Field #5">Subscription</th> --}}
+                    {{-- <th title="Field #8">Action</th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -137,28 +137,28 @@ use App\Functions\Helper;
             </td>
             <td>{{ $user->created_at != '' || $user->created_at != null ? $user->created_at->format('Y-m-d') : '' }}
             </td>
-            <td>
+            {{-- <td>
                <span style="width: 157px;">
                 <span
                 class="label label-lg font-weight-bold  {{ $user->subscription_cancel_status == 1 ? 'label-light-danger' : 'label-light-success' }} label-inline">
                 {{ $user->subscription_cancel_status == 0 ? 'Active' : 'Cancelled' }}
             </span>
-            </td>
+            </td> --}}
            
-            <td>
-                {{-- <a href="{{ route('companies.create', $user->id) }}"
+            {{--<td>
+                 <a href="{{ route('companies.create', $user->id) }}"
                     class="btn btn-md btn-default btn-hover-info text-info">
                     Add Company
-                </a> --}}
+                </a> 
                 <a href="{{ route('users.edit', $user->id) }}"
                     class="btn btn-sm btn-default btn-hover-info btn-icon">
                     <i class="flaticon-edit"></i>
                 </a>
-                {{-- <a href="javascript:;" data-url="{{ route('users.delete', $user->id) }}"
+                 <a href="javascript:;" data-url="{{ route('users.delete', $user->id) }}"
                     class="btn btn-sm btn-default btn-hover-danger btn-icon delete">
                     <i class="flaticon2-rubbish-bin-delete-button"></i>
-                </a> --}}
-            </td>
+                </a> 
+            </td> --}}
         </tr>
         @endforeach
         
