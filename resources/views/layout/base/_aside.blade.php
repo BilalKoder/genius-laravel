@@ -4,7 +4,7 @@
     <div class="brand flex-column-auto" id="kt_brand">
         <!--begin::Logo-->
         <a href="{{route('dashboard')}}" class="brand-logo text-success">
-            <img alt="Logo" src="{{asset('above/images/logo.png')}}" width="55px" />
+            <img alt="Logo" src="{{asset('genius/img/logo/RHMC-logo.png')}}" width="55px" />
         </a>
         <!--end::Logo-->
         <!--begin::Toggle-->
@@ -46,20 +46,38 @@
                         <i class="menu-icon flaticon2-user"></i>
                         <span class="menu-text">Profile</span>
                     </a>
-                </li> --}}
+                </li> 
                 <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'users' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{route('users')}}" class="menu-link">
                         <i class="menu-icon flaticon2-user"></i>
-                        <span class="menu-text">Know your Customer</span>
+                        <span class="menu-text">Users</span>
+                    </a>
+                </li>--}}
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'courses' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('courses')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">Courses</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'blogs' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('blogs')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">Blogs</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'categories' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('categories')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">Categories</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'faqs' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('faqs')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">FAQ's</span>
                     </a>
                 </li>
            
-                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'interviews' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
-                    <a href="{{route('interviews')}}" class="menu-link">
-                        <i class="menu-icon flaticon-user-ok"></i>
-                        <span class="menu-text">Interviews</span>
-                    </a>
-                </li>
                 {{-- <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'settings' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{route('settings')}}" class="menu-link">
                         <i class="menu-icon flaticon-settings"></i>
@@ -67,6 +85,12 @@
                     </a>
                 </li> --}}
                 @endif
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'enrolled.all' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('enrolled.all')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">Enrolled Courses</span>
+                    </a>
+                </li>
             </ul>
             <!--end::Menu Nav-->
         </div>

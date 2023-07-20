@@ -86,13 +86,16 @@ class Helper
         ]
     ];
 
+    public static function ifAlreadySelected($id,$array){
+        return in_array($id, $array);
+    }
     public static function ifUserHasImage($logo)
     {
         if ($logo == '' || $logo == null) {
             return false;
         }
-        if (File::exists(public_path('storage' . $logo))) {
-            return 'storage' . $logo;
+        if (File::exists(public_path($logo))) {
+            return $logo;
         } else {
             return false;
         }

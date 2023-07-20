@@ -3,14 +3,14 @@
     <!--begin::Main-->
     <div class="d-flex flex-column flex-root">
         <!--begin::Login-->
-        <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
+        <div style="background: url('media/bg/bg-3.jpg') !important;" class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
             <!--begin::Aside-->
-            <div class="login-aside d-flex flex-column flex-row-auto" style="background-color: #fff;">
+            {{-- <div class="login-aside d-flex flex-column flex-row-auto" style="background-color: #fff;">
                 <!--begin::Aside Top-->
                 <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
                     <!--begin::Aside header-->
                     <a href="#" class="text-center mb-10">
-                        <img src="{{ asset('/above/images/logo.png') }}" class="max-h-70px" alt="" />
+                        <img src="{{ asset('/genius/img/logo/RHMC-logo.png') }}" class="max-h-70px" alt="" />
                     </a>
                     <!--end::Aside header-->
                     <!--begin::Aside title-->
@@ -21,9 +21,9 @@
                 <!--end::Aside Top-->
                 <!--begin::Aside Bottom-->
                 <div class="aside-img d-flex flex-row-fluid bgi-no-repeat bgi-position-y-bottom bgi-position-x-center"
-                    style="background-image: url({{ asset('/media/svg/illustrations/login.svg') }})"></div>
+                    style="background-image: url({{ asset('/media/svg/illustrations/working.svg') }})"></div>
                 <!--end::Aside Bottom-->
-            </div>
+            </div> --}}
             <!--begin::Aside-->
             <!--begin::Content-->
             <div
@@ -48,9 +48,10 @@
                             autocomplete="off">
                             <!--begin::Title-->
                             @csrf
-                            <div class="pb-13 pt-lg-0 pt-5">
-                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Login
-                             
+                            <div class="pb-3 pt-lg-0 pt-5" style="display: flex; justify-content: center; align-items: center;">
+                                <a href="#" class="text-center mb-10">
+                                    <img src="{{ asset('/genius/img/logo/RHMC-logo.png') }}" class="max-h-70px" alt="" />
+                                </a>    
                             </div>
                             <!--begin::Title-->
                             <!--begin::Form group-->
@@ -73,7 +74,7 @@
                                     <label class="font-size-h6 font-weight-bolder text-dark pt-5">Password</label>
                                     <a href="{{ route('password.request') }}"
                                         class="text-danger font-size-h6 font-weight-bolder text-hover-primary pt-5"
-                                        id="kt_login_forgot">Forgot Password ?</a>
+                                        style="color: #000000 !important;"id="kt_login_forgot">Forgot Password ?</a>
                                 </div>
                                 <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg" id="password"
                                     type="password" name="password" required />
@@ -88,7 +89,7 @@
                             <!--end::Form group-->
                             <!--begin::Action-->
                             <div class="pb-lg-0 pb-5">
-                                <button type="submit" id="kt_login_signin_submit"
+                                <button type="submit" style="background: #009051 !important;border-color: #fff;display: flex; justify-content: center; align-items: center;" id="kt_login_signin_submit"
                                     class="btn btn-danger font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">Sign
                                     In</button>
                                 {{-- <button type="button"

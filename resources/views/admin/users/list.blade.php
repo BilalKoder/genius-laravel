@@ -2,152 +2,170 @@
 use App\Functions\Helper;
 @endphp
 @extends('layout.default')
+@section('title', 'User')
 @section('content')
 
-<style>
-    .label.label-lg{
-        height:auto !important;
-    }
-    .dataTables_wrapper .dataTable th, .dataTables_wrapper .dataTable td{
-        border: 1px solid #0000001f;
-        font-size: 11px !important;
-    }
-    .label-lg{
-        margin: 2px;
-    }
-    .btn.btn-icon.btn-sm, .btn-group-sm > .btn.btn-icon{
-        margin: 2px;   
-    }
-
-</style>
 <div class="card card-custom">
     <div class="card-header flex-wrap border-0 pt-6 pb-0">
         <div class="card-title">
-            <h3 class="card-label">Know Your Customer
-                <div class="text-muted pt-2 font-size-sm">All Submitted Forms List</div>
+            <h3 class="card-label">Users
+                <div class="text-muted pt-2 font-size-sm">All Users List</div>
             </h3>
+        </div>
+        <div class="card-toolbar">
+            
+            <!--begin::Button-->
+             <a href="{{ route('users.create') }}" class="btn btn-primary font-weight-bolder">
+                <span class="svg-icon svg-icon-md">
+                    <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                    height="24px" viewBox="0 0 24 24" version="1.1">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <rect x="0" y="0" width="24" height="24" />
+                        <circle fill="#000000" cx="9" cy="15" r="6" />
+                        <path
+                        d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z"
+                        fill="#000000" opacity="0.3" />
+                    </g>
+                </svg>
+                <!--end::Svg Icon-->
+            </span>New Record</a> 
+            <!--end::Button-->
         </div>
     </div>
     <div class="card-body">
         <!--begin: Datatable-->
-        <table class="table-responsive" id="myTable2" style="width: 100%;">
+        <table class="" id="myTable" style="width: 100%;" border="0">
             <thead>
                 <tr>
                     <th title="Field #1">#</th>
                     <th title="Field #2">User</th>
-                    <th title="Field #2">Investment Type</th>
-                    <th title="Field #3">Address</th>
-                    <th title="Field #4">ID/Passport</th>
-                    <th title="Field #4">Amount Invested</th>
-                    <th title="Field #3">Document</th>
-                    <th title="Field #5">Document Status</th>
-                    <th title="Field #5">Payment Status</th>
-                    <th title="Field #5">Interview Status</th>
-                    <th title="Field #5">Actions</th>
-                
+                    <th title="Field #3">Country</th>
+                    {{-- <th title="Field #4">Companies</th> --}}
+                    <th title="Field #6">Status</th>
+                    <th title="Field #7">User Type</th>
+                    <th title="Field #5">Joined At</th>
+                     <th title="Field #5">Subscription</th>
+                    <th title="Field #8">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($users as $key => $user)
-                    @php
-                    $image = Helper::ifUserHasImage($user->image);
-                    @endphp
-                    <tr>
-                        <td>{{ $key + 1 }}</td>
-                        <td>
-                            <div class="d-flex align-items-center">
-                                <div class="ml-4">
-                                    <div class="text-dark-75 font-weight-bolder font-size-lg mb-0">
-                                        {{ $user->name }}
-                                    </div>
-                                    <a href="#" class="text-muted font-weight-bold text-hover-primary">({{ $user->reference_id }})</a>
-                                    <a href="#" class="text-muted font-weight-bold text-hover-primary">{{ $user->email }}</a>
-                                    <a href="#" class="text-muted font-weight-bold text-hover-primary">{{ $user->phone }}</a>
-                                    <a href="#" class="text-muted font-weight-bold text-hover-primary">{{ $user->address??''.' '.$user->city??''.''.$user->state??''.''.$user->country??'' }}</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            @if($user->package_id == 1)
-                                {{"€ 1,000 - € 10,000"}}
-                            @else
-                                {{"€ 1M - € 10M"}}
-                            @endif
-
-                        </td>
-                        
-                        <td>{{ $user->address??''.' '.$user->city??''.''.$user->state??''.''.$user->country??''}}</td>
-                        <td>{{ $user->passport_number??''}}</td>
-                        <td>{{ $user->invested_amount??''}}</td>
-                        <td><a target="_blank" href="{{asset($user->document_image??'')}}"
-                                class="btn btn-sm btn-default btn-hover-danger btn-icon">
-                                <i class="flaticon-download-1"></i>
-                            </a>
-                        </td>
+                @php
+                $image = Helper::ifUserHasImage($user->image);
+                @endphp
+                <tr>
+                    <td>{{ $key + 1 }}</td>
                     <td>
-                            @if($user->package_id == 1 )
-                                <span class="label label-lg  {{ $user->is_signed_doc == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                    Investment Document Signed :  {{ $user->is_signed_doc == 0 ? 'No' : 'Yes' }} 
-                                </span>
-                            @elseif($user->package_id == 2)
-                                <span class="label label-lg  {{ $user->is_signed_deposit_doc == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                    Deposit Document Signed :  {{ $user->is_signed_deposit_doc == 0 ? 'No' : 'Yes' }} 
-                                </span>
-                                <span class="label label-lg  {{ $user->is_signed_doc == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                    Investment Document Signed :  {{ $user->is_signed_doc == 0 ? 'No' : 'Yes' }} 
-                                </span>
+                        <div class="d-flex align-items-center">
+                            @if (!$image)
+                            <span class="symbol symbol-35 symbol-light-success">
+                                <span
+                                class="symbol-label font-size-h5 font-weight-bold">{{ $user->name[0] }}</span>
+                            </span>
+                            
+                            @else
+                            <div class="symbol symbol-40 symbol-sm flex-shrink-0">
+                                <img src="{{ asset($image) }}" alt="">
+                            </div>
                             @endif
+                            <div class="ml-4">
+                                <div class="text-dark-75 font-weight-bolder font-size-lg mb-0">
+                                    {{ $user->name }}
+                                </div>
+                                <a href="#"
+                                class="text-muted font-weight-bold text-hover-primary">{{ $user->email }}</a>
+                            </div>
+                        </div>
+                    </td>
+                   
+                    <td>{{ $user->country!=""?$user->country:'-' }}</td>
+                    {{-- <td>
+                        @if (count($user->companies) > 0)
+                        @foreach ($user->companies as $company)
+                        -- {{ $company->name }}
+                        @endforeach
+                        @else
+                        None
+                        @endif
+                    </td> --}}
+                    <td align="left">
+                        <span style="width: 157px;">
+                            <span
+                            class="label label-lg font-weight-bold  {{ $user->status == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
+                            {{ $user->status == 0 ? 'Inactive' : 'Active' }}
+                        </span>
+                    </span>
+                </td>
+                @php
+                $class = 'success'; 
+                $text = 'User';
 
-                        </td>
-
-                        <td>
-                            @if($user->package_id == 1 )
-                                <span class="label label-lg  {{ $user->is_payment_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                    Investment Payment Captured :  {{ $user->is_payment_done == 0 ? 'No' : 'Yes' }} 
-                                </span>
-                            @elseif($user->package_id == 2)
-                                <span class="label label-lg  {{ $user->is_deposit_payment_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                    Deposit Payment Captured :  {{ $user->is_deposit_payment_done == 0 ? 'No' : 'Yes' }} 
-                                </span>
-                                <span class="label label-lg  {{ $user->is_payment_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                    Investment Payment Captured :  {{ $user->is_payment_done == 0 ? 'No' : 'Yes' }} 
-                                </span>
-                            @endif
-
-                        </td>
-
-                        <td>
-                            @if($user->package_id == 2 && $user->interview_link_send == 0)
-                                <span class="label label-lg  {{ $user->is_interview_done == 0 ? 'label-light-danger' : 'label-light-success' }} label-inline">
-                                    {{ $user->is_interview_done == 0 ? 'Not Taken' : 'Taken' }} 
-                                </span>
-                            @elseif($user->package_id == 2 && $user->interview_link_send == 1 && $user->is_interview_done == 0)
-                                <span class="label label-lg  label-light-danger label-inline">
-                                    Invitation Sent
-                                </span>
-                            @elseif($user->package_id == 2 && $user->interview_link_send == 1 && $user->is_interview_done == 1)
-                                <span class="label label-lg  label-light-success label-inline">
-                                    Taken
-                                </span>
-                            @endif
-
-                        </td>
+                if($user->role->slug == 'user'){
+                    $class = 'info'; 
+                    $text = 'User';
+                }
+                if($user->role->slug == 'institute'){
+                    $class = 'info'; 
+                    $text = 'Institute';
+                }
+                if($user->role->slug == 'teacher'){
+                    $class = 'info'; 
+                    $text = 'Teacher';
+                }
+                if($user->role->slug == 'vendor'){
+                    $class = 'success'; 
+                    $text = 'Vendor';
+                }
+                if($user->role->slug == 'million-member'){
+                    $class = 'primary'; 
+                    $text = 'Million Member';
+                }
+                if($user->role->slug == 'team'){
+                    $class = 'warning'; 
+                    $text = 'Team Member';
+                }
                 
-                        <td>
-                            @if($user->package_id == 2 && $user->interview_link_send == 0  && $user->is_deposit_payment_done == 1)
-                                <a title="Send Interview Invitation" href="{{ route('send-interview-invitation', $user->id) }}"
-                                    class="btn btn-sm btn-primary btn-hover-info btn-icon">
-                                    <i class="flaticon2-bell"></i>
-                                </a>
-                            @endif
-                        </td>
-                    </tr>
-                @endforeach
-                
-            </tbody>
-        </table>
-        <!--end: Datatable-->
-    </div>
+                @endphp
+                <td align="left">
+                    <span style="width: 157px;">
+                        <span
+                        class="label label-lg font-weight-bold  label-light-{{$class}} label-inline">
+                        {{ $text }}
+                    </span>
+                </span>
+            </td>
+            <td>{{ $user->created_at != '' || $user->created_at != null ? $user->created_at->format('Y-m-d') : '' }}
+            </td>
+            <td>
+               <span style="width: 157px;">
+                <span
+                class="label label-lg font-weight-bold  {{ $user->subscription_cancel_status == 1 ? 'label-light-danger' : 'label-light-success' }} label-inline">
+                {{ $user->subscription_cancel_status == 0 ? 'Active' : 'Cancelled' }}
+            </span>
+            </td>
+           
+            <td>
+                {{-- <a href="{{ route('companies.create', $user->id) }}"
+                    class="btn btn-md btn-default btn-hover-info text-info">
+                    Add Company
+                </a> --}}
+                <a href="{{ route('users.edit', $user->id) }}"
+                    class="btn btn-sm btn-default btn-hover-info btn-icon">
+                    <i class="flaticon-edit"></i>
+                </a>
+                {{-- <a href="javascript:;" data-url="{{ route('users.delete', $user->id) }}"
+                    class="btn btn-sm btn-default btn-hover-danger btn-icon delete">
+                    <i class="flaticon2-rubbish-bin-delete-button"></i>
+                </a> --}}
+            </td>
+        </tr>
+        @endforeach
+        
+    </tbody>
+</table>
+<!--end: Datatable-->
+</div>
 </div>
 
 @include('admin.users.modal')
@@ -157,26 +175,5 @@ use App\Functions\Helper;
 
 {{-- Scripts Section --}}
 @section('scripts')
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"> 
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
-
-<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
-<script type="text/javascript">
-
-$('#myTable2').DataTable( {
-    dom: 'Bfrtip',
-    buttons: ['csv', 'excel', 'pdf']
-} );
-</script>
-{{-- @include('admin.commons.js') --}}
-
+@include('admin.commons.js')
 @endsection
-
-

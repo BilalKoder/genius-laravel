@@ -18,7 +18,7 @@ class PagesController extends Controller
         $page_title = 'Dashboard';
         $page_description = 'Some description for the page';
         $user = User::count();
-        $interview = Interviews::count();
+        $interview = 0;
         $total_transaction = Transaction::count();
         $total_amount_invested = User::SUM('invested_amount');
         $users = User::all();

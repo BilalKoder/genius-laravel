@@ -21,7 +21,7 @@
 @if (config('layout.page-loader.type') == 'spinner-logo')
     <div class="page-loader page-loader-logo">
         {{-- <img alt="{{ config('app.name') }}" src="{{ asset('media/logos/logo-letter-1.png') }}"/> --}}
-        <img alt="{{ config('app.name') }}" src="{{ asset('above/images/logo.png') }}"/>
+        <!-- <img alt="{{ config('app.name') }}" src="{{ asset('genius/img/logo/RHMC-logo.png') }}"/> -->
         <div class="spinner spinner-primary"></div>
     </div>
 @endif

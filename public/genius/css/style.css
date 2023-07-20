@@ -695,7 +695,7 @@ h1, h2, h3, h4, h5, h6 {
 .popup-logo {
   left: 0;
   right: 0;
-  top: -30px;
+  /* top: -30px; */
   position: absolute;
   text-align: center; }
   .popup-logo img {
