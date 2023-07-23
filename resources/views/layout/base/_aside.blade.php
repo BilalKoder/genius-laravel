@@ -65,6 +65,18 @@
                         <span class="menu-text">Blogs</span>
                     </a>
                 </li>
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'webinars' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('webinars')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">Webinar</span>
+                    </a>
+                </li>
+                <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'events' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{route('events')}}" class="menu-link">
+                        <i class="menu-icon flaticon2-user"></i>
+                        <span class="menu-text">Events</span>
+                    </a>
+                </li>
                 <li class="menu-item menu-item-submenu {{ Route::currentRouteName() == 'categories' ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="{{route('categories')}}" class="menu-link">
                         <i class="menu-icon flaticon2-user"></i>

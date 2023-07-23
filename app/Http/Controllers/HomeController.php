@@ -6,6 +6,7 @@ use App\Blogs;
 use App\CourseCategories;
 use App\Courses;
 use App\Categories;
+use App\Events;
 use App\Faqs;
 use Carbon\Carbon;
 use App\User;
@@ -32,8 +33,9 @@ class HomeController extends Controller
     public function index()
     {
         $data['page_title'] = 'Home';
-        $data['courses'] = Courses::where('status',1)->limit(4)->get();
-        $data['blogs'] = Blogs::where('status',1)->limit(2)->get();
+        $data['courses'] = Courses::where('status',1)->limit(4)->orderBy('id','DESC')->get();
+        $data['blogs'] = Blogs::where('status',1)->limit(2)->orderBy('id','DESC')->get();
+        $data['events'] = Events::limit(3)->orderBy('id','DESC')->get();
         $data['faqs'] = Faqs::limit(4)->get();
         return view('front.home',$data);
     }

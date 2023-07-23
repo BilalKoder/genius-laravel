@@ -82,6 +82,20 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('blogs/{id}/edit', 'BlogsController@show')->name('blogs.edit');
     Route::post('blogs/{id}/update', 'BlogsController@update')->name('blogs.update');
     Route::get('blogs/{id}/destroy', 'BlogsController@destroy')->name('blogs.delete');
+    
+    Route::get('webinars', 'WebinarController@index')->name('webinars');
+    Route::get('webinars/add', 'WebinarController@create')->name('webinars.add');
+    Route::post('webinars/store', 'WebinarController@store')->name('webinars.store');
+    Route::get('webinars/{id}/edit', 'WebinarController@show')->name('webinars.edit');
+    Route::post('webinars/{id}/update', 'WebinarController@update')->name('webinars.update');
+    Route::get('webinars/{id}/destroy', 'WebinarController@destroy')->name('webinars.delete');
+    
+    Route::get('events', 'EventsController@index')->name('events');
+    Route::get('events/add', 'EventsController@create')->name('events.add');
+    Route::post('events/store', 'EventsController@store')->name('events.store');
+    Route::get('events/{id}/edit', 'EventsController@show')->name('events.edit');
+    Route::post('events/{id}/update', 'EventsController@update')->name('events.update');
+    Route::get('events/{id}/destroy', 'EventsController@destroy')->name('events.delete');
 
     
     Route::get('courses', 'CoursesController@index')->name('courses');

@@ -1,5 +1,6 @@
 @php
 use App\Functions\Helper;
+    use Carbon\Carbon;
 @endphp
 
 @extends('front.app')
@@ -902,57 +903,27 @@ use App\Functions\Helper;
 							<div class="section-title-2 mb65 headline text-left">
 								<h2>Upcoming <span>Events.</span></h2>
 							</div>
+
+							@if(!empty($events))
+							@foreach($events as $event)
 							<div class="latest-events">
 								<div class="latest-event-item">
 									<div class="events-date  relative-position text-center">
 										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">22</span>
-										April 2018
+										<span class="event-date bold-font">{{ Carbon::parse($event->event_date)->format('d') }}</span>
+										{{ Carbon::parse($event->event_date)->format('F Y') }}
 									</div>
 									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Fully Responsive Web Design & Development.</a></h3>
+										<h3 class="latest-title bold-font"><a href="#">{{$event->title??''}}</a></h3>
 										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
+											<span class="course-category"><a href="#">{{$event->category->name??''}}</a></span>
+											<span class="course-author"><a href="#">{{$event->user->name??''}}</a></span>
 										</div>
 									</div>
 								</div>
 							</div>
-
-							<div class="latest-events">
-								<div class="latest-event-item">
-									<div class="events-date  relative-position text-center">
-										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">07</span>
-										August 2018
-									</div>
-									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">Introduction to Mobile Application Development.</a></h3>
-										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="latest-events">
-								<div class="latest-event-item">
-									<div class="events-date  relative-position text-center">
-										<div class="gradient-bdr"></div>
-										<span class="event-date bold-font">30</span>
-										Sept 2018
-									</div>
-									<div class="event-text">
-										<h3 class="latest-title bold-font"><a href="#">IOS Apps Programming & Development.</a></h3>
-										<div class="course-meta">
-											<span class="course-category"><a href="#">Web Design</a></span>
-											<span class="course-author"><a href="#">Koke</a></span>
-										</div>
-									</div>
-								</div>
-							</div>
-
+							@endforeach
+							@endif
 							<div class="view-all-btn bold-font">
 								<a  href="#">Check Calendar   <i class="fas fa-calendar-alt"></i></a>
 							</div>
