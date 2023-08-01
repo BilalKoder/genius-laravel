@@ -37,7 +37,7 @@
                 <div class=""> --}}
                     <!--begin::Form-->
                     <form class="form" id="register-form" method="POST" action="{{ route('register') }}"
-                        autocomplete="off">
+                        autocomplete="off" enctype="multipart/form-data">
                         @csrf
                         <!--begin::Title-->
                         <div class="pb-13 pt-lg-0 pt-5">
@@ -110,6 +110,69 @@
                                 @error('cpassword')
                                 <div class="fv-plugins-message-container">
                                     <div data-field="password" data-validator="notEmpty" class="fv-help-block">
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                                @enderror
+                            </div>
+                            <input type="hidden" name="details" id="details" value="">
+                            <!--end::Form group-->
+                        </div>
+                        <div class="row">
+                            <!--begin::Form group-->
+                            <div class="form-group col-sm-6">
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    id="emirates_id" type="text" placeholder="Emirates ID" name="emirates_id" required />
+                                @error('emirates_id')
+                                <div class="fv-plugins-message-container">
+                                    <div data-field="emirates_id" data-validator="notEmpty" class="fv-help-block">
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                                @enderror
+                            </div>
+                            <!--end::Form group-->
+                            <div class="form-group col-sm-6">
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    id="phone" type="text" placeholder="Emirates ID" name="phone" required />
+                                @error('phone')
+                                <div class="fv-plugins-message-container">
+                                    <div data-field="phone" data-validator="notEmpty" class="fv-help-block">
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                                @enderror
+                            </div>
+                            <!--end::Form group-->
+                        </div>
+                        <div class="row">
+                            
+                            <!--begin::Form group-->
+                            <div class="form-group col-sm-6">
+                                    <label for="passport" style="
+                                    cursor: pointer;" class="custom-file-upload">
+                                        Select Passport File (required)
+                                    </label>
+                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                        id="passport" type="file" name="passport" required/>
+                                @error('passport')
+                                <div class="fv-plugins-message-container">
+                                    <div data-field="passport" data-validator="notEmpty" class="fv-help-block">
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="form-group col-sm-6">
+                                    <label for="image" style="
+                                    cursor: pointer;" class="custom-file-upload">
+                                        Select Profile Photo (optional)
+                                    </label>
+                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                        id="image"  type="file" name="image" />
+                                @error('image')
+                                <div class="fv-plugins-message-container">
+                                    <div data-field="image" data-validator="notEmpty" class="fv-help-block">
                                         {{ $message }}
                                     </div>
                                 </div>

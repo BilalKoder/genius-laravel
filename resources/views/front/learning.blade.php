@@ -44,15 +44,6 @@ use App\Functions\Helper;
 									<li rel="tab2"> <i class="fas fa-list"></i></li>
 								</ul>
 							</div>
-							<div class="shorting-filter float-right">
-								<span><b>Sort</b> By</span>
-								<select>
-									<option value="9" selected="">Popularity</option>
-									<option value="10">Most Read</option>
-									<option value="11">Most View</option>
-									<option value="12">Most Shared</option>
-								</select>
-							</div>
 						</div>
 
 						<div class="genius-post-item">

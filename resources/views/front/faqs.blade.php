@@ -59,18 +59,22 @@ $index = 0;
 													<div class="row">
 														<div class="col-md-6">
                                                             @if(!empty($faqs))
-                                                            @foreach($faqs as $key => $faq)
+                                                            @foreach($faqs as $uniqueId => $faq)
+															@php
+																// Generate a unique identifier for the FAQ item
+																$uniqueId = uniqid();
+															@endphp
 															<div class="panel">
-																<div class="panel-title" id="heading{{ $key }}">
+																<div class="panel-title" id="heading{{ $uniqueId }}">
 																	<h3 class="mb-0">
-																		<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ $key }}" aria-expanded="false" aria-controls="collapse{{ $key }}">
-																			How to Register or Make An Account in Genius?
+																		<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ $uniqueId }}" aria-expanded="false" aria-controls="collapse{{ $uniqueId }}">
+																			{{$faq->question??''}}
 																		</button>
 																	</h3>
 																</div>
-																<div id="collapse{{ $key }}" class="collapse" aria-labelledby="heading{{ $key }}" data-parent="#accordion" style="">
+																<div id="collapse{{ $uniqueId }}" class="collapse" aria-labelledby="heading{{ $uniqueId }}" data-parent="#accordion" style="">
 																	<div class="panel-body">
-																		Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
+																		{{$faq->answer??''}}
 																	</div>
 																</div>
 															</div>

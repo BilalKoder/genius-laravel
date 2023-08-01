@@ -37,18 +37,45 @@ class MyAuthController extends Controller
 
         ]); 
         
-        // dd($request->all());
         try {
+
+            // if($request->hasFile('passport'))
+            {
+                    $image = $request->passport;
+                    $imgName = rand() . '_' . time() . '.' . $image->getClientOriginalExtension();
+                    $destinationPath = public_path('course_photos');
+                    $imagePath = $destinationPath . "/" . $imgName;
+                    $image->move($destinationPath, $imgName);
+                    $path = basename($imagePath);
+                    $image = 'course_photos/'.$path;
+            }
+
+            if($request->hasFile('image'))
+            {
+                    $profileImage = $request->image;
+                    $imgName = rand() . '_' . time() . '.' . $profileImage->getClientOriginalExtension();
+                    $destinationPath = public_path('course_photos');
+                    $imagePath = $destinationPath . "/" . $imgName;
+                    $profileImage->move($destinationPath, $imgName);
+                    $path = basename($imagePath);
+                    $profileImage = 'course_photos/'.$path;
+            }
+
             DB::beginTransaction();
+            
             $user = new User;
             $user->role_id = 2;
-            $user->name = $request->name;
-            $user->email = $request->email;
-            $user->password = Hash::make($request->password);
-            // $user->identity_token = Str::random(12, 'alphaNum');
+            $user->name = $request->name ?? null;
+            $user->email = $request->email ?? null;
+            $user->password = isset($request->password) ? Hash::make($request->password) : null;
+            $user->phone = $request->phone ?? null;
+            $user->emirates_id = $request->emirates_id ?? null;
+            $user->passport = $request->hasFile('passport') ? $image : null;
+            $user->image = $request->hasFile('image') ? $profileImage : null;
             $user->save();
+
             DB::commit();
-            // $this->sendMail(['name' => $request->name, 'email' => $request->email, 'password' => $request->password, 'role' => $user->role->slug], 'emails.basic-register');
+
             if(Auth::user() === null){
                 Auth::loginUsingId($user->id);    
             }

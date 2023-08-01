@@ -117,6 +117,17 @@ use App\Functions\Helper;
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-form-label col-3 text-lg-right text-left">Best Seller<span class="text-danger">*</span></label>
+                                <div class="col-9">
+                                    <div class="input-group input-group-lg input-group-solid">
+                                        <select name="best_seller" id="best_seller" class="form-control form-control-lg form-control-solid @error('best_seller') is-invalid @enderror" required>
+                                            <option value="1" {{($course->best_seller == '1')?'selected':''}}>YES</option>
+                                            <option value="0" {{($course->best_seller == '0')?'selected':''}}>NO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <!--end::Group-->
                             <!--begin::Group-->
                             <div class="form-group row">
@@ -131,6 +142,14 @@ use App\Functions\Helper;
                                     <div class="col-9">
                                         <div class="input-group input-group-lg input-group-solid">
                                             <input type="number"  min = "1" step="0.01" name="price" value="{{($course->id === null)?old('price'):$course->price}}" class="form-control form-control-lg form-control-solid semester_lesson_inputs @error('price') is-invalid @enderror" required placeholder="69.01">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="form-group row">
+                                    <label class="col-form-label col-3 text-lg-right text-left">Sale Price </Pre> <span class="text-danger">*</span></label>
+                                    <div class="col-9">
+                                        <div class="input-group input-group-lg input-group-solid">
+                                            <input type="number"  min = "1" step="0.01" name="sale_price" value="{{($course->id === null)?old('sale_price'):$course->sale_price}}" class="form-control form-control-lg form-control-solid semester_lesson_inputs @error('sale_price') is-invalid @enderror" required placeholder="69.01">
                                         </div>
                                     </div>
                             </div>
