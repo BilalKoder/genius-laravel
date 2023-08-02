@@ -149,9 +149,10 @@
 									<div class="login">
 										<!-- <a data-toggle="modal" data-target="#myModal" href="#">LogIn</a> -->
 										@auth
-										<a href="{{url('/dasboard')}}">Dashboard</a>
+										<a href="{{url('/admin/dashboard')}}">Dashboard</a>
 										@else
-										<a href="{{url('/login')}}">Login</a>
+										<a href="{{url('/login')}}">Login | </a> 
+										<a href="{{url('/register')}}">Register</a> 
 										@endauth
 									</div>
 									<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -215,16 +216,28 @@
 													<!-- <div class="alt-text text-center"><a href="#">OR SIGN IN</a> </div> -->
 													<form class="contact_form" method="POST" enctype="multipart/form-data">
 														<div class="contact-info">
+															<label>Full Name </label>
 															<input class="name" name="Full Name" id="formName" type="text" placeholder="e.g John Doe*">
 														</div>
 														<div class="contact-info">
+															<label>Email</label>
 															<input class="name" name="Email" id="formEmailReg" type="email" placeholder="Your@email.com*">
 														</div>
 														<div class="contact-info">
+															<label>Password</label>
 															<input class="password" name="name" id="formPasswordReg" type="password" placeholder="Your Password*">
 														</div>
 														<div class="contact-info">
+															<label>Phone </label>
 															<input class="name" name="Email" id="formPhone" type="text" placeholder="+6689128812*">
+														</div>
+														<div class="contact-info">
+															<label>Emirates ID</label>
+															<input class="emrirates_id" name="emrirates_id" id="formEmrirates" type="text" placeholder="Emirates ID">
+														</div>
+														<div class="contact-info">
+															<label>Upload Passport</label>
+															<input class="passport" name="passport" id="formPassport" type="file" placeholder="Passport">
 														</div>
 														<div class="nws-button text-center white text-capitalize">
 															<button type="submit" class="registerForm" value="Submit" style="color: #000 !important;background-color: #009051 !important;">Sign Up Now</button> 
@@ -293,10 +306,10 @@
 								<ul class="quick-menu">
 									<li><a  href="{{url('/')}}">Home</a></li>
 									<li><a  href="{{route('learning')}}">Learning</a></li>
-									<li><a  href="#about-us">Webinar</a></li>
+									<li><a  href="{{route('front.webinars')}}">Webinar</a></li>
 									<li><a  href="{{route('front.faqs')}}">FAQ</a></li>
 									<li><a  href="{{route('front.blogs')}}">Blogs</a></li>
-									<li><a  href="#faq">Events</a></li>
+									<li><a  href="{{route('front.events')}}">Events</a></li>
 									<!-- <li><a  href="#latest-area">BLOG</a></li>
 									<li><a  href="#contact-form">Contact Us</a></li> -->
 								</ul>

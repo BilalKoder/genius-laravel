@@ -28,7 +28,7 @@
     <!--begin::Login-->
     <div class="d-flex flex-column flex-lg-row flex-column-fluid bg-white">
         <!--begin::Content-->
-        <div
+        <div style="background: url('media/bg/bg-3.jpg') !important;"
             class="flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
             <!--begin::Content body-->
             <div class="container">
@@ -37,7 +37,7 @@
                 <div class=""> --}}
                     <!--begin::Form-->
                     <form class="form" id="register-form" method="POST" action="{{ route('register') }}"
-                        autocomplete="off">
+                        autocomplete="off" enctype="multipart/form-data">
                         @csrf
                         <!--begin::Title-->
                         <div class="pb-13 pt-lg-0 pt-5">
@@ -76,7 +76,7 @@
                             </div>
                             <!--end::Form group-->
                         </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             <!--begin::Form group-->
                             <div class="form-group col-sm-6">
                                 <select name="role_id" id="role_id" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6">
@@ -87,7 +87,7 @@
                                 </select>
                             </div>
                             <!--end::Form group-->
-                        </div>
+                        </div> --}}
                         <div class="row">
                             <!--begin::Form group-->
                             <div class="form-group col-sm-6">
@@ -118,12 +118,75 @@
                             <input type="hidden" name="details" id="details" value="">
                             <!--end::Form group-->
                         </div>
+                        <div class="row">
+                            <!--begin::Form group-->
+                            <div class="form-group col-sm-6">
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    id="emirates_id" type="text" placeholder="Emirates ID" name="emirates_id" required />
+                                @error('emirates_id')
+                                <div class="fv-plugins-message-container">
+                                    <div data-field="emirates_id" data-validator="notEmpty" class="fv-help-block">
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                                @enderror
+                            </div>
+                            <!--end::Form group-->
+                            <div class="form-group col-sm-6">
+                                <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    id="phone" type="text" placeholder="Emirates ID" name="phone" required />
+                                @error('phone')
+                                <div class="fv-plugins-message-container">
+                                    <div data-field="phone" data-validator="notEmpty" class="fv-help-block">
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                                @enderror
+                            </div>
+                            <!--end::Form group-->
+                        </div>
+                        <div class="row">
+                            
+                            <!--begin::Form group-->
+                            <div class="form-group col-sm-6">
+                                    <label for="passport" style="
+                                    cursor: pointer;" class="custom-file-upload">
+                                        Select Passport File (required)
+                                    </label>
+                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                        id="passport" type="file" name="passport" required/>
+                                @error('passport')
+                                <div class="fv-plugins-message-container">
+                                    <div data-field="passport" data-validator="notEmpty" class="fv-help-block">
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="form-group col-sm-6">
+                                    <label for="image" style="
+                                    cursor: pointer;" class="custom-file-upload">
+                                        Select Profile Photo (optional)
+                                    </label>
+                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                        id="image"  type="file" name="image" />
+                                @error('image')
+                                <div class="fv-plugins-message-container">
+                                    <div data-field="image" data-validator="notEmpty" class="fv-help-block">
+                                        {{ $message }}
+                                    </div>
+                                </div>
+                                @enderror
+                            </div>
+                            <input type="hidden" name="details" id="details" value="">
+                            <!--end::Form group-->
+                        </div>
                         <!--begin::Form group-->
                         <div class="form-group d-flex flex-wrap pb-lg-0 pb-3">
-                            <button type="submit" id="kt_login_signup_submit"
+                            <button type="submit" style="background: #009051 !important;border-color: #fff;" id="kt_login_signup_submit"
                                 class="btn btn-danger font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Submit</button>
-                            <a href="{{ route('home') }}"
-                                class="btn btn-light-danger font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</a>
+                            <a href="{{ url('/') }}"
+                                class="btn btn-light-success font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</a>
                             {{-- <a type="button" id="kt_login_signup_cancel"
                                 class="btn btn-light-danger font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</button>
                                 --}}

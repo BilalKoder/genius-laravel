@@ -20,13 +20,29 @@ use Illuminate\Support\Facades\Hash;
 class EnrolledCoursesController extends Controller
 {
 
-    public function index() {
+    public function index(Request $request) {
 
-        if(auth()->user()->role->id === 1){
-            $data['enrolled'] = EnrolledCourses::orderBy('id','DESC')->get();
-        }else{
-            $data['enrolled'] = EnrolledCourses::where('user_id',auth()->user()->id)->orderBy('id','DESC')->get();
-        }
+        $query = EnrolledCourses::query();
+
+            if ($request->has('user')) {
+                $userId = $request->input('user');
+                $query->where('user_id', $userId);
+            }
+
+            if ($request->has('courses')) {
+                $courseId = $request->input('courses');
+                $query->where('course_id', $courseId);
+            }
+
+             if(auth()->user()->role->id != 1){
+                $query->where('user_id',auth()->user()->id);
+            }
+        
+
+        $data['enrolled'] = $query->orderBy('id', 'DESC')->get();
+
+        $data['users'] = User::where('role_id', '!=', 1)->get();
+        $data['courses'] = Courses::with('categories')->orderBy('id','DESC')->get();;
         $data['page_title'] = "Enrolled Courses";
 
         return view('admin.enrolled.list',$data);

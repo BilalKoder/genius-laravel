@@ -6,7 +6,9 @@ use App\Blogs;
 use App\CourseCategories;
 use App\Courses;
 use App\Categories;
+use App\Events;
 use App\Faqs;
+use App\Webinar;
 use Carbon\Carbon;
 use App\User;
 use App\Advertisement;
@@ -32,9 +34,12 @@ class HomeController extends Controller
     public function index()
     {
         $data['page_title'] = 'Home';
-        $data['courses'] = Courses::where('status',1)->limit(4)->get();
-        $data['blogs'] = Blogs::where('status',1)->limit(2)->get();
+        $data['popularCourses'] = Courses::where('is_featured',1)->where('status',1)->limit(4)->orderBy('id','DESC')->get();
+        $data['courses'] = Courses::where('status',1)->limit(4)->orderBy('id','DESC')->get();
+        $data['blogs'] = Blogs::where('status',1)->limit(2)->orderBy('id','DESC')->get();
+        $data['events'] = Events::limit(3)->orderBy('id','DESC')->get();
         $data['faqs'] = Faqs::limit(4)->get();
+        $data['webinar'] = Webinar::first();
         return view('front.home',$data);
     }
     
@@ -62,6 +67,18 @@ class HomeController extends Controller
         $data['categories'] = Categories::where('type', "COURSES")->orderBy('id', 'DESC')->get();
         return view('front.learning',$data);
     }
+    public function events(Request $request)
+    {
+        $data['page_title'] = 'Events';
+        $data['events'] = Events::orderBy('id', 'DESC')->get();
+        return view('front.events',$data);
+    }
+    public function webinars(Request $request)
+    {
+        $data['page_title'] = 'Webinars';
+        $data['webinars'] = Webinar::orderBy('id', 'DESC')->get();
+        return view('front.webinars',$data);
+    }
 
     public function courseDetail($id){
         // Store the course ID in the session or cookie
@@ -84,6 +101,26 @@ class HomeController extends Controller
         ];
 
         return view('front.learning-detail',$data);
+    }
+    public function eventDetail($id){
+        $course = Events::where('id',$id)->first();
+        $data = [
+            'course' => $course,
+            'page_title' => $course->meta_title??'',
+            'meta_description' =>  $course->meta_description??''
+        ];
+
+        return view('front.event-detail',$data);
+    }
+    public function webinarDetail($id){
+        $course = Webinar::where('id',$id)->first();
+        $data = [
+            'course' => $course,
+            'page_title' => $course->meta_title??'',
+            'meta_description' =>  $course->meta_description??''
+        ];
+
+        return view('front.webinar-detail',$data);
     }
 
     public function knowYourCustomer($package_id = null){

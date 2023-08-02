@@ -7,7 +7,7 @@
 </style>
 
 <div class="row">
-    
+    @if(auth()->user()->role_id == 1)
     <div class="col-xl-3">
         <!--begin::Stats Widget 26-->
         <div class="card card-custom bg-light-info card-stretch gutter-b">
@@ -21,6 +21,7 @@
         </div>
         <!--end::Stats Widget 26-->
     </div>
+    @endif
   {{--  <div class="col-xl-3">
         <!--begin::Stats Widget 27-->
         <div class="card card-custom bg-light-info card-stretch gutter-b">

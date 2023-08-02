@@ -10,27 +10,33 @@ use App\Functions\Helper;
             <h3 class="card-label">Enrolled Courses
                 <div class="text-muted pt-2 font-size-sm">All Enrolled Courses List</div></h3>
             </div>
-            <div class="card-toolbar">
-                
-                <!--begin::Button-->
-                {{-- <a href="{{route('enrolls.add')}}" class="btn btn-primary font-weight-bolder">
-                    <span class="svg-icon svg-icon-md">
-                        <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg-->
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <rect x="0" y="0" width="24" height="24" />
-                                <circle fill="#000000" cx="9" cy="15" r="6" />
-                                <path d="M8.8012943,7.00241953 C9.83837775,5.20768121 11.7781543,4 14,4 C17.3137085,4 20,6.6862915 20,10 C20,12.2218457 18.7923188,14.1616223 16.9975805,15.1987057 C16.9991904,15.1326658 17,15.0664274 17,15 C17,10.581722 13.418278,7 9,7 C8.93357256,7 8.86733422,7.00080962 8.8012943,7.00241953 Z" fill="#000000" opacity="0.3" />
-                            </g>
-                        </svg>
-                        <!--end::Svg Icon-->
-                    </span>New Record</a> --}}
-                    <!--end::Button-->
+            <div class="d-flex">
+                <div class="input-group input-group-lg input-group-solid mr-5">
+                    <select name="status" id="status" class="form-control form-control-lg form-control-solid userFilter" required>
+                        <option value="0">Select User Filter</option>
+                        @if(count($users) > 0)
+                            @foreach($users as $user)
+                                <option value="{{$user->id}}">{{$user->name??''}}</option>
+                            @endforeach
+                        @endif
+                    </select>
                 </div>
+                <div class="input-group input-group-lg input-group-solid">
+                    <select name="status" id="status" class="form-control form-control-lg form-control-solid courseFilter" required>
+                        <option value="0">Select Course Filter</option>
+                        @if(count($courses) > 0)
+                        @foreach($courses as $course)
+                            <option value="{{$course->id}}">{{$course->title??''}}</option>
+                        @endforeach
+                    @endif
+                    </select>
+                </div>
+                <!--end::Button-->
+            </div>
             </div>
             <div class="card-body">
                 <!--begin: Datatable-->
-                <table class="" id="myTable" style="width: 100%;" border="0">
+                <table class="" id="myTable2" style="width: 100%;" border="0">
                     <thead>
                         <tr>
                             <th title="Field #1">#</th>
@@ -42,7 +48,7 @@ use App\Functions\Helper;
                             <th title="Field #3">User</th>
                             {{-- <th title="Field #3">Status</th> --}}
                             <th title="Field #5">Created At</th>
-                            <th title="Field #6">Action</th>
+                            {{-- <th title="Field #6">Action</th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -78,14 +84,14 @@ use App\Functions\Helper;
                             </td> --}}
                         
                             <td>{{ ($enroll->created_at != ''|| $enroll->created_at != null)?$enroll->created_at->format('Y-m-d'): '' }}</td>
-                            <td>
+                            {{-- <td>
                                 <a href="javascript:void(0)" class=" btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon">
                                     <i class="flaticon-edit"></i>
                                 </a>
-                                {{-- <a href="javascript:;" data-url="#" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon delete">
+                                <a href="javascript:;" data-url="#" class="btn btn-sm btn-default btn-text-primary btn-hover-primary btn-icon delete">
                                     <i class="flaticon2-rubbish-bin-delete-button"></i>
-                                </a> --}}
-                            </td>
+                                </a>
+                            </td> --}}
                         </tr>
                         @endforeach
                         
@@ -103,112 +109,45 @@ use App\Functions\Helper;
         
         {{-- Scripts Section --}}
         @section('scripts')
+
+        
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"> 
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.0.1/css/buttons.dataTables.min.css">
+
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+<script type="text/javascript">
+
+$('#myTable2').DataTable( {
+    dom: 'Bfrtip',
+    buttons: ['csv', 'excel', 'pdf']
+} );
+</script>
         <script>
-            $(document).ready(function () {
-             $('.editSubmissionButton').on('click', function () {
-
-                var category_name = $("#category_name").val();
-
-                if(category_name == null || category_name == ""){
-                    Swal.fire({
-                        title: 'Error',
-                        text: 'Category Name can not be empty!',
-                        type: 'warning'
-                    });
-
-                    return false;
-                }
-
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+             $('.userFilter').on('change', function () {
+                    var selectedUserValue = $(this).val();
+                    if (selectedUserValue == null || selectedUserValue == 0) {
+                        return false;
                     }
+                    var url = '?user=' + selectedUserValue;
+                    window.location.href = url;
                 });
-
-                $.ajax({
-                        type: 'POST',
-                        url: '/categories/store/',
-                        dataType: "JSON",
-                        data: {
-                            "_token": "{{ csrf_token() }}",
-                            "name": category_name
-                        },
-
-                        success: function (data) {  
-
-                            Swal.fire({
-                                title: 'Success',
-                                text: 'Submitted Successfully',
-                                type: 'success'
-                            });
-
-                        $('#exampleModal').modal('hide');
-
-                        setTimeout(() => {
-                            location.reload();
-                        }, 2000);
-                        },
-                    })
-
-            });
-
-            
-            $('.updateSubmissionButtonModal').on('click', function () {
+             
+                $('.courseFilter').on('change', function () {
+                    var selectedUserValue = $(this).val();
+                    if (selectedUserValue == null || selectedUserValue == 0) {
+                        return false;
+                    }
+                    var url = '?courses=' + selectedUserValue;
+                    window.location.href = url;
+                });
               
-                var id = $(this).data('id');
-                var name = $(this).data('name');
-                var category_name = $("#edit_category_name").val(name);
-                $("#category_id").val(id)
-            });
-
-            $('.updateSubmissionButton').on('click', function () {
-
-                var id =  $("#category_id").val();
-                var category_name = $("#edit_category_name").val();
-                
-                if(category_name == null || category_name == ""){
-                    Swal.fire({
-                        title: 'Error',
-                        text: 'Category Name can not be empty!',
-                        type: 'warning'
-                    });
-
-                    return false;
-                }
-
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-
-                $.ajax({
-                        type: 'POST',
-                        url: 'categories/'+id+'/update',
-                        dataType: "JSON",
-                        data: {
-                            "_token": "{{ csrf_token() }}",
-                            "name": category_name
-                        },
-
-                        success: function (data) {  
-
-                            Swal.fire({
-                                title: 'Success',
-                                text: 'Submitted Successfully',
-                                type: 'success'
-                            });
-
-                        $('#exampleModal').modal('hide');
-
-                        setTimeout(() => {
-                            location.reload();
-                        }, 2000);
-                        },
-                    })
-
-                });
-});
    
       
         </script>

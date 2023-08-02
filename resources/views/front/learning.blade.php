@@ -15,7 +15,7 @@ use App\Functions\Helper;
 			<div class="container">
 				<div class="page-breadcrumb-content text-center">
 					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">Genius <span>Learning</span></h2>
+						<h2 class="breadcrumb-head black bold">RHMC <span>Learning</span></h2>
 					</div>
 					<div class="page-breadcrumb-item ul-li">
 						<ul class="breadcrumb text-uppercase black">
@@ -43,15 +43,6 @@ use App\Functions\Helper;
 									<li class="active" rel="tab1"><i class="fas fa-th"></i></li>
 									<li rel="tab2"> <i class="fas fa-list"></i></li>
 								</ul>
-							</div>
-							<div class="shorting-filter float-right">
-								<span><b>Sort</b> By</span>
-								<select>
-									<option value="9" selected="">Popularity</option>
-									<option value="10">Most Read</option>
-									<option value="11">Most View</option>
-									<option value="12">Most Shared</option>
-								</select>
 							</div>
 						</div>
 

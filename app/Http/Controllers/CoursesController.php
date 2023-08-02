@@ -62,19 +62,26 @@ class CoursesController extends Controller
 
         $includesArray = [];
 
-        foreach ($request->includes as $key => $value) {
-            $decodedValue = json_decode($value, true);
-            foreach ($decodedValue as $item) {
-                $includesArray[] = $item['value'];
+        if(isset($request->includes) && count($request->includes) > 0){
+            foreach ($request->includes as $key => $value) {
+                if($value){
+                    $decodedValue = json_decode($value, true);
+                    foreach ($decodedValue as $item) {
+                        $includesArray[] = $item['value'];
+                    }
+                }
             }
         }
         
         $languagesArray = [];
-
-        foreach ($request->languages as $key => $value) {
-            $decodedValue = json_decode($value, true);
-            foreach ($decodedValue as $item) {
-                $languagesArray[] = $item['value'];
+        if(isset($request->languages) && count($request->languages) > 0){
+            foreach ($request->languages as $key => $value) {
+                if($value){
+                    $decodedValue = json_decode($value, true);
+                    foreach ($decodedValue as $item) {
+                        $languagesArray[] = $item['value'];
+                    }
+                }
             }
         }
         
@@ -112,7 +119,7 @@ class CoursesController extends Controller
                 $course = Courses::create($input);
                 
                 $categories = $request->categories;
-                if(count($categories) > 0){
+                if(isset($request->categories) && count($categories) > 0){
                     foreach($categories as $value){
                         $category = new CourseCategories();
                         $category->course_id = $course->id;
@@ -130,7 +137,7 @@ class CoursesController extends Controller
 
 
         } catch (\Throwable $th) {
-            // dd($th->getMessage());
+            dd($th->getMessage());
 
            
             $notification = array(
@@ -200,21 +207,29 @@ class CoursesController extends Controller
 
             $includesArray = [];
 
+        if(isset($request->includes) && count($request->includes) > 0){
             foreach ($request->includes as $key => $value) {
-                $decodedValue = json_decode($value, true);
-                foreach ($decodedValue as $item) {
-                    $includesArray[] = $item['value'];
+                if($value){
+                    $decodedValue = json_decode($value, true);
+                    foreach ($decodedValue as $item) {
+                        $includesArray[] = $item['value'];
+                    }
                 }
             }
-            
-            $languagesArray = [];
-    
+        }
+        
+        $languagesArray = [];
+        
+        if(isset($request->languages) && count($request->languages) > 0){
             foreach ($request->languages as $key => $value) {
-                $decodedValue = json_decode($value, true);
-                foreach ($decodedValue as $item) {
-                    $languagesArray[] = $item['value'];
+                if($value){
+                    $decodedValue = json_decode($value, true);
+                    foreach ($decodedValue as $item) {
+                        $languagesArray[] = $item['value'];
+                    }
                 }
             }
+        }
             
             $input['includes'] = json_encode($includesArray);
             $input['languages'] = json_encode($languagesArray);

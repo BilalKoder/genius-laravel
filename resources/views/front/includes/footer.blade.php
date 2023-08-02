@@ -18,8 +18,6 @@
                                 <p>We take our mission of increasing global access to quality education seriously. We
                                     connect learners to the best universities and institutions from around the world.
                                 </p>
-                                <p>Lorem ipsum dolor sit amet we take our mission of increasing global access to quality
-                                    education seriously. </p>
                             </div>
                         </div>
                     </div>
@@ -28,91 +26,37 @@
                             <div class="footer-menu ul-li-block">
                                 <h2 class="widget-title">Useful Links</h2>
                                 <ul>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>About Us</a></li>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Mobile Apps</a></li>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Responsive Website</a></li>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
-                                    <li><a href="#"><i class="fas fa-caret-right"></i>Mobile Apps</a></li>
+                                    <li><a href="{{url('/')}}"><i class="fas fa-caret-right"></i>Home</a></li>
+                                    <li><a href="{{url('/learning')}}"><i class="fas fa-caret-right"></i>Courses</a></li>
+                                    <li><a href="{{url('/blogs')}}"><i class="fas fa-caret-right"></i>Blogs</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="footer-menu ul-li-block">
                             <h2 class="widget-title">Account Info</h2>
                             <ul>
-                                <li><a href="#"><i class="fas fa-caret-right"></i>Setting Account</a></li>
-                                <li><a href="#"><i class="fas fa-caret-right"></i>Login & Register</a></li>
-                                <li><a href="#"><i class="fas fa-caret-right"></i>Contact Us</a></li>
-                                <li><a href="#"><i class="fas fa-caret-right"></i>Graphic Design</a></li>
-                                <li><a href="#"><i class="fas fa-caret-right"></i>Mobile Apps</a></li>
-                                <li><a href="#"><i class="fas fa-caret-right"></i>Responsive Website</a></li>
+                                <li><a href="{{url('/webinars')}}"><i class="fas fa-caret-right"></i>Webinars</a></li>
+                                <li><a href="{{url('/events')}}"><i class="fas fa-caret-right"></i>Events</a></li>
+                                <li><a href="{{url('/faqs')}}"><i class="fas fa-caret-right"></i>FAQ</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="footer-widget">
-                            <h2 class="widget-title">Photo Gallery</h2>
-                            <div class="photo-list ul-li">
-                                <ul>
-                                    <li>
-                                        <img src="<?= asset('genius/img/gallery/g-1.jpg')?>" alt="">
-                                        <div class="blakish-overlay"></div>
-                                        <div class="pop-up-icon">
-                                            <a href="<?= asset('genius/img/gallery/g-1.jpg')?>" data-lightbox="roadtrip">
-                                                <i class="fas fa-search"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="<?= asset('genius/img/gallery/g-2.jpg') ?>" alt="">
-                                        <div class="blakish-overlay"></div>
-                                        <div class="pop-up-icon">
-                                            <a href="<?= asset('genius/img/gallery/g-2.jpg')?>" data-lightbox="roadtrip">
-                                                <i class="fas fa-search"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="<?= asset('genius/img/gallery/g-3.jpg')?>" alt="">
-                                        <div class="blakish-overlay"></div>
-                                        <div class="pop-up-icon">
-                                            <a href="<?= asset('genius/img/gallery/g-3.jpg')?>" data-lightbox="roadtrip"> <i
-                                                    class="fas fa-search"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="<?= asset('genius/img/gallery/g-4.jpg')?>" alt="">
-                                        <div class="blakish-overlay"></div>
-                                        <div class="pop-up-icon">
-                                            <a href="<?= asset('genius/img/gallery/g-4.jpg')?>" data-lightbox="roadtrip"> <i
-                                                    class="fas fa-search"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="<?= asset('genius/img/gallery/g-5.jpg')?>" alt="">
-                                        <div class="blakish-overlay"></div>
-                                        <div class="pop-up-icon">
-                                            <a href="<?= asset('genius/img/gallery/g-5.jpg')?>" data-lightbox="roadtrip"> <i
-                                                    class="fas fa-search"></i></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <img src="<?= asset('genius/img/gallery/g-6.jpg')?>" alt="">
-                                        <div class="blakish-overlay"></div>
-                                        <div class="pop-up-icon">
-                                            <a href="<?= asset('genius/img/gallery/g-6.jpg')?>" data-lightbox="roadtrip"> <i
-                                                    class="fas fa-search"></i></a>
-                                        </div>
-
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="row">
+                                <div class="footer-social ul-li">
+                                    <h2 class="widget-title">Social Network</h2>
+                                    <ul>
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                    </ul>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- /footer-widget-content -->
-            <div class="footer-social-subscribe mb65">
+            {{-- <div class="footer-social-subscribe mb65">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="footer-social ul-li">
@@ -139,22 +83,22 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="copy-right-menu">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="copy-right-text">
-                            <p>© {{date('Y')}} - RHMC. All rights reserved</p>
+                            <p>© {{ date('Y') }} - RHMC All rights reserved</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="copy-right-menu-item float-right ul-li">
-                            <ul>
+                            {{-- <ul>
                                 <li><a href="#">License</a></li>
                                 <li><a href="#">Privacy & Policy</a></li>
                                 <li><a href="#">Term Of Service</a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
                     </div>
                 </div>
@@ -179,12 +123,10 @@
 <script src="<?= asset('genius/js/jquery-ui.js')?>"></script>
 <script src="<?= asset('genius/js/gmap3.min.js')?>"></script>
 <script src="<?= asset('genius/js/switch.js')?>"></script>
+<script src="<?= asset('genius/js/script.js')?>"></script>
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyC61_QVqt9LAhwFdlQmsNwi5aUJy9B2SyA"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
-
-
-<script src="<?= asset('genius/js/script.js')?>"></script>
 
 <script>
 
@@ -283,7 +225,9 @@ $('.registerForm').on('click', function (event) {
                 var password = $("#formPasswordReg").val();
                 var courseId = "{{isset($course) ? $course->id : '0'}}";
                 var name = $("#formName").val();
+                var emirates = $("#formEmrirates").val();
                 var phone = $("#formPhone").val();
+                var passportFile = $("#formPassport")[0].files[0];
                
                 if(email == null || email == ""){
                
@@ -311,6 +255,23 @@ $('.registerForm').on('click', function (event) {
 
                     return false;
                 }
+               
+                if(passportFile == null || passportFile == ""){
+                  
+                    toastr.error('Passport File can not be empty!', 'Inconceivable!', {timeOut: 5000});
+
+                    return false;
+                }
+
+                var formData = new FormData();
+                formData.append('_token', "{{ csrf_token() }}");
+                formData.append('email', email);
+                formData.append('password', password);
+                formData.append('name', name);
+                formData.append('phone', phone);
+                formData.append('emirates', emirates ? emirates : '');
+                formData.append('passport', passportFile); // Append the file to the FormData
+
 
                 $.ajaxSetup({
                     headers: {
@@ -319,16 +280,12 @@ $('.registerForm').on('click', function (event) {
                 });
 
                 $.ajax({
-                        type: 'POST',
-                        url: '/admin/register',
-                        dataType: "JSON",
-                        data: {
-                            "_token": "{{ csrf_token() }}",
-                            "email": email,
-                            "password": password,
-                            "name": name,
-                            "phone": phone,
-                        },
+                    type: 'POST',
+                    url: '/admin/register',
+                    dataType: 'JSON',
+                    processData: false, // Important: Prevent jQuery from processing the data
+                    contentType: false, // Important: Prevent jQuery from setting content type
+                    data: formData, // Use the FormData object containing the file
 
                         success: function (data) {  
 

@@ -15,6 +15,7 @@ class Courses extends Model
         'lectures',
         'status',
         'price',
+        'sale_price',
         'media',
         'created_by',
         'languages',
@@ -25,7 +26,8 @@ class Courses extends Model
         'includes',
         'type',
         'status',
-        'is_featured'
+        'is_featured',
+        'best_seller'
     ];
 
 

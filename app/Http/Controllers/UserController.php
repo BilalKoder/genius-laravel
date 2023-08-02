@@ -239,14 +239,27 @@ class UserController extends Controller
     public function registerAjax(Request $request)
     {
         try {
+
+            if($request->hasFile('passport'))
+            {
+                    $profileImage = $request->passport;
+                    $imgName = rand() . '_' . time() . '.' . $profileImage->getClientOriginalExtension();
+                    $destinationPath = public_path('course_photos');
+                    $imagePath = $destinationPath . "/" . $imgName;
+                    $profileImage->move($destinationPath, $imgName);
+                    $path = basename($imagePath);
+                    $profileImage = 'course_photos/'.$path;
+            }
             DB::beginTransaction();
+
             $user = new User;
             $user->role_id = 2;
             $user->name = $request->name;
             $user->email = $request->email;
             $user->phone = $request->phone;
+            $user->passport = $request->hasFile('passport') ? $profileImage:'';
+            $user->emirates_id = $request->emirates ? $request->emirates: '';
             $user->password = Hash::make($request->password);
-            // $user->identity_token = Str::random(12, 'alphaNum');
             $user->save();
             DB::commit();
             // $this->sendMail(['name' => $request->name, 'email' => $request->email, 'password' => $request->password, 'role' => $user->role->slug], 'emails.basic-register');
