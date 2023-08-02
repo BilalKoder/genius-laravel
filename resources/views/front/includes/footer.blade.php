@@ -145,7 +145,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="copy-right-text">
-                            <p>© 2018 - www.GeniusCourse.com. All rights reserved</p>
+                            <p>© {{date('Y')}} - RHMC. All rights reserved</p>
                         </div>
                     </div>
                     <div class="col-md-6">

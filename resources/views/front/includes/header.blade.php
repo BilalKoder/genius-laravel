@@ -75,7 +75,7 @@
 							<li>
 								<div class="mail-phone">
 									<div class="info-icon">
-										<i class="text-gradiant fas fa-envelope"></i>
+										<i class="fas fa-envelope" style="color: #fff;"></i>
 									</div>
 									<div class="info-content">
 										<span class="info-id">info.rhmc.ae</span>
@@ -86,7 +86,7 @@
 							<li>
 								<div class="mail-phone">
 									<div class="info-icon">
-										<i class="text-gradiant fas fa-phone-square"></i>
+										<i class="fas fa-phone-square"  style="color: #fff;"></i>
 									</div>
 									<div class="info-content">
 										<span class="info-id">+97143967462</span>

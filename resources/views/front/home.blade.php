@@ -106,14 +106,14 @@ use App\Functions\Helper;
 						</div>
 					</div>
 				</div>
-				<div class="slider-area slider-bg-4 relative-position">
+				{{-- <div class="slider-area slider-bg-4 relative-position">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
 							<h2><span>Inventive</span> Solution <br> for <span>Education</span></h2>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</section>
 	<!-- End of slider section
