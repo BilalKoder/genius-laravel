@@ -2062,7 +2062,7 @@ button.alt-menu-btn.float-left {
   width: 40px;
   line-height: 40px;
   border-radius: 100%;
-  color: #fff;
+  color: #009051;
   position: absolute;
   top: 50%;
   right: 0;
@@ -3354,7 +3354,9 @@ ul.product-tab li.active:after {
   overflow: hidden;
   padding-top: 10px; }
   .features-text .features-text-dec {
-    color: #009051; }
+    /* color: #009051; */
+    color: #fff; 
+  }
 
 .extra-icon-text {
   margin-bottom: 45px; }

@@ -262,8 +262,8 @@ use App\Functions\Helper;
 		<section id="why-choose" class="why-choose-section version-four backgroud-style">
 			<div class="container">
 				<div class="section-title mb20 headline text-center">
-					<span class="subtitle text-uppercase">RHMC ADVANTAGES</span>
-					<h2>Reason <span>Why Choose RHMC.</span></h2>
+					<span class="subtitle text-uppercase">Advantages of Choosing RHMC</span>
+					<h2>RHMC <span> Redefining Higher Education Worldwide</span></h2>
 				</div>
 				<div class="extra-features-content">
 					<div class="row">
@@ -279,10 +279,10 @@ use App\Functions\Helper;
 										</div>
 										<div class="features-text">
 											<div class="features-text-title">
-												<h3>The Power Of Education.</h3>
+												<h3>Unparalleled Global Network</h3>
 											</div>
 											<div class="features-text-dec">
-												<span>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam non nibh euismod tincidun laoreet.</span>
+												<span>RHMC is a leading education platform that has established strong partnerships with renowned universities and institutions worldwide. We offer a vast network of prestigious academic programs and courses from top-tier educational providers around the globe.</span>
 											</div>
 										</div>
 									</div>
@@ -299,10 +299,10 @@ use App\Functions\Helper;
 										</div>
 										<div class="features-text pt25">
 											<div class="features-text-title">
-												<h3>Best Online Education.</h3>
+												<h3>Diverse Range of Courses</h3>
 											</div>
 											<div class="features-text-dec">
-												<span>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam non nibh euismod tincidun laoreet.</span>
+												<span>Whether you seek undergraduate, graduate, or professional development programs, RHMC offers an extensive range of courses in various disciplines. From business and technology to arts and sciences, we ensure learners find the perfect fit for their educational aspirations.</span>
 											</div>
 										</div>
 									</div>
@@ -319,10 +319,10 @@ use App\Functions\Helper;
 										</div>
 										<div class="features-text pt25">
 											<div class="features-text-title">
-												<h3>Education For Student.</h3>
+												<h3>Flexible Learning Options</h3>
 											</div>
 											<div class="features-text-dec">
-												<span>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam non nibh euismod tincidun laoreet.</span>
+												<span>RHMC understands the value of flexibility in today's fast-paced world. With our online and blended learning options, students can tailor their study schedules to accommodate personal and professional commitments, making education accessible to all.</span>
 											</div>
 										</div>
 									</div>
@@ -351,10 +351,10 @@ use App\Functions\Helper;
 										</div>
 										<div class="features-text pt25">
 											<div class="features-text-title text-right pb10">
-												<h3>The Power Of Education.</h3>
+												<h3>Expert Guidance and Support</h3>
 											</div>
 											<div class="features-text-dec text-right">
-												<span>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam non nibh euismod tincidun laoreet.</span>
+												<span>Our dedicated team of educational advisors and counselors work closely with learners to understand their unique needs and guide them through the entire admission process. From selecting the right program to assisting with visa applications, RHMC provides comprehensive support at every step.</span>
 											</div>
 										</div>
 									</div>
@@ -371,10 +371,10 @@ use App\Functions\Helper;
 										</div>
 										<div class="features-text pt25">
 											<div class="features-text-title text-right pb10">
-												<h3>Best Online Education.</h3>
+												<h3>Scholarships and Financial Aid</h3>
 											</div>
 											<div class="features-text-dec text-right">
-												<span>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam non nibh euismod tincidun laoreet.</span>
+												<span>We believe in making quality education affordable. RHMC strives to connect learners with various scholarship opportunities and financial aid options, ensuring that finances are not a barrier to achieving academic excellence.</span>
 											</div>
 										</div>
 									</div>
@@ -391,10 +391,10 @@ use App\Functions\Helper;
 										</div>
 										<div class="features-text pt25">
 											<div class="features-text-title text-right pb10">
-												<h3>Education For Student.</h3>
+												<h3>EHolistic Student Experience</h3>
 											</div>
 											<div class="features-text-dec text-right">
-												<span>Lorem ipsum dolor sit amet consectuerer adipiscing elit set diam non nibh euismod tincidun laoreet.</span>
+												<span>RHMC is committed to offering a holistic learning experience beyond academics. We foster a supportive learning community where students can participate in cultural exchanges, and develop essential skills for personal and professional growth.</span>
 											</div>
 										</div>
 									</div>
@@ -463,16 +463,19 @@ use App\Functions\Helper;
 								<span class="subtitle ml42 text-uppercase">SORT ABOUT US</span>
 								<h2>We are <span>RHMC Course</span>
 								work since 1980.</h2>
-								<p>We take our mission of increasing global access to quality education seriously. We connect learners to the best universities and institutions from around the world.</p>
+								<p>At RHMC, our mission is to revolutionize the way education is accessed and experienced worldwide. As a pioneering education platform, we bridge the gap between learners and leading universities, opening doors to endless possibilities for academic and career advancement. With a firm belief in the transformative power of education, we strive to create a global learning ecosystem that nurtures curiosity, promotes inclusivity, and empowers individuals to reach their full potential.</p>
 							</div>
 							<div class="about-content-text">
-								<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam. magna aliquam volutpat. Ut wisi enim ad minim veniam.</p>
+								{{-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam. magna aliquam volutpat. Ut wisi enim ad minim veniam.</p> --}}
 								<div class="about-list mb65 ul-li-block">
 									<ul>
-										<li>Professional And Experienced Since 1980</li>
-										<li>We Connect Learners To The Best  Universities From Around The World</li>
-										<li>Our Mission Increasing Global Access To Quality Aducation</li>
-										<li>100K Online Available Courses</li>
+										<li>Connect learner from diverse backgrounds to top-notch educational institutions.</li>
+										<li>RHMC partners exclusively with accredited universities and institutions.</li>
+										<li>We ensure the highest standards of education and academic excellence.</li>
+										<li>RHMC constantly seeks to keep pace with the ever-evolving educational landscape.</li>
+										<li>RHMC offers opportunities for continuous skill development.</li>
+										<li>RHMC celebrates diversity and inclusivity.</li>
+										
 									</ul>
 								</div>
 								<div class="about-btn">
@@ -560,7 +563,7 @@ use App\Functions\Helper;
 				
 			</div>
 		</section>
-		<div class="about-course-categori one-page-category about-teacher-2">
+		{{-- <div class="about-course-categori one-page-category about-teacher-2">
 			<div class="container">
 				<div class="category-slide text-center">
 					<div class="category-icon-title text-center">
@@ -636,7 +639,7 @@ use App\Functions\Helper;
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 		<!-- /course-categori -->
 	<!-- End of best course
 		============================================= -->
@@ -644,7 +647,7 @@ use App\Functions\Helper;
 
 	<!-- Start of genius teacher v2
 		============================================= -->
-		<section id="genius-teacher-2" class="genius-teacher-section-2 one-page-teacher backgroud-style">
+		{{-- <section id="genius-teacher-2" class="genius-teacher-section-2 one-page-teacher backgroud-style">
 			<div class="container">
 				<div class="section-title mb20  headline text-center">
 					<span class="subtitle text-uppercase">LEARN NEW SKILLS</span>
@@ -839,7 +842,7 @@ use App\Functions\Helper;
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 	<!-- End of genius teacher v2
 		============================================= -->
 
@@ -925,7 +928,7 @@ use App\Functions\Helper;
 							@endforeach
 							@endif
 							<div class="view-all-btn bold-font">
-								<a  href="#">Check Calendar   <i class="fas fa-calendar-alt"></i></a>
+								<a  href="{{route('front.events')}}">View All <i class="fas fa-calendar-alt"></i></a>
 							</div>
 						</div>
 					</div>
@@ -945,7 +948,7 @@ use App\Functions\Helper;
 							<h3 class="latest-title bold-font"><a href="#">Learning IOS Apps in Amsterdam.</a></h3>
 							<p class="mb25">Lorem ipsum dolor sit amet, consectetuer delacosta adipiscing elit, sed diam nonummy.</p>
 							<div class="view-all-btn bold-font">
-								<a href="#">View All Videos <i class="fas fa-chevron-circle-right"></i></a>
+								<a href="{{route('front.webinars')}}">View All <i class="fas fa-chevron-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -1108,7 +1111,7 @@ use App\Functions\Helper;
 
 	<!-- Start of Search Courses
 		============================================= -->
-		<section id="search-course-2" class="search-course-section home-third-course-search backgroud-style">
+		{{-- <section id="search-course-2" class="search-course-section home-third-course-search backgroud-style">
 			<div class="container">
 				<div class="section-title mb20 headline text-center">
 					<span class="subtitle text-uppercase">LEARN NEW SKILLS</span>
@@ -1166,7 +1169,7 @@ use App\Functions\Helper;
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 	<!-- End of Search Courses
 		============================================= -->
 
@@ -1176,15 +1179,15 @@ use App\Functions\Helper;
 		<section id="faq" class="faq-section faq-secound-home-version backgroud-style">
 			<div class="container">
 				<div class="section-title mb45 headline text-center">
-					<span class="subtitle text-uppercase">GENIUS COURSE FAQ</span>
-					<h2>Frequently<span> Ask & Questions</span></h2>
+					{{-- <span class="subtitle text-uppercase">GENIUS COURSE FAQ</span> --}}
+					<h2>Frequently Asked Questions (FAQs)</span></h2>
 				</div>
 
 				<div class="faq-tab mb65">
 					<div class="faq-tab-ques  ul-li">
 						<div class="tab-button text-center mb65">
 							<ul class="product-tab">
-								<li class="active" rel="tab1">GENERAL </li>
+								{{-- <li class="active" rel="tab1">GENERAL </li> --}}
 							</ul>
 						</div>
 						<!-- /tab-head -->
@@ -1261,14 +1264,14 @@ use App\Functions\Helper;
 					</div>
 				</div>
 
-				<div class="about-btn text-center">
+				{{-- <div class="about-btn text-center">
 					<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 						<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
 					</div>
 					<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 						<a href="#">contact us <i class="fas fa-caret-right"></i></a>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</section>
 	<!-- End FAQ section
@@ -1277,7 +1280,7 @@ use App\Functions\Helper;
 
 	<!-- Start of testimonial secound section
 		============================================= -->
-		<section id="testimonial_2" class="testimonial_2_section">
+		{{-- <section id="testimonial_2" class="testimonial_2_section">
 			<div class="container">
 				<div class="testimonial-slide">
 					<div class="section-title-2 mb65 headline text-left">
@@ -1319,7 +1322,7 @@ use App\Functions\Helper;
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 	<!-- End  of testimonial secound section
 		============================================= -->
 
@@ -1467,13 +1470,13 @@ use App\Functions\Helper;
 							</div>
 						</div>
 
-						<div class="col-md-6">
+						{{-- <div class="col-md-6">
 							<div id="contact-map" class="contact-map-section">
 								<div id="google-map">
 									<div id="googleMaps" class="google-map-container"></div>
 								</div><!-- /#google-map-->
 							</div>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</div>
