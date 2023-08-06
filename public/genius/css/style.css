@@ -333,7 +333,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #009051; }
 
 .breadcrumb-section {
-  background-image: url(../img/banner/brt-1.jpg);
+  background-image: url(../img/banner/s-5.jpg);
   padding-bottom: 355px; }
   .breadcrumb-section .blakish-overlay {
     opacity: 1;
@@ -1257,10 +1257,10 @@ button.alt-menu-btn.float-left {
   background-image: url(../img/banner/s-3.jpg); }
 
 .slider-bg-4 {
-  background-image: url(../img/banner/s-4.jpg); }
+  background-image: url(../img/banner/s-5.jpg); }
 
 .slider-bg-5 {
-  background-image: url(../img/banner/sd-1.jpg); }
+  background-image: url(../img/banner/sd-5.jpg); }
   .slider-bg-5 .slider-text {
     max-width: 1170px;
     margin: 0 auto; }
@@ -1681,6 +1681,7 @@ button.alt-menu-btn.float-left {
     border-radius: 100%;
     position: absolute;
     background-color: #009051; }
+
 
 .about-btn .genius-btn {
   display: inline-block;

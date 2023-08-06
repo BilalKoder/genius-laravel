@@ -134,7 +134,7 @@
                             <!--end::Form group-->
                             <div class="form-group col-sm-6">
                                 <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
-                                    id="phone" type="text" placeholder="Emirates ID" name="phone" required />
+                                    id="phone" type="text" placeholder="Phone Number" name="phone" required />
                                 @error('phone')
                                 <div class="fv-plugins-message-container">
                                     <div data-field="phone" data-validator="notEmpty" class="fv-help-block">

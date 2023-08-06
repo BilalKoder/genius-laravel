@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Hash;
 
 class EnrolledCoursesController extends Controller
 {
+    use EmailTrait;
 
     public function index(Request $request) {
 
@@ -59,6 +60,11 @@ class EnrolledCoursesController extends Controller
             $course->phone = $request->phone;
             $course->address = $request->address;
             $course->save();
+
+            $course = Courses::find($request->courseId);
+
+            $this->enrolledCourse(['name' => auth()->user()->name, 'email' => auth()->user()->email, 'course' => $course->title], 'emails.enroll');
+
             DB::commit();
             return response()->json(["Success"], 200);
 

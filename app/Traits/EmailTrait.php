@@ -18,6 +18,20 @@ trait EmailTrait
             return false;
         }       
     }
+  
+    public function enrolledCourse($data, $view){
+        try {
+            Mail::send($view, $data, function ($message) use ($data) {
+                $message->from('info@rhmc.ae', 'RHMC');
+                $message->subject($data['subject'] ?? 'Enrolled Course');
+                $message->to("info@rhmc.ae");
+                // $message->cc('info@aabove.com');
+            });
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }       
+    }
 
     public function sendContactMail($data, $view){
         try {
