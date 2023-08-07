@@ -69,10 +69,16 @@ use App\Functions\Helper;
 															<span>Featured</span>
 														</div>
 														@endif
-														<div class="course-price text-center gradient-bg">
+														{{-- <div class="course-price text-center gradient-bg">
 															<span>${{$value->price??''}}</span>
+														</div> --}}
+														<div class="course-price text-center gradient-bg">
+															<span style="text-decoration: line-through;">${{$value->price??'0'}}</span>
 														</div>
-														<div class="course-rate ul-li">
+														<div style="margin-left:100px" class="course-price text-center gradient-bg">
+															<span id="sale-price">${{$value->sale_price??'0'}}</span>
+														</div>
+														{{-- <div class="course-rate ul-li">
 															<ul>
 																<li><i class="fas fa-star"></i></li>
 																<li><i class="fas fa-star"></i></li>
@@ -80,19 +86,22 @@ use App\Functions\Helper;
 																<li><i class="fas fa-star"></i></li>
 																<li><i class="fas fa-star"></i></li>
 															</ul>
-														</div>
+														</div> --}}
 														<div class="course-details-btn">
-															<a href="{{ route('learning.detail', ['id' => $value->id]) }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+															<a href="{{ route('learning.detail', ['id' => $value->id]) }}"> <i class="fas fa-arrow-right"></i></a>
 														</div>
 														<div class="blakish-overlay"></div>
 													</div>
 													<div class="best-course-text">
 														<div class="course-title mb20 headline relative-position">
-															<h3><a href="{{ route('learning.detail', ['id' => $value->id]) }}">{{$value->title??''}}</a></h3>
+															<h3><a href="{{ route('learning.detail', ['id' => $value->id]) }}">{{$value->title??''}}</a>
+															@if($value->best_seller == 1) <span style="top:0px !important;" class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> BEST SELLER</span>@endif
+																
+															</h3>
 														</div>
-														<div class="course-meta">
+														{{-- <div class="course-meta">
 															<span class="course-category"><a href="{{ route('learning.detail', ['id' => $value->id]) }}">Web Design</a></span>
-														</div>
+														</div> --}}
 													</div>
 												</div>
 											</div>

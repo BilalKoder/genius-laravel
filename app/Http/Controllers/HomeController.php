@@ -34,12 +34,13 @@ class HomeController extends Controller
     public function index()
     {
         $data['page_title'] = 'Home';
-        $data['popularCourses'] = Courses::where('is_featured',1)->where('status',1)->limit(4)->orderBy('id','DESC')->get();
+        $data['popularCourses'] = Courses::where('best_seller',1)->where('status',1)->limit(4)->orderBy('id','DESC')->get();
         $data['courses'] = Courses::where('status',1)->limit(4)->orderBy('id','DESC')->get();
         $data['blogs'] = Blogs::where('status',1)->limit(2)->orderBy('id','DESC')->get();
         $data['events'] = Events::limit(3)->orderBy('id','DESC')->get();
         $data['faqs'] = Faqs::limit(4)->get();
         $data['webinar'] = Webinar::first();
+        // dd($data['popularCourses']);
         return view('front.home',$data);
     }
     

@@ -75,16 +75,16 @@ use App\Functions\Helper;
 															</ul> --}}
 														</div>
 														<div class="course-details-btn">
-															<a href="{{ route('event.detail', ['id' => $value->id]) }}">EVENT DETAIL <i class="fas fa-arrow-right"></i></a>
+															<a href="javscript:void(0)">EVENT DETAIL <i class="fas fa-arrow-right"></i></a>
 														</div>
 														<div class="blakish-overlay"></div>
 													</div>
 													<div class="best-course-text">
 														<div class="course-title mb20 headline relative-position">
-															<h3><a href="{{ route('event.detail', ['id' => $value->id]) }}">{{$value->title??''}}</a></h3>
+															<h3><a href="javscript:void(0)">{{$value->title??''}}</a></h3>
 														</div>
 														<div class="course-meta">
-															<span class="course-category"><a href="{{ route('event.detail', ['id' => $value->id]) }}">{{$value->user->name??''}}</a></span>
+															<span class="course-category"><a href="javscript:void(0)">{{$value->user->name??''}}</a></span>
 														</div>
 													</div>
 												</div>

@@ -40,7 +40,7 @@ use App\Functions\Helper;
 							</div>
 						</div>
 						<div class="layer-1-3">
-							<div class="search-course mb30 relative-position">
+							{{-- <div class="search-course mb30 relative-position">
 								<form action="#" method="post">
 									<input class="course" name="course" type="text" placeholder="Type what do you want to learn today?">
 									<div class="nws-button text-center  gradient-bg text-capitalize">
@@ -59,11 +59,18 @@ use App\Functions\Helper;
 										<li>Science</li>
 									</ul>
 								</div>
+							</div> --}}
+							<div class="layer-1-4">
+								<div id="course-btn">
+									<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
+										<a href="{{route('learning')}}">Best Courses <i class="fas fa-caret-right"></i></a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="slider-area slider-bg-3 relative-position">
+				{{-- <div class="slider-area slider-bg-3 relative-position">
 					<div class="slider-text">
 						<div class="layer-1-2">
 							<div class="coming-countdown ul-li">
@@ -101,13 +108,13 @@ use App\Functions\Helper;
 									<a href="#">About Us <i class="fas fa-caret-right"></i></a>
 								</div>
 								<div class="genius-btn text-center text-uppercase ul-li-block bold-font">
-									<a href="#">contact us <i class="fas fa-caret-right"></i></a>
+									<a href="mailto:info.rhmc.ae">contact us <i class="fas fa-caret-right"></i></a>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				{{-- <div class="slider-area slider-bg-4 relative-position">
+				</div> --}}
+				<div class="slider-area slider-bg-4 relative-position">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
@@ -123,7 +130,7 @@ use App\Functions\Helper;
 
 	<!-- Start of Search Courses
 		============================================= -->
-		<section id="search-course" class="search-course-section search-course-third">
+		{{-- <section id="search-course" class="search-course-section search-course-third">
 			<div class="container">
 				<div class="search-counter-up">
 					<div class="version-four">
@@ -183,7 +190,7 @@ use App\Functions\Helper;
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> --}}
 	<!-- End of Search Courses
 		============================================= -->
 
@@ -201,15 +208,19 @@ use App\Functions\Helper;
 				@php
 				$counter = 0;
 				@endphp
-				@if(!empty($courses))
-				@foreach($courses as $key => $course)
+				@if(!empty($popularCourses))
+				@foreach($popularCourses as $key => $course)
 				
 					<div class="course-item-pic-text">
 						<div class="course-pic relative-position mb25">
-							<img src="<?= asset($course->media)?>" alt="">
+							<img src="<?= asset($course->media??'')?>" alt="">
 							<div class="course-price text-center gradient-bg">
-								<span>${{$course->price??'0'}}</span>
+								<span style="text-decoration: line-through;">${{$course->price??'0'}}</span>
 							</div>
+							<div style="margin-left:100px" class="course-price text-center gradient-bg">
+								<span id="sale-price">${{$course->sale_price??'0'}}</span>
+							</div>
+							
 							<div class="course-details-btn">
 								<a href="{{ route('learning.detail', ['id' => $course->id]) }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
 							</div>
@@ -232,7 +243,7 @@ use App\Functions\Helper;
 							</div>
 							<div class="course-title mt10 headline pb45 relative-position">
 								<h3><a href="{{ route('learning.detail', ['id' => $course->id]) }}">{{$course->title??''}}</a>
-								@if($course->is_featured == 1) <span class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> FEATURED</span>@endif</h3>
+								@if($course->best_seller == 1) <span class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> BEST SELLER</span>@endif</h3>
 							</div>
 							<!-- <div class="course-viewer ul-li">
 								<ul>
@@ -479,11 +490,11 @@ use App\Functions\Helper;
 									</ul>
 								</div>
 								<div class="about-btn">
-									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+									{{-- <div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 										<a href="#">About Us <i class="fas fa-caret-right"></i></a>
-									</div>
+									</div> --}}
 									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-										<a href="#">contact us <i class="fas fa-caret-right"></i></a>
+										<a href="mailto:info.rhmc.ae">contact us <i class="fas fa-caret-right"></i></a>
 									</div>
 								</div>
 							</div>
@@ -516,17 +527,23 @@ use App\Functions\Helper;
 						<div class="col-md-3">
 							<div class="best-course-pic-text relative-position">
 								<div class="best-course-pic relative-position">
-									<img src="<?= asset($value->media)?>" alt="">
+									<img src="<?= asset($value->media??'')?>" alt="">
 									@if($value->is_featured == 1)
 									<div class="trend-badge-2 text-center text-uppercase">
 										<i class="fas fa-bolt"></i>
 										<span>FEATURED</span>
 									</div>
 									@endif
-									<div class="course-price text-center gradient-bg">
+									{{-- <div class="course-price text-center gradient-bg">
 										<span>${{$value->price??'0'}}</span>
+									</div> --}}
+									<div class="course-price text-center gradient-bg">
+										<span style="text-decoration: line-through;">${{$value->price??'0'}}</span>
 									</div>
-									<div class="course-rate ul-li">
+									<div style="margin-left:100px" class="course-price text-center gradient-bg">
+										<span id="sale-price">${{$value->sale_price??'0'}}</span>
+									</div>
+									{{-- <div class="course-rate ul-li">
 										<ul>
 											<li><i class="fas fa-star"></i></li>
 											<li><i class="fas fa-star"></i></li>
@@ -534,15 +551,17 @@ use App\Functions\Helper;
 											<li><i class="fas fa-star"></i></li>
 											<li><i class="fas fa-star"></i></li>
 										</ul>
-									</div>
+									</div> --}}
 									<div class="course-details-btn">
-										<a href="{{ route('learning.detail', ['id' => $value->id]) }}">COURSE DETAIL <i class="fas fa-arrow-right"></i></a>
+										<a href="{{ route('learning.detail', ['id' => $value->id]) }}"> <i class="fas fa-arrow-right"></i></a>
 									</div>
 									<div class="blakish-overlay"></div>
 								</div>
 								<div class="best-course-text">
 									<div class="course-title mb20 headline relative-position">
-										<h3><a href="{{ route('learning.detail', ['id' => $value->id]) }}">{{$value->title??''}}</a></h3>
+										<h3><a href="{{ route('learning.detail', ['id' => $value->id]) }}">{{$value->title??''}}</a>
+											@if($value->best_seller == 1) <span style="top:0px !important;" class="trend-badge text-uppercase bold-font"><i class="fas fa-bolt"></i> BEST SELLER</span>@endif
+										</h3>
 									</div>
 									<div class="course-meta">
 										<span class="course-category"><a href="{{ route('learning.detail', ['id' => $value->id]) }}">	
@@ -871,7 +890,7 @@ use App\Functions\Helper;
 
 								<div class="latest-news-area">
 									<div class="latest-news-thumbnile relative-position">
-										<img src="<?= asset($blog->media)?>" alt="">
+										<img src="<?= asset($blog->media??'')?>" alt="">
 										<div class="hover-search">
 											<i class="fas fa-search"></i>
 										</div>
@@ -880,7 +899,7 @@ use App\Functions\Helper;
 									<div class="date-meta">
 										<i class="fas fa-calendar-alt"></i> {{ \Carbon\Carbon::parse($blog->created_at)->format('d F Y') }}
 									</div>
-									<h3 class="latest-title bold-font"><a href="#">{{$blog->name??''}}</a></h3>
+									<h3 class="latest-title bold-font"><a href="{{route('front.blogs.solo', $blog->id)}}">{{$blog->name??''}}</a></h3>
 									<!-- <div class="course-viewer ul-li">
 										<ul>
 											<li><a href=""><i class="fas fa-user"></i> 1.220</a></li>
@@ -928,7 +947,7 @@ use App\Functions\Helper;
 							@endforeach
 							@endif
 							<div class="view-all-btn bold-font">
-								<a  href="{{route('front.events')}}">View All <i class="fas fa-calendar-alt"></i></a>
+								<a  href="{{route('front.events')}}">Show All Events<i class="fas fa-chevron-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -937,18 +956,18 @@ use App\Functions\Helper;
 					<div class="col-md-4">
 						<div class="latest-area-content">
 							<div class="section-title-2 mb65 headline text-left">
-								<h2>Latest <span>Video.</span></h2>
+								<h2>Latest <span>Webinars.</span></h2>
 							</div>
 							<div class="latest-video-poster relative-position mb20">
-								<img src="<?= asset('genius/img/banner/v-1.jpg')?>" alt="">
+								<img src="<?= asset($webinar->media??'')?>" alt="">
 								<div class="video-play-btn text-center gradient-bg">
-									<a class="popup-with-zoom-anim" href="https://www.youtube.com/watch?v=-g4TnixUdSc"><i class="fas fa-play"></i></a>
+									<a class="popup-with-zoom-anim" href="{{$webinar->video_url??''}}"><i class="fas fa-play"></i></a>
 								</div>
 							</div>
-							<h3 class="latest-title bold-font"><a href="#">Learning IOS Apps in Amsterdam.</a></h3>
-							<p class="mb25">Lorem ipsum dolor sit amet, consectetuer delacosta adipiscing elit, sed diam nonummy.</p>
+							<h3 class="latest-title bold-font"><a href="#">{{$webinar->title??'' }}</a></h3>
+							<p class="mb25">{{ Illuminate\Support\Str::limit($webinar->description??'', $limit = 100, $end = '...') }}							</p>
 							<div class="view-all-btn bold-font">
-								<a href="{{route('front.webinars')}}">View All <i class="fas fa-chevron-circle-right"></i></a>
+								<a href="{{route('front.webinars')}}">Show All Webinars <i class="fas fa-chevron-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -1115,7 +1134,7 @@ use App\Functions\Helper;
 			<div class="container">
 				<div class="section-title mb20 headline text-center">
 					<span class="subtitle text-uppercase">LEARN NEW SKILLS</span>
-					<h2><span>Search</span> Genius Courses.</h2>
+					<h2><span>Search</span> RHMC Courses.</h2>
 				</div>
 				<div class="search-course mb30 relative-position">
 					<form action="#" method="post">
@@ -1198,76 +1217,38 @@ use App\Functions\Helper;
 							<!-- 1st tab -->
 							<div id="tab1" class="tab-content-1 pt35">
 								<div id="accordion" class="panel-group">
-									<div class="panel">
-										<div class="panel-title" id="headingOne">
-											<h3 class="mb-0">
-												<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-													How to Register or Make An Account in Genius?
-												</button>
-											</h3>
-										</div>
-										<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
+								
+									@if(!empty($faqs))
+									@foreach($faqs as $key => $faq)
+										@php
+										// Generate a unique identifier for the FAQ item
+										$uniqueId = uniqid();
+									@endphp
+										<div class="panel">
+											<div class="panel-title" id="heading{{$uniqueId}}">
+												<h3 class="mb-0">
+													<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{$uniqueId}}" aria-expanded="false" aria-controls="collapse{{$uniqueId}}">
+														{{$faq->question ?? ''}}
+													</button>
+												</h3>
+											</div>
+											<div id="collapse{{$uniqueId}}" class="collapse" aria-labelledby="heading{{$uniqueId}}" data-parent="#accordion">
+												<div class="panel-body">
+													{{$faq->answer ?? ''}}
+												</div>
 											</div>
 										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="headingTwo">
-											<h3 class="mb-0">
-												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-													What is Genius Courses?
-												</button>
-											</h3>
-										</div>
-										<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-											</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="headingThree">
-											<h3 class="mb-0">
-												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-													What Lorem Ipsum Dolor Sit Amet Consectuerer?
-												</button>
-											</h3>
-										</div>
-										<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-											</div>
-										</div>
-									</div>
-									<div class="panel">
-										<div class="panel-title" id="headingFoure">
-											<h3 class="mb-0">
-												<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFoure" aria-expanded="false" aria-controls="collapseFoure">
-													Adipiscing Diamet Nonnumy Nibh Euismod?
-												</button>
-											</h3>
-										</div>
-										<div id="collapseFoure" class="collapse" data-parent="#accordion">
-											<div class="panel-body">
-												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam volutpat. Ut wisi enim ad minim veniam consectetuer adipiscing elit, sed diam nonummy.
-											</div>
-										</div>
-									</div>
+										@endforeach
+									@endif
 								</div>
 								<!-- end of #accordion -->
-
 							</div>
 							<!-- #tab1 -->
-
 						</div>
 					</div>
 				</div>
 
 				{{-- <div class="about-btn text-center">
-					<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
-						<a href="#">Make Question <i class="fas fa-caret-right"></i></a>
-					</div>
 					<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 						<a href="#">contact us <i class="fas fa-caret-right"></i></a>
 					</div>
@@ -1380,7 +1361,7 @@ use App\Functions\Helper;
 				</div>
 				
 				<div class="contact_third_form">
-					<form class="contact_form" action="#" method="POST" enctype="multipart/form-data">
+					<form class="contact_form" id="myForm" action="#" method="POST" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-md-4">
 								<div class="contact-info">
@@ -1400,8 +1381,15 @@ use App\Functions\Helper;
 						</div>
 						<textarea  placeholder="Message."></textarea>
 						<div class="nws-button text-center  gradient-bg text-uppercase">
-							<button type="submit" value="Submit">SEND EMAIL <i class="fas fa-caret-right"></i></button> 
+							{{-- <button type="submit" value="Submit">SEND EMAIL <i class="fas fa-caret-right"></i></button>  --}}
+							<a href="#" id="submitForm">SEND EMAIL <i class="fas fa-caret-right"></i></a>
 						</div>
+						{{-- <div class="about-btn text-center">
+							<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+								<a href="#" id="submitForm">SEND EMAIL <i class="fas fa-caret-right"></i></a>
+								<button type="submit" value="Submit">SEND EMAIL <i class="fas fa-caret-right"></i></button> 
+							</div>
+						</div> --}}
 					</form>
 				</div>
 			</div>
@@ -1434,8 +1422,8 @@ use App\Functions\Helper;
 										</div>
 										<div class="address-details ul-li-block">
 											<ul>
-												<li><span>Primary: </span>Last Vegas, 120 Graphic Street, US</li>
-												<li><span>Second: </span>Califorinia, 88 Design Street, US</li>
+												<li><span>Location: </span>Last Vegas, 120 Graphic Street, US</li>
+												{{-- <li><span>Second: </span>Califorinia, 88 Design Street, US</li> --}}
 											</ul>
 										</div>
 									</div>
@@ -1446,8 +1434,8 @@ use App\Functions\Helper;
 										</div>
 										<div class="address-details ul-li-block">
 											<ul>
-												<li><span>Primary: </span>(100) 3434 55666</li>
-												<li><span>Second: </span>(20) 3434 9999</li>
+												<li><span>Primary: </span>+97143967462</li>
+												{{-- <li><span>Second: </span>(20) 3434 9999</li> --}}
 											</ul>
 										</div>
 									</div>
@@ -1458,15 +1446,15 @@ use App\Functions\Helper;
 										</div>
 										<div class="address-details ul-li-block">
 											<ul>
-												<li><span>Primary: </span>info@geniuscourse.com</li>
-												<li><span>Second: </span>mail@genius.info</li>
+												<li><span>Primary: </span>info.rhmc.ae</li>
+												{{-- <li><span>Second: </span>mail@genius.info</li> --}}
 											</ul>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="genius-btn mt60 gradient-bg text-center text-uppercase ul-li-block bold-font">
-								<a href="#">Contact Us <i class="fas fa-caret-right"></i></a>
+								<a href="mailto:info.rhmc.ae">Contact Us <i class="fas fa-caret-right"></i></a>
 							</div>
 						</div>
 
