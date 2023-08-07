@@ -5,9 +5,13 @@ use App\Functions\Helper;
 @endphp
 
 @extends('front.app')
+<style>
+	.breadcrumb-section{
+		background-image: url(../img/banner/learning-1.jpg) !important;
+	}
+
+</style>
 @section('content')
-
-
 	<!-- Start of breadcrumb section
 		============================================= -->
 		<section id="breadcrumb" class="breadcrumb-section relative-position backgroud-style">
@@ -15,7 +19,7 @@ use App\Functions\Helper;
 			<div class="container">
 				<div class="page-breadcrumb-content text-center">
 					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">RHMC <span>Learning</span></h2>
+						<h2 class="breadcrumb-head black bold"><span>Learning</span></h2>
 					</div>
 					<div class="page-breadcrumb-item ul-li">
 						<ul class="breadcrumb text-uppercase black">
