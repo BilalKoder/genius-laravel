@@ -25,7 +25,7 @@ class MyAuthController extends Controller
         // dd('a');
         $data['title'] = 'Register | RHMC';
         // $data['roles'] = Role::where('id', '!=', 1)->get();
-        return view('auth.basic-register', $data);
+        return view('auth.basic-register2', $data);
     }
 
     public function store(Request $request){

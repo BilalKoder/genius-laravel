@@ -5,6 +5,12 @@ use App\Functions\Helper;
 @endphp
 
 @extends('front.app')
+<style>
+	.breadcrumb-section{
+		background-image: url(../genius/img/banner/webinar-1.jpg) !important;
+	}
+
+</style>
 @section('content')
 
 

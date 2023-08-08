@@ -7,6 +7,12 @@ $index = 0;
 @endphp
 
 @extends('front.app')
+<style>
+	.breadcrumb-section{
+		background-image: url(../genius/img/banner/faq-1.jpg) !important;
+	}
+
+</style>
 @section('content')
 
 

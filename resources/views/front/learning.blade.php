@@ -7,7 +7,7 @@ use App\Functions\Helper;
 @extends('front.app')
 <style>
 	.breadcrumb-section{
-		background-image: url(../img/banner/learning-1.jpg) !important;
+		background-image: url(../genius/img/banner/learning-1.jpg) !important;
 	}
 
 </style>

@@ -49,7 +49,7 @@
                             <!--begin::Title-->
                             @csrf
                             <div class="pb-3 pt-lg-0 pt-5" style="display: flex; justify-content: center; align-items: center;">
-                                <a href="#" class="text-center mb-10">
+                                <a href="{{route('home')}}" class="text-center mb-10">
                                     <img src="{{ asset('/genius/img/logo/RHMC-logo.png') }}" class="max-h-70px" alt="" />
                                 </a>    
                             </div>
