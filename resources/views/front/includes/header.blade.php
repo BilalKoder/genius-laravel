@@ -331,7 +331,7 @@
 
 						<div class="logo-area">
 							<a href="index-1.html">
-								<img src="<?= asset('genius/img/logo/logo.png')?>" alt="Logo_not_found">
+								<img src="<?= asset('genius/img/logo/RHMC-logo.png')?>" alt="Logo_not_found">
 							</a>
 						</div>
 
