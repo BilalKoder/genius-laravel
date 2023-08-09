@@ -337,7 +337,8 @@
 
 						<div class="cart-btn pulse  ul-li float-right">
 							<ul>
-								<li><a data-toggle="modal" data-target="#myModal-2"  href="#"><i class="fas fa-user"></i></a>
+								{{-- <li><a data-toggle="modal" data-target="#myModal-2"  href="#"><i class="fas fa-user"></i></a> --}}
+								<li><a href="{{url('/login')}}"><i class="fas fa-user"></i></a>
 								</li>
 								{{-- <li><a href="#"><i class="fas fa-shopping-bag"></i></a></li> --}}
 							</ul>
@@ -395,21 +396,28 @@
 				</div>
 
 				<ul class="menu-list accordion" style="left: -100%;">
-					<li class="alt-search">
+					{{-- <li class="alt-search">
 						<form action="#">
 							<input type="search" placeholder="search">
 						</form>
-					</li>
-					<li class="card">
+					</li> --}}
+					<li class="card"><a class="menu-link" href="{{url('/')}}">Home</a></li>
+					<li class="card"><a class="menu-link" href="{{route('learning')}}">Learning</a></li>
+					<li class="card"><a class="menu-link" href="{{route('front.webinars')}}">Webinar</a></li>
+					<li class="card"><a class="menu-link" href="{{route('front.faqs')}}">FAQ</a></li>
+					<li class="card"><a class="menu-link" href="{{route('front.blogs')}}">Blogs</a></li>
+					<li class="card"><a class="menu-link" href="{{route('front.events')}}">Events</a></li>
+					
+					{{-- <li class="card">
 						<a class="menu-link" href="index-1.html">Home</a>
 					</li>
 					
 					<li class="card">
 						<a class="menu-link" href="about.html">About Us</a>
-					</li>
+					</li> --}}
 
 					<!-- services - start -->
-					<li class="card active">
+					{{-- <li class="card active">
 						<div class="card-header" id="heading1">
 							<button class="menu-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
 								Service
@@ -419,11 +427,11 @@
 							<li class="active"><a href="service.html">Service</a></li>
 							<li><a href="service-details.html">Service Details</a></li>
 						</ul>
-					</li>
+					</li> --}}
 					<!-- services - end -->
 
 					<!-- team - start -->
-					<li class="card">
+					{{-- <li class="card">
 						<div class="card-header" id="headingtwo">
 							<button class="menu-link" data-toggle="collapse" data-target="#collapsetwo" aria-expanded="true" aria-controls="collapsetwo">
 								Team
@@ -433,11 +441,11 @@
 							<li><a href="team.html">Team</a></li>
 							<li><a href="team-details.html">Team Details</a></li>
 						</ul>
-					</li>
+					</li> --}}
 					<!-- team - end -->
 
 					<!-- shop - start -->
-					<li class="card">
+					{{-- <li class="card">
 						<div class="card-header" id="headingthree">
 							<button class="menu-link" data-toggle="collapse" data-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
 								Shop
@@ -448,11 +456,11 @@
 							<li><a href="checkout.html">Checkout</a></li>
 							<li><a href="product-details.html">Product Details</a></li>
 						</ul>
-					</li>
+					</li> --}}
 					<!-- shop - end -->
 
 					<!-- newses - start -->
-					<li class="card">
+					{{-- <li class="card">
 						<div class="card-header" id="headingfour">
 							<button class="menu-link" data-toggle="collapse" data-target="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
 								Newses
@@ -462,11 +470,11 @@
 							<li><a href="blog.html">Blog</a></li>
 							<li><a href="blog-details.html">Blog Details</a></li>
 						</ul>
-					</li>
+					</li> --}}
 					<!-- newses - end -->
 
 					<!-- contact - start -->
-					<li class="card">
+					{{-- <li class="card">
 						<div class="card-header" id="headingfive">
 							<button class="menu-link" data-toggle="collapse" data-target="#collapsefive" aria-expanded="true" aria-controls="collapsefive">
 								Contact
@@ -476,11 +484,11 @@
 							<li><a href="contact.html">Contact</a></li>
 							<li><a href="contactv2.html">Contact V2</a></li>
 						</ul>
-					</li>
+					</li> --}}
 					<!-- contact - end -->
 
 					<!-- pages - start -->
-					<li class="card">
+					{{-- <li class="card">
 						<div class="card-header" id="headingsix">
 							<button class="menu-link" data-toggle="collapse" data-target="#collapsesix" aria-expanded="true" aria-controls="collapsesix">
 								Pages
@@ -492,7 +500,7 @@
 							<li><a href="work-process.html">work process</a></li>
 							<li><a href="register.html">Register</a></li>
 						</ul>
-					</li>
+					</li> --}}
 					<!-- pages - end -->
 
 				</ul>

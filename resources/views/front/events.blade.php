@@ -99,7 +99,7 @@ use App\Functions\Helper;
 							</div>
 						</div>
 
-						<div class="couse-pagination text-center ul-li">
+						{{-- <div class="couse-pagination text-center ul-li">
 							<ul>
 								<li class="pg-text"><a href="#">PREV</a></li>
 								<li><a href="#">01</a></li>
@@ -110,7 +110,7 @@ use App\Functions\Helper;
 								<li><a href="#">15</a></li>
 								<li class="pg-text"><a href="#">NEXT</a></li>
 							</ul>
-						</div>
+						</div> --}}
 					</div>
 
 					
