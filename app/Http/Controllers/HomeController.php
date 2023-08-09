@@ -10,12 +10,16 @@ use App\Events;
 use App\Faqs;
 use App\Webinar;
 use Carbon\Carbon;
+use App\Traits\EmailTrait;
 use App\User;
 use App\Advertisement;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+
+    use EmailTrait;
+
     /**
      * Create a new controller instance.
      *
@@ -67,6 +71,41 @@ class HomeController extends Controller
 
         $data['categories'] = Categories::where('type', "COURSES")->orderBy('id', 'DESC')->get();
         return view('front.learning',$data);
+    }
+
+    public function submitRequest(Request $request){
+        
+        try{
+            // dd($request->all());
+
+            if(isset($request->course_id)){
+                $course = Courses::find($request->course_id);
+            }
+
+            $this->submittedRequest([
+            'name' => $request->name,
+            'email' => $request->email,
+            'number' => $request->nbm,
+            'course' => (isset($request->course_id)) ? $course->title:'',
+            'date' => $request->date,
+            'message' => $request->message], 
+            'emails.request');
+            
+
+            $notification = array(
+                'message' => 'Submitted Successfully',
+                'alert-type' => 'success'
+            );
+
+        } catch (\Throwable $th) {
+
+            $notification = array(
+                'message' => 'Some error occured',
+                'alert-type' => 'error'
+            );
+        }
+
+        return redirect('/')->with($notification);
     }
     public function events(Request $request)
     {

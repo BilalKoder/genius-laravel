@@ -40,26 +40,7 @@ use App\Functions\Helper;
 							</div>
 						</div>
 						<div class="layer-1-3">
-							{{-- <div class="search-course mb30 relative-position">
-								<form action="#" method="post">
-									<input class="course" name="course" type="text" placeholder="Type what do you want to learn today?">
-									<div class="nws-button text-center  gradient-bg text-capitalize">
-										<button type="submit" value="Submit">Search Course</button> 
-									</div>
-								</form>
-							</div>
-							<div class="layer-1-4">
-								<div class="slider-course-category ul-li text-center">
-									<span class="float-left">BY CATEGORY:</span>
-									<ul>
-										<li>Graphics Design</li>
-										<li>Web Design</li>
-										<li>Mobile Application</li>
-										<li>Enginering</li>
-										<li>Science</li>
-									</ul>
-								</div>
-							</div> --}}
+						
 							<div class="layer-1-4">
 								<div id="course-btn">
 									<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
@@ -70,50 +51,7 @@ use App\Functions\Helper;
 						</div>
 					</div>
 				</div>
-				{{-- <div class="slider-area slider-bg-3 relative-position">
-					<div class="slider-text">
-						<div class="layer-1-2">
-							<div class="coming-countdown ul-li">
-								<ul>
-									<li class="days">
-										<span class="number"></span>
-										<span class>Days</span>
-									</li>
-
-									<li class="hours">
-										<span class="number"></span>
-										<span class>Hours</span>
-									</li>
-
-									<li class="minutes">
-										<span class="number"></span>
-										<span class>Minutes</span>
-									</li>
-
-									<li class="seconds">
-										<span class="number"></span>
-										<span class>Seconds</span>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="section-title mb20 headline text-center">
-							<div class="layer-1-3">
-								<h2 class="third-slide"> Mobile Application Experiences : <br> <span>Mobile App Design.</span></h2>
-							</div>
-						</div>
-						<div class="layer-1-4">
-							<div class="about-btn text-center">
-								<div class="genius-btn text-center text-uppercase ul-li-block bold-font">
-									<a href="#">About Us <i class="fas fa-caret-right"></i></a>
-								</div>
-								<div class="genius-btn text-center text-uppercase ul-li-block bold-font">
-									<a href="mailto:info.rhmc.ae">contact us <i class="fas fa-caret-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div> --}}
+			
 				<div class="slider-area slider-bg-4 relative-position">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
@@ -121,7 +59,7 @@ use App\Functions\Helper;
 							<h2><span>Inventive</span> Solution <br> for <span>Education</span></h2>
 						</div>
 					</div>
-				</div> --}}
+				</div> 
 			</div>
 		</section>
 	<!-- End of slider section
@@ -435,26 +373,29 @@ use App\Functions\Helper;
 									<p>More Than 122K Online Available Courses</p>
 								</div>
 								<div class="register-form-area">
-									<form class="contact_form" action="#" method="POST" enctype="multipart/form-data">
+									<form class="contact_form" action="{{route('submit.request')}}" method="POST" enctype="multipart/form-data">
+									@csrf
 										<div class="contact-info">
-											<input class="name" name="name" type="text" placeholder="Your Name.">
+											<input class="name" name="name" type="text" placeholder="Your Name." required>
 										</div>
 										<div class="contact-info">
-											<input class="nbm" name="nbm" type="number" placeholder="Your Number">
+											<input class="nbm" name="nbm" type="number" placeholder="Your Number" required>
 										</div>
 										<div class="contact-info">
-											<input class="email" name="email" type="email" placeholder="Email Address.">
+											<input class="email" name="email" type="email" placeholder="Email Address." required>
 										</div>
-										<select>
-											<option value="9" selected="">Select Course.</option>
-											<option value="10">Web Design</option>
-											<option value="11">Web Development</option>
-											<option value="12">Php Core</option>
+										<select name="course_id" required>
+											@if(!empty($courses))
+											<option value="0" selected="">Select Course.</option>
+											@foreach($courses as $course)
+											<option value="{{$course->id}}" >{{$course->title??''}}</option>
+											@endforeach
+											@endif
 										</select>
 										<div class="contact-info">
-											<input type="text" id="datepicker" placeholder="Date.">
+											<input name="date" type="text" id="datepicker" placeholder="Date." required>
 										</div>
-										<textarea  placeholder="Message."></textarea>
+										<textarea name="message" placeholder="Message."></textarea>
 										<div class="nws-button text-uppercase text-center white text-capitalize">
 											<button type="submit" value="Submit">SUBMIT REQUEST </button> 
 										</div> 

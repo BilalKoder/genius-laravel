@@ -55,6 +55,7 @@ Route::get('/terms-and-conditions','PagesController@terms_and_conditions')->name
 
 //login for ajax
 Route::post('admin/login', 'UserController@loginAjax')->name('login.ajax');
+Route::post('submit-request', 'HomeController@submitRequest')->name('submit.request');
 //signup for ajax
 Route::post('admin/register', 'UserController@registerAjax')->name('register.ajax');
 
