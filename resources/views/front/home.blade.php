@@ -12,18 +12,22 @@ use App\Functions\Helper;
 				<div  class="slider-area slider-bg-1 relative-position">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
+							
 							<div class="layer-1-1">
-								<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+								{{-- <span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span> --}}
 							</div>
 							<div class="layer-1-3">
-								<h2><span>Inventive</span> Solution <br> for <span>Education</span></h2>
+								<h2><span>Inventive Solution <br> for Education</span></h2>
 							</div>
+
 						</div>
 						<div class="layer-1-4">
+							
 							<div id="course-btn">
-								<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
+								
+								{{-- <div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
 									<a href="{{route('learning')}}">Our Courses <i class="fas fa-caret-right"></i></a>
-								</div>
+								</div> --}}
 							</div>
 						</div>
 					</div>
@@ -33,7 +37,7 @@ use App\Functions\Helper;
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-1">
-								<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
+								{{-- <span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span> --}}
 							</div>
 							<div class="layer-1-2">
 								<h2 class="secoud-title"> Browse The <span>Best Courses.</span></h2>
@@ -117,11 +121,11 @@ use App\Functions\Helper;
 				<div class="slider-area slider-bg-4 relative-position">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
-							<span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span>
-							<h2><span>Inventive</span> Solution <br> for <span>Education</span></h2>
+							{{-- <span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span> --}}
+							<h2><span>Inventive Solution <br> for Education</span></h2>
 						</div>
 					</div>
-				</div> --}}
+				</div> 
 			</div>
 		</section>
 	<!-- End of slider section
@@ -199,7 +203,7 @@ use App\Functions\Helper;
 		============================================= -->
 		<section id="popular-course" class="popular-course-section popular-three">
 			<div class="container">
-				<div class="section-title mb20 headline text-left">
+				<div class="section-title mb30 headline text-center">
 					<span class="subtitle text-uppercase">LEARN NEW SKILLS</span>
 					<h2><span>Popular</span> Courses.</h2>
 				</div>
@@ -270,18 +274,26 @@ use App\Functions\Helper;
 
 	<!-- Start why choose section
 		============================================= -->
-		<section id="why-choose" class="why-choose-section version-four backgroud-style">
+		<section id="why-choose-1" class="why-choose-section version-four backgroud-style-heading">
 			<div class="container">
 				<div class="section-title mb20 headline text-center">
 					<span class="subtitle text-uppercase">Advantages of Choosing RHMC</span>
-					<h2>RHMC <span> Redefining Higher Education Worldwide</span></h2>
+					<h2>RHMC <span class="text-green"> Redefining Higher Education Worldwide</span></h2>
 				</div>
+			</div>
+		</section>
+		<section id="why-choose" class="why-choose-section green-custom-background version-four backgroud-style">
+			<div class="container">
+				{{-- <div class="section-title mb20 headline text-center">
+					<span class="subtitle text-uppercase">Advantages of Choosing RHMC</span>
+					<h2>RHMC <span> Redefining Higher Education Worldwide</span></h2>
+				</div> --}}
 				<div class="extra-features-content">
 					<div class="row">
-						<div class="col-md-4 col-sm-6">
+						<div class="col-md-6 col-sm-6">
 							<div class="extra-left">
 								<div class="extra-left-content">
-									<div class="extra-icon-text text-left">
+									<div class="extra-icon-text text-justify">
 										<div class="features-icon gradient-bg text-center">
 											<i class="flaticon-maths-class-materials-cross-of-a-pencil-and-a-ruler"></i>
 											<div class="feat-tag">
@@ -301,7 +313,7 @@ use App\Functions\Helper;
 								<!-- // extra-left-content --> 
 
 								<div class="extra-left-content">
-									<div class="extra-icon-text">
+									<div class="extra-icon-text text-justify">
 										<div class="features-icon gradient-bg text-center">
 											<i class=" flaticon-clipboard-with-pencil"></i>
 											<div class="feat-tag">
@@ -321,7 +333,7 @@ use App\Functions\Helper;
 								<!-- // extra-left-content -->
 
 								<div class="extra-left-content">
-									<div class="extra-icon-text">
+									<div class="extra-icon-text text-justify">
 										<div class="features-icon gradient-bg text-center">
 											<i class="flaticon-list"></i>
 											<div class="feat-tag">
@@ -343,17 +355,17 @@ use App\Functions\Helper;
 						</div>
 						<!-- /col-sm-3 -->
 
-						<div class="col-sm-4">
+						{{-- <div class="col-sm-4">
 							<div class="extra-pic text-center">
 								<img src="<?= asset('genius/img/banner/wc-2.png')?>" alt="img">
 							</div>
-						</div>
+						</div> --}}
 						<!-- /col-sm-6 -->
 
-						<div class="col-md-4 col-sm-6">
+						<div class="col-md-6 col-sm-6">
 							<div class="extra-right">
 								<div class="extra-left-content">
-									<div class="extra-icon-text text-right">
+									<div class="extra-icon-text text-justify text-right">
 										<div class="features-icon gradient-bg text-center">
 											<i class="flaticon-ruler-and-pencil"></i>
 											<div class="feat-tag">
@@ -373,7 +385,7 @@ use App\Functions\Helper;
 								<!-- // extra-left-content -->
 
 								<div class="extra-left-content">
-									<div class="extra-icon-text text-right">
+									<div class="extra-icon-text text-justify text-right">
 										<div class="features-icon gradient-bg text-center">
 											<i class="flaticon-clipboards"></i>
 											<div class="feat-tag">
@@ -393,7 +405,7 @@ use App\Functions\Helper;
 								<!-- // extra-left-content -->
 
 								<div class="extra-left-content">
-									<div class="extra-icon-text text-right">
+									<div class="extra-icon-text text-justify text-right">
 										<div class="features-icon gradient-bg text-center">
 											<i class="flaticon-pie-chart"></i>
 											<div class="feat-tag">
@@ -402,7 +414,7 @@ use App\Functions\Helper;
 										</div>
 										<div class="features-text pt25">
 											<div class="features-text-title text-right pb10">
-												<h3>EHolistic Student Experience</h3>
+												<h3>Eholistic Student Experience</h3>
 											</div>
 											<div class="features-text-dec text-right">
 												<span>RHMC is committed to offering a holistic learning experience beyond academics. We foster a supportive learning community where students can participate in cultural exchanges, and develop essential skills for personal and professional growth.</span>
@@ -1195,56 +1207,62 @@ use App\Functions\Helper;
 
 	<!-- Start FAQ section
 		============================================= -->
-		<section id="faq" class="faq-section faq-secound-home-version backgroud-style">
+		<section id="faq" class="faq-section green-custom-background faq-secound-home-version backgroud-style">
 			<div class="container">
-				<div class="section-title mb45 headline text-center">
+				<div class="section-title headline text-center">
 					{{-- <span class="subtitle text-uppercase">GENIUS COURSE FAQ</span> --}}
 					<h2>Frequently Asked Questions (FAQs)</span></h2>
 				</div>
-
-				<div class="faq-tab mb65">
-					<div class="faq-tab-ques  ul-li">
-						<div class="tab-button text-center mb65">
-							<ul class="product-tab">
-								{{-- <li class="active" rel="tab1">GENERAL </li> --}}
-							</ul>
-						</div>
-						<!-- /tab-head -->
-
-						<!-- tab content -->
-						<div class="tab-container">
-
-							<!-- 1st tab -->
-							<div id="tab1" class="tab-content-1 pt35">
-								<div id="accordion" class="panel-group">
-								
-									@if(!empty($faqs))
-									@foreach($faqs as $key => $faq)
-										@php
-										// Generate a unique identifier for the FAQ item
-										$uniqueId = uniqid();
-									@endphp
-										<div class="panel">
-											<div class="panel-title" id="heading{{$uniqueId}}">
-												<h3 class="mb-0">
-													<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{$uniqueId}}" aria-expanded="false" aria-controls="collapse{{$uniqueId}}">
-														{{$faq->question ?? ''}}
-													</button>
-												</h3>
-											</div>
-											<div id="collapse{{$uniqueId}}" class="collapse" aria-labelledby="heading{{$uniqueId}}" data-parent="#accordion">
-												<div class="panel-body">
-													{{$faq->answer ?? ''}}
-												</div>
-											</div>
-										</div>
-										@endforeach
-									@endif
+				<div class="row">
+					<div class="col-md-8">
+						<div class="faq-tab">
+							<div class="faq-tab-ques  ul-li">
+								<div class="tab-button text-center mb65">
+									<ul class="product-tab">
+										{{-- <li class="active" rel="tab1">GENERAL </li> --}}
+									</ul>
 								</div>
-								<!-- end of #accordion -->
+								<!-- /tab-head -->
+
+								<!-- tab content -->
+								<div class="tab-container">
+
+									<!-- 1st tab -->
+									<div id="tab1" class="tab-content-1 pt35">
+										<div id="accordion" class="panel-group">
+										
+											@if(!empty($faqs))
+											@foreach($faqs as $key => $faq)
+												@php
+												// Generate a unique identifier for the FAQ item
+												$uniqueId = uniqid();
+											@endphp
+												<div class="panel">
+													<div class="panel-title" id="heading{{$uniqueId}}">
+														<h3 class="mb-0">
+															<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{$uniqueId}}" aria-expanded="false" aria-controls="collapse{{$uniqueId}}">
+																{{$faq->question ?? ''}}
+															</button>
+														</h3>
+													</div>
+													<div id="collapse{{$uniqueId}}" class="collapse" aria-labelledby="heading{{$uniqueId}}" data-parent="#accordion">
+														<div class="panel-body">
+															{{$faq->answer ?? ''}}
+														</div>
+													</div>
+												</div>
+												@endforeach
+											@endif
+										</div>
+										<!-- end of #accordion -->
+									</div>
+									<!-- #tab1 -->
+								</div>
 							</div>
-							<!-- #tab1 -->
 						</div>
+					</div>
+					<div class="col-md-4">
+						<img src="{{asset('genius/img/banner/faq.png')}}" alt="Picture" style=" position: absolute;margin-top: 80px;">
 					</div>
 				</div>
 
@@ -1453,9 +1471,12 @@ use App\Functions\Helper;
 									</div>
 								</div>
 							</div>
-							<div class="genius-btn mt60 gradient-bg text-center text-uppercase ul-li-block bold-font">
+							{{-- <div class="genius-btn mt60 gradient-bg text-center text-uppercase ul-li-block bold-font">
 								<a href="mailto:info.rhmc.ae">Contact Us <i class="fas fa-caret-right"></i></a>
-							</div>
+							</div> --}}
+						</div>
+						<div class="col-md-6">
+							<img src="{{asset('genius/img/banner/home-contactus.png')}}" alt="Picture" style=" position: absolute; margin-top: 30px;">
 						</div>
 
 						{{-- <div class="col-md-6">
