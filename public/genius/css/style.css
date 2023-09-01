@@ -3519,8 +3519,8 @@ ul.product-tab li.active:after {
 
 .contact-address-details {
   width: 100%;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
+  /* margin-bottom: 15px;
+  padding-bottom: 15px; */
   display: inline-block;
   /* border-bottom: 1px solid #ff0000 */
 }
@@ -4663,7 +4663,7 @@ i.fas.fa-chevron-right {
 }
 
 .contact-area-section::after {
-  background: url(http://127.0.0.1:8000/genius/img/banner/home-contactus.png), lightgray 50% / cover no-repeat;
+  background: url(../img/banner/home-contactus.webp), lightgray 50% / cover no-repeat;
   position: absolute;
   z-index: -1;
   width: 100%;
