@@ -26,18 +26,24 @@
                             <div class="footer-menu ul-li-block">
                                 <h2 class="widget-title">Useful Links</h2>
                                 <ul>
-                                    <li><a href="{{url('/')}}"><i class="fas fa-caret-right"></i>Home</a></li>
-                                    <li><a href="{{url('/learning')}}"><i class="fas fa-caret-right"></i>Courses</a></li>
-                                    <li><a href="{{url('/blogs')}}"><i class="fas fa-caret-right"></i>Blogs</a></li>
+                                    <li><a  href="{{url('/')}}"><i class="fas fa-caret-right"> </i> Home</a></li>
+                                    <li><a  href="{{route('learning')}}"><i class="fas fa-caret-right"> </i> Learning</a></li>
+                                    <li><a  href="{{route('front.webinars')}}"><i class="fas fa-caret-right"> </i> Webinar</a></li>
+                                    <li><a  href="{{route('front.faqs')}}"><i class="fas fa-caret-right"></i>  FAQ</a></li>
+                                    <li><a  href="{{route('front.blogs')}}"><i class="fas fa-caret-right"></i>  Blogs</a></li>
+                                    <li><a  href="{{route('front.events')}}"><i class="fas fa-caret-right"></i> Events</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="footer-menu ul-li-block">
                             <h2 class="widget-title">Account Info</h2>
                             <ul>
-                                <li><a href="{{url('/webinars')}}"><i class="fas fa-caret-right"></i>Webinars</a></li>
-                                <li><a href="{{url('/events')}}"><i class="fas fa-caret-right"></i>Events</a></li>
-                                <li><a href="{{url('/faqs')}}"><i class="fas fa-caret-right"></i>FAQ</a></li>
+                                @auth
+                                    <li> <a  href="{{url('/admin/dashboard')}}"><i class="fas fa-caret-right"> </i> Dashboard</a></li>
+                                @else
+                                    <li> <a href="{{url('/login')}}"><i class="fas fa-caret-right"> </i> Login </a> </li>
+                                    <li> <a href="{{url('/register')}}"><i class="fas fa-caret-right"> </i> Register</a> </li>
+                                @endauth
                             </ul>
                         </div>
                     </div>
@@ -46,9 +52,11 @@
                                 <div class="footer-social ul-li">
                                     <h2 class="widget-title">Social Network</h2>
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                                        
                                     </ul>
                                 </div>
                         </div>
@@ -89,7 +97,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="copy-right-text">
-                            <p>© {{ date('Y') }} - RHMC All rights reserved</p>
+                            <p>© {{ date('Y') }} - RHMC All rights reserved - Developed By <a href='https://360bsn.com/' target="_blank" style="color: #009051;font-weight: 500;"> 360 BSN </a> </p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -129,7 +137,6 @@
 <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 
 <script>
-
     $('.checkAuth').on('click', function(e) {
         // toastr.success('We do have the Kapua suite available.', 'Success Alert', {timeOut: 5000});
 		// toastr.error('You Got Error', 'Inconceivable!', {timeOut: 5000})
@@ -391,6 +398,8 @@ $('.registerForm').on('click', function (event) {
     });
 
 </script>
+
+@yield('scripts')
 <!-- End Copyright -->
 
 <!-- JavaScript -->

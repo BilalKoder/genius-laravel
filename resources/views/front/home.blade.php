@@ -4,6 +4,7 @@ use App\Functions\Helper;
 @endphp
 
 @extends('front.app')
+
 @section('content')
    	<!-- Start of slider section
 		============================================= -->
@@ -24,7 +25,15 @@ use App\Functions\Helper;
 						<div class="layer-1-4">
 							
 							<div id="course-btn">
-								
+								<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
+									<div class="input-group rounded-pill">
+										<input type="text" placeholder="What're you searching for?" aria-describedby="button-addon4" class="typeahead search-home-course form-control bg-none border-0">
+										<div class="input-group-append border-0">
+											<button id="button-addon3" type="button" class="search-home-course-btn btn btn-link text-success"><i class="fa fa-search"></i></button>
+										  </div>
+									  </div>
+									{{-- <a href="{{route('learning')}}">Best Courses <i class="fas fa-caret-right"></i></a> --}}
+								</div>
 								{{-- <div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
 									<a href="{{route('learning')}}">Our Courses <i class="fas fa-caret-right"></i></a>
 								</div> --}}
@@ -33,14 +42,14 @@ use App\Functions\Helper;
 					</div>
 
 				</div>
-				<div class="slider-area slider-bg-2 relative-position">
+				<div class="slider-area slider-bg-4 relative-position">
 					<div class="slider-text">
 						<div class="section-title mb20 headline text-center">
 							<div class="layer-1-1">
 								{{-- <span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span> --}}
 							</div>
 							<div class="layer-1-2">
-								<h2 class="secoud-title"> Browse The <span>Best Courses.</span></h2>
+								<h2 class="secoud-title"><span> Browse The Best Courses.</span></h2>
 							</div>
 						</div>
 						<div class="layer-1-3">
@@ -48,22 +57,18 @@ use App\Functions\Helper;
 							<div class="layer-1-4">
 								<div id="course-btn">
 									<div class="genius-btn  text-center text-uppercase ul-li-block bold-font">
-										<a href="{{route('learning')}}">Best Courses <i class="fas fa-caret-right"></i></a>
+										<div class="input-group rounded-pill">
+											<input type="text" placeholder="What're you searching for?" aria-describedby="button-addon4" class="typeahead search-home-course form-control bg-none border-0">
+											<div class="input-group-append border-0">
+												<button id="button-addon3" type="button" class="search-home-course-btn btn btn-link text-success"><i class="fa fa-search"></i></button>
+											  </div>
+										  </div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			
-				<div class="slider-area slider-bg-4 relative-position">
-					<div class="slider-text">
-						<div class="section-title mb20 headline text-center">
-							{{-- <span class="subtitle text-uppercase">EDUCATION & TRAINING ORGANIZATION</span> --}}
-							<h2><span>Inventive Solution <br> for Education</span></h2>
-						</div>
-					</div>
-				</div> 
 			</div>
 		</section>
 	<!-- End of slider section
@@ -301,7 +306,7 @@ use App\Functions\Helper;
 						<!-- /col-sm-6 -->
 
 						<div class="col-md-6 col-sm-6">
-							<div class="extra-right">
+							<div class="extra-left">
 								<div class="extra-left-content">
 									<div class="extra-icon-text text-justify text-right">
 										<div class="features-icon gradient-bg text-center">
@@ -311,10 +316,10 @@ use App\Functions\Helper;
 											</div>
 										</div>
 										<div class="features-text pt25">
-											<div class="features-text-title text-right pb10">
+											<div class="features-text-title text-left">
 												<h3>Expert Guidance and Support</h3>
 											</div>
-											<div class="features-text-dec text-right">
+											<div class="features-text-dec text-justify">
 												<span>Our dedicated team of educational advisors and counselors work closely with learners to understand their unique needs and guide them through the entire admission process. From selecting the right program to assisting with visa applications, RHMC provides comprehensive support at every step.</span>
 											</div>
 										</div>
@@ -331,10 +336,10 @@ use App\Functions\Helper;
 											</div>
 										</div>
 										<div class="features-text pt25">
-											<div class="features-text-title text-right pb10">
+											<div class="features-text-title text-left">
 												<h3>Scholarships and Financial Aid</h3>
 											</div>
-											<div class="features-text-dec text-right">
+											<div class="features-text-dec text-justify">
 												<span>We believe in making quality education affordable. RHMC strives to connect learners with various scholarship opportunities and financial aid options, ensuring that finances are not a barrier to achieving academic excellence.</span>
 											</div>
 										</div>
@@ -351,10 +356,10 @@ use App\Functions\Helper;
 											</div>
 										</div>
 										<div class="features-text pt25">
-											<div class="features-text-title text-right pb10">
+											<div class="features-text-title text-left">
 												<h3>Eholistic Student Experience</h3>
 											</div>
-											<div class="features-text-dec text-right">
+											<div class="features-text-dec text-justify">
 												<span>RHMC is committed to offering a holistic learning experience beyond academics. We foster a supportive learning community where students can participate in cultural exchanges, and develop essential skills for personal and professional growth.</span>
 											</div>
 										</div>
@@ -424,7 +429,7 @@ use App\Functions\Helper;
 					<div class="col-md-7">
 						<div class="about-us-text">
 							<div class="section-title relative-position mb20 headline text-left">
-								<span class="subtitle ml42 text-uppercase">SORT ABOUT US</span>
+								<span class="subtitle text-uppercase">SORT ABOUT US</span>
 								<h2>We are <span>RHMC Course</span>
 								work since 1980.</h2>
 								<p>At RHMC, our mission is to revolutionize the way education is accessed and experienced worldwide. As a pioneering education platform, we bridge the gap between learners and leading universities, opening doors to endless possibilities for academic and career advancement. With a firm belief in the transformative power of education, we strive to create a global learning ecosystem that nurtures curiosity, promotes inclusivity, and empowers individuals to reach their full potential.</p>
@@ -446,9 +451,9 @@ use App\Functions\Helper;
 									{{-- <div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 										<a href="#">About Us <i class="fas fa-caret-right"></i></a>
 									</div> --}}
-									<div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
+									{{-- <div class="genius-btn gradient-bg text-center text-uppercase ul-li-block bold-font">
 										<a href="mailto:info.rhmc.ae">contact us <i class="fas fa-caret-right"></i></a>
-									</div>
+									</div> --}}
 								</div>
 							</div>
 						</div>
@@ -1150,12 +1155,12 @@ use App\Functions\Helper;
 		============================================= -->
 		<section id="faq" class="faq-section green-custom-background faq-secound-home-version backgroud-style">
 			<div class="container">
-				<div class="section-title headline text-center">
+				<div class="section-title headline text-left">
 					{{-- <span class="subtitle text-uppercase">GENIUS COURSE FAQ</span> --}}
 					<h2>Frequently Asked Questions (FAQs)</span></h2>
 				</div>
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-6">
 						<div class="faq-tab">
 							<div class="faq-tab-ques  ul-li">
 								<div class="tab-button text-center mb65">
@@ -1202,8 +1207,8 @@ use App\Functions\Helper;
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<img src="{{asset('genius/img/banner/faq.png')}}" alt="Picture" style=" position: absolute;margin-top: 80px;">
+					<div class="col-md-6">
+						<img src="{{asset('genius/img/banner/faq.png')}}" alt="Picture" style=" position: absolute;">
 					</div>
 				</div>
 
@@ -1364,7 +1369,7 @@ use App\Functions\Helper;
 			<div class="container">
 				<div class="contact-area-content">
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-8">
 							<div class="contact-left-content">
 								<div class="section-title  mb45 headline text-left">
 									<span class="subtitle ml42  text-uppercase">CONTACT US</span>
@@ -1416,8 +1421,8 @@ use App\Functions\Helper;
 								<a href="mailto:info.rhmc.ae">Contact Us <i class="fas fa-caret-right"></i></a>
 							</div> --}}
 						</div>
-						<div class="col-md-6">
-							<img src="{{asset('genius/img/banner/home-contactus.png')}}" alt="Picture" style=" position: absolute; margin-top: 30px;">
+						<div class="col-md-4">
+							{{-- <img src="{{asset('genius/img/banner/home-contactus.png')}}" alt="Picture" style=" position: absolute; margin-top: 30px;"> --}}
 						</div>
 
 						{{-- <div class="col-md-6">
@@ -1434,4 +1439,24 @@ use App\Functions\Helper;
 	<!-- End of contact area
 		============================================= -->
 
+@endsection
+@section('scripts')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+<script type="text/javascript">
+    var path = "{{ route('autocomplete') }}";
+    $('input.typeahead').typeahead({
+        source:  function (text, process) {
+        return $.get(path, { text: text }, function (data) {
+			console.log(data);
+                return process(data);
+            });
+        }
+    });
+
+	$('.search-home-course-btn').on('click',function(){
+		var search = $('.search-home-course').val();
+		// console.log('search',search);
+		window.location.href = "{{route('learning')}}"+"?search="+search;
+	});
+</script>
 @endsection

@@ -3,7 +3,7 @@
     <!--begin::Main-->
     <div class="d-flex flex-column flex-root">
         <!--begin::Login-->
-        <div style="background: url('media/bg/bg-3.jpg') !important;" class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
+        <div style="background: url('media/bg/bg-8.jpg') !important;" class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
             <!--begin::Aside-->
             {{-- <div class="login-aside d-flex flex-column flex-row-auto" style="background-color: #fff;">
                 <!--begin::Aside Top-->

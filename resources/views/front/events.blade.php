@@ -19,7 +19,7 @@ use App\Functions\Helper;
 					</div>
 					<div class="page-breadcrumb-item ul-li">
 						<ul class="breadcrumb text-uppercase black">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
 							<li class="breadcrumb-item active">Events</li>
 						</ul>
 					</div>
@@ -36,14 +36,14 @@ use App\Functions\Helper;
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="short-filter-tab">
+						{{-- <div class="short-filter-tab">
 							
 							<div class="tab-button blog-button ul-li text-center float-right">
 								<ul class="product-tab">
 									<li class="active" rel="tab1"><i class="fas fa-th"></i></li>
 								</ul>
 							</div>
-						</div>
+						</div> --}}
 
 						<div class="genius-post-item">
 							<div class="tab-container">

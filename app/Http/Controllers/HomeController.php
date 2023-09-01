@@ -59,7 +59,7 @@ class HomeController extends Controller
                 $query->where('title', 'like', "%$searchTerm%");
             }
 
-            if ($request->has('category')) {
+            if ($request->has('category') && $request->category != null) {
                 $categoryId = $request->input('category');
                 $blogIds = CourseCategories::where('category_id', $categoryId)->pluck('course_id');
                 $query->whereIn('id', $blogIds);
@@ -122,7 +122,7 @@ class HomeController extends Controller
 
     public function courseDetail($id){
         // Store the course ID in the session or cookie
-        $course = Courses::where('id',$id)->first();
+        $course = Courses::findOrFail($id);
         // if (auth()->check()) {
         //     // For authenticated users, you can store the course ID in the session
         //     session()->push('recently_viewed_courses', $id);
@@ -171,5 +171,19 @@ class HomeController extends Controller
     public function landing()
     {
         return view('landing');
+    }
+
+
+    public function autocomplete(Request $request)
+    {
+        // dd($request->text);
+        $data = Courses::select("title")
+                ->where("title","LIKE","%{$request->text}%")
+                ->get();
+        $response = array();
+        foreach($data as $value){
+            $response[] = $value->title;
+        }
+        return response()->json($response);
     }
 }

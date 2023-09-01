@@ -32,6 +32,7 @@ Route::get('/event-details/{id}', 'HomeController@eventDetail')->name('event.det
 Route::get('/webinar-details/{id}', 'HomeController@webinarDetail')->name('webinar.detail');
 Route::get('/course-details/{id}', 'HomeController@courseDetail')->name('learning.detail');
 Route::get('/know-your-customer/{id}', 'HomeController@knowYourCustomer')->name('know-your-customer');
+Route::get('autocomplete', 'HomeController@autocomplete')->name('autocomplete');
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('submit/form', 'UserController@submitForm')->name('submit.form');

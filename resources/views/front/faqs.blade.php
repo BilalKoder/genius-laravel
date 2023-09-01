@@ -25,7 +25,7 @@ $index = 0;
 					</div>
 					<div class="page-breadcrumb-item ul-li">
 						<ul class="breadcrumb text-uppercase black">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
 							<li class="breadcrumb-item active">FAQ</li>
 						</ul>
 					</div>
@@ -45,7 +45,7 @@ $index = 0;
 
 								<div class="faq-tab faq-secound-home-version mb35">
 									<div class="faq-tab-ques  ul-li">
-										<div class="tab-button text-left mb45">
+										{{-- <div class="tab-button text-left mb45">
 											<ul class="product-tab">
 												<li class="active" rel="tab1">GENERAL </li>
 												<!-- <li rel="tab2" class=""> COURSES </li>
@@ -53,7 +53,7 @@ $index = 0;
 												<li rel="tab4" class="">  EVENTS  </li>
 												<li rel="tab5" class="tab_last">  OTHERS  </li> -->
 											</ul>
-										</div>
+										</div> --}}
 										<!-- /tab-head -->
 
 										<!-- tab content -->
@@ -63,7 +63,7 @@ $index = 0;
 											<div id="tab1" class="tab-content-1 pt35" style="display: block;">
 												<div id="accordion" class="panel-group">
 													<div class="row">
-														<div class="col-md-6">
+														<div class="col-md-12">
                                                             @if(!empty($faqs))
                                                             @foreach($faqs as $uniqueId => $faq)
 															@php

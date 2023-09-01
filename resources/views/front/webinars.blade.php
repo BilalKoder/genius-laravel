@@ -25,7 +25,7 @@ use App\Functions\Helper;
 					</div>
 					<div class="page-breadcrumb-item ul-li">
 						<ul class="breadcrumb text-uppercase black">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
 							<li class="breadcrumb-item active">Webinars</li>
 						</ul>
 					</div>
@@ -42,13 +42,13 @@ use App\Functions\Helper;
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<div class="short-filter-tab">
+						{{-- <div class="short-filter-tab">
 							<div class="tab-button blog-button ul-li text-center float-right">
 								<ul class="product-tab">
 									<li class="active" rel="tab1"><i class="fas fa-th"></i></li>
 								</ul>
 							</div>
-						</div>
+						</div> --}}
 						<div class="genius-post-item">
 							<div class="tab-container">
 								<div id="tab1" class="tab-content-1 pt35">
@@ -69,10 +69,11 @@ use App\Functions\Helper;
 														<div class="course-price text-center gradient-bg">
 															<span>{{ \Carbon\Carbon::parse($value->created_at)->format('d F Y') }}</span>
 														</div>
-														<div class="course-rate ul-li">
-														</div>
+														{{-- <div class="video-play-btn text-center gradient-bg">
+															<a class="popup-with-zoom-anim" href="{{$webinar->video_url??''}}"><i class="fas fa-play"></i></a>
+														</div> --}}
 														<div class="course-details-btn">
-															<a href="javscript:void(0)"> DETAIL <i class="fas fa-arrow-right"></i></a>
+															<a target="_blank" href="{{$value->video_url??''}}"> View <i class="fas fa-play"></i></a>
 														</div>
 														<div class="blakish-overlay"></div>
 													</div>

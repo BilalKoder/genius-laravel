@@ -3,7 +3,7 @@
     <!--begin::Main-->
     <div class="d-flex flex-column flex-root">
         <!--begin::Login-->
-        <div style="background: url('media/bg/bg-3.jpg') !important;"
+        <div style="background: url('media/bg/bg-8.jpg') !important;"
             class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
             <div
                 class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
@@ -32,16 +32,16 @@
                                 </a>    
                             </div>
                             <!--begin::Title-->
-                            <div class="pb-13 pt-lg-0 pt-5">
+                            <div class="pt-lg-0 pt-5">
                                 <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Sign Up</h3>
-                                <p class="text-muted font-weight-bold font-size-h4">Enter your details to create your
+                                <p class=" font-weight-bold font-size-h4">Enter your details to create your
                                     account</p>
                             </div>
                             <!--end::Title-->
                             <div class="row">
                                 <!--begin::Form group-->
                                 <div class="form-group col-sm-12">
-                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    <input class="form-control form-control-solid h-auto   px-6 rounded-lg font-size-h6"
                                         id="name" type="text" placeholder="Fullname" name="name"
                                         value="{{ old('name') }}" required />
                                     @error('name')
@@ -55,7 +55,7 @@
                                 <!--end::Form group-->
                                 <!--begin::Form group-->
                                 <div class="form-group col-sm-12">
-                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    <input class="form-control form-control-solid h-auto   px-6 rounded-lg font-size-h6"
                                         id="email" type="email" placeholder="Email" name="email"
                                         value="{{ old('email') }}" required />
                                     @error('email')
@@ -71,7 +71,7 @@
                             {{-- <div class="row">
                             <!--begin::Form group-->
                             <div class="form-group col-sm-6">
-                                <select name="role_id" id="role_id" class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6">
+                                <select name="role_id" id="role_id" class="form-control form-control-solid h-auto   px-6 rounded-lg font-size-h6">
                                     <option value="">Who are you?</option>
                                     @foreach ($roles as $role)
                                         <option value="{{$role->id}}">{{$role->name}}</option>
@@ -83,7 +83,7 @@
                             <div class="row">
                                 <!--begin::Form group-->
                                 <div class="form-group col-sm-12">
-                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    <input class="form-control form-control-solid h-auto   px-6 rounded-lg font-size-h6"
                                         id="password" type="password" placeholder="Password" name="password" required />
                                     @error('password')
                                         <div class="fv-plugins-message-container">
@@ -96,7 +96,7 @@
                                 <!--end::Form group-->
                                 <!--begin::Form group-->
                                 <div class="form-group col-sm-12">
-                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    <input class="form-control form-control-solid h-auto   px-6 rounded-lg font-size-h6"
                                         id="confirm_password" type="password" placeholder="Confirm password"
                                         name="cpassword" required />
                                     @error('cpassword')
@@ -113,7 +113,7 @@
                             <div class="row">
                                 <!--begin::Form group-->
                                 <div class="form-group col-sm-12">
-                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    <input class="form-control form-control-solid h-auto   px-6 rounded-lg font-size-h6"
                                         id="emirates_id" type="text" placeholder="Emirates ID" name="emirates_id"
                                         required />
                                     @error('emirates_id')
@@ -126,7 +126,7 @@
                                 </div>
                                 <!--end::Form group-->
                                 <div class="form-group col-sm-12">
-                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    <input class="form-control form-control-solid h-auto   px-6 rounded-lg font-size-h6"
                                         id="phone" type="text" placeholder="Phone Number" name="phone" required />
                                     @error('phone')
                                         <div class="fv-plugins-message-container">
@@ -147,7 +147,7 @@
                                         class="custom-file-upload">
                                         Select Passport File (required)
                                     </label>
-                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    <input class="form-control form-control-solid h-auto   px-6 rounded-lg font-size-h6"
                                         id="passport" type="file" name="passport" required />
                                     @error('passport')
                                         <div class="fv-plugins-message-container">
@@ -163,7 +163,7 @@
                                         class="custom-file-upload">
                                         Select Profile Photo (optional)
                                     </label>
-                                    <input class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6"
+                                    <input class="form-control form-control-solid h-auto   px-6 rounded-lg font-size-h6"
                                         id="image" type="file" name="image" />
                                     @error('image')
                                         <div class="fv-plugins-message-container">

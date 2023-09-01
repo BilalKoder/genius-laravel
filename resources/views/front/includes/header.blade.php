@@ -38,6 +38,8 @@
 	<link href="<?= asset('genius/css/colors/color-7.css') ?>" rel="alternate stylesheet" type="text/css" title="color-7">
 	<link href="<?= asset('genius/css/colors/color-8.css') ?>" rel="alternate stylesheet" type="text/css" title="color-8">
 	<link href="<?= asset('genius/css/colors/color-9.css') ?>" rel="alternate stylesheet" type="text/css" title="color-9">
+	<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+	<div class="elfsight-app-50682dd6-92dc-4796-bdbb-d6031d9b942c"></div>
     @yield('styles')
 </head>
 
@@ -64,7 +66,7 @@
 
 <!-- Start of Header section
 		============================================= -->
-		<header class="header_3 gradient-bg">
+		<header class="header_3">
 			<div class="container">
 				<div class="navbar-default">
 					<div class="navbar-header float-left">
@@ -95,7 +97,7 @@
 								</div>
 							</li>
 							<li>
-								<a href="#">
+								<a href="https://www.facebook.com/" target="_blank">
 									<div class="info-social">
 										<i class="fab fa-facebook-f"></i>
 									</div>
@@ -103,11 +105,11 @@
 								</a>
 							</li>
 							<li>
-								<a href="#">
+								<a href="https://www.instagram.com/" target="_blank">
 									<div class="info-social">
-										<i class="fab fa-twitter"></i>
+										<i class="fab fa-instagram"></i>
 									</div>
-									<span class="info-text">Twitter</span>
+									<span class="info-text">Instagram</span>
 								</a>
 							</li>
 						</ul>
@@ -160,7 +162,7 @@
 											<div class="modal-content">
 
 												<!-- Modal Header -->
-												<div class="modal-header backgroud-style" style="background:#000;">
+												<div class="modal-header backgroud-style">
 													<!-- <div class="gradient-bg"></div> -->
 													<!-- <div class="popup-logo">
 														<img src="<?= asset('genius/img/logo/RHMC-logo.png')?>" alt="">
@@ -183,7 +185,7 @@
 															<input class="password" name="name" id="formPassword" type="password" placeholder="Your Password*">
 														</div>
 														<div class="nws-button text-center white text-capitalize">
-															<button type="submit" class="submitLoginForm" value="Submit" style="color: #000 !important;background-color: #009051 !important;">Log in Now</button> 
+															<button type="submit" class="submitLoginForm" value="Submit" >Log in Now</button> 
 														</div> 
 													</form>
 													<div class="log-in-footer text-center">
@@ -199,7 +201,7 @@
 											<div class="modal-content">
 
 												<!-- Modal Header -->
-												<div class="modal-header backgroud-style" style="background:#000;">
+												<div class="modal-header backgroud-style">
 													<!-- <div class="gradient-bg"></div> -->
 													<!-- <div class="popup-logo">
 														<img src="<?= asset('genius/img/logo/RHMC-logo.png')?>" alt="">
@@ -240,7 +242,7 @@
 															<input class="passport" name="passport" id="formPassport" type="file" placeholder="Passport">
 														</div>
 														<div class="nws-button text-center white text-capitalize">
-															<button type="submit" class="registerForm" value="Submit" style="color: #000 !important;background-color: #009051 !important;">Sign Up Now</button> 
+															<button type="submit" class="registerForm" value="Submit"  >Sign Up Now</button> 
 														</div> 
 													</form>
 													<div class="log-in-footer text-center">
@@ -256,7 +258,7 @@
 											<div class="modal-content">
 
 												<!-- Modal Header -->
-												<div class="modal-header backgroud-style" style="background:#000;">
+												<div class="modal-header backgroud-style">
 													<!-- <div class="gradient-bg"></div> -->
 													<!-- <div class="popup-logo">
 														<img src="<?= asset('genius/img/logo/RHMC-logo.png')?>" alt="">
@@ -285,7 +287,7 @@
 															<input class="name" name="Email" id="formAdressEnroll" type="text" placeholder="Business Bay ,Dubai,UAE*">
 														</div>
 														<div class="nws-button text-center white text-capitalize">
-															<button type="submit" class="enrollForm" value="Submit" style="color: #000 !important;background-color: #009051 !important;">Enroll Now</button> 
+															<button type="submit" class="enrollForm" value="Submit"  >Enroll Now</button> 
 														</div> 
 													</form>
 													<div class="log-in-footer text-center">

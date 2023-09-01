@@ -23,7 +23,7 @@ use App\Functions\Helper;
 					</div>
 					<div class="page-breadcrumb-item ul-li">
 						<ul class="breadcrumb text-uppercase black">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
 							<li class="breadcrumb-item active">Learning</li>
 						</ul>
 					</div>

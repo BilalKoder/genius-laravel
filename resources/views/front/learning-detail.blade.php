@@ -10,11 +10,11 @@ use App\Functions\Helper;
 			<div class="container">
 				<div class="page-breadcrumb-content text-center">
 					<div class="page-breadcrumb-title">
-						<h2 class="breadcrumb-head black bold">RHMC <span>Course Details.</span></h2>
+						<h2 class="breadcrumb-head black bold"> <span> {{$course->title??'Course Details'}}</span>  </h2>
 					</div>
 					<div class="page-breadcrumb-item ul-li">
 						<ul class="breadcrumb text-uppercase black">
-							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
 							<li class="breadcrumb-item active">Details</li>
 						</ul>
 					</div>
@@ -28,7 +28,7 @@ use App\Functions\Helper;
 					<div class="col-md-9">
 						<div class="course-details-item">
 							<div class="course-single-pic mb30">
-								<img src="assets/img/course/cs-1.jpg" alt="">
+								<img src="{{asset($course->media??'')}}" alt="{{$course->title??'Course Image'}}">
 							</div>
 							<div class="course-single-text">
 								<div class="course-title mt10 headline relative-position">
@@ -338,15 +338,20 @@ use App\Functions\Helper;
 						<div class="side-bar">
 							<div class="course-side-bar-widget">
 								<h3>Price <span>${{$course->price}}</span></h3>
-								<div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font">
-									<a class="checkAuth" data-course="{{$course->id}}" href="javascript:void(0)">Enroll THis course <i class="fas fa-caret-right"></i></a>
+								
+								{{-- <div class="genius-btn gradient-bg text-center text-uppercase float-left bold-font"> --}}
+								<div class="genius-btn text-left text-uppercase">
+									<a class="checkAuth" data-course="{{$course->id}}" href="javascript:void(0)">
+										Enroll This course 
+										{{-- <i class="fas fa-caret-right"></i> --}}
+									</a>
 									<input type="hidden" id="courseId" value="{{$course->id}}">
 								</div>
-								<div class="like-course">
+								{{-- <div class="like-course">
 									<a href="#"><i class="fas fa-heart"></i></a>
-								</div>
+								</div> --}}
 							</div>
-							<div class="enrolled-student">
+							{{-- <div class="enrolled-student">
 								<div class="comment-ratting float-left ul-li">
 									<ul>
 										<li><i class="fas fa-star"></i></li>
@@ -357,7 +362,7 @@ use App\Functions\Helper;
 									</ul>
 								</div>
 								
-							</div>
+							</div> --}}
 							<div class="couse-feature ul-li-block">
 								<ul>
 									<li>Lectures <span>{{$course->lectures??''}} Lectures</span></li>
