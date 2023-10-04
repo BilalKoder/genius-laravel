@@ -208,14 +208,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .gradient-bg, .modal-body .nws-button button, .teacher-pic-content .teacher-img-content:after, .course-details-category li:hover {
   background: #fff;
-  /* background: -moz-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #009051), color-stop(100%, #4eb3bf));
-  background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #0071b0 100%);
-  background: -o-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-  background: -ms-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-  background: -webkit-gradient(linear, left top, right top, from(#009051), color-stop(51%, #009051), to(#009051));
-  background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-  background: linear-gradient(to right, #009051 0%, #009051 51%, #009051 100%); */
+  /* background: -moz-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #44546a), color-stop(100%, #4eb3bf));
+  background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #0071b0 100%);
+  background: -o-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+  background: -ms-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#44546a), color-stop(51%, #44546a), to(#44546a));
+  background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+  background: linear-gradient(to right, #44546a 0%, #44546a 51%, #44546a 100%); */
   background-size: 200% auto;
   -webkit-transition: background 1s ease-out;
   -moz-transition: background 1s ease-out;
@@ -223,25 +223,25 @@ h1, h2, h3, h4, h5, h6 {
   transition: background 1s ease-out; }
   .gradient-bg:hover, .modal-body .nws-button button:hover, .teacher-pic-content .teacher-img-content:hover:after, .course-details-category li:hover {
     background: #fff;
-    /* background: linear-gradient(163deg, #009051 0%, #61CD7C 100%);; */
-    /* background: -moz-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #009051), color-stop(100%, #4eb3bf));
-    background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #0071b0 100%);
-    background: -o-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -ms-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -webkit-gradient(linear, left top, right top, from(#009051), color-stop(51%, #009051), to(#009051));
-    background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: linear-gradient(to right, #009051 0%, #009051 51%, #009051 100%); */
+    /* background: linear-gradient(163deg, #44546a 0%, #61CD7C 100%);; */
+    /* background: -moz-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #44546a), color-stop(100%, #4eb3bf));
+    background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #0071b0 100%);
+    background: -o-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -ms-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#44546a), color-stop(51%, #44546a), to(#44546a));
+    background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: linear-gradient(to right, #44546a 0%, #44546a 51%, #44546a 100%); */
     background-size: 200% auto;
     background-position: 190px; }
 
 .text-gradiant {
-  /* background: -moz-linear-gradient(left, #009051 0%, #009051 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #009051), color-stop(100%, #009051));
-  background: -webkit-linear-gradient(left, #009051 0%, #009051 100%);
-  background: -o-linear-gradient(left, #009051 0%, #009051 100%);
-  background: -ms-linear-gradient(left, #009051 0%, #009051 100%); */
-  background: #009051;
+  /* background: -moz-linear-gradient(left, #44546a 0%, #44546a 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #44546a), color-stop(100%, #44546a));
+  background: -webkit-linear-gradient(left, #44546a 0%, #44546a 100%);
+  background: -o-linear-gradient(left, #44546a 0%, #44546a 100%);
+  background: -ms-linear-gradient(left, #44546a 0%, #44546a 100%); */
+  background: #44546a;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
@@ -266,12 +266,12 @@ h1, h2, h3, h4, h5, h6 {
   display: table;
   padding: 0px 25px; }
   .genius-btn a {
-    color: #009051;
+    color: #44546a;
     display: block;
     width: 100%; }
     .genius-btn a i {
       margin-left: 5px;
-      color: #009051; }
+      color: #44546a; }
 
 .bold-font {
   font-weight: 700; }
@@ -289,8 +289,8 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: rgba(0, 0, 0, 0) 0px 0px;
     top: -10px;
     line-height: 0;
-    color: #ff0000;
-    text-shadow: 15px 0 #009051; */
+    color: #43a047;
+    text-shadow: 15px 0 #44546a; */
    }
   .section-title .subtitle:after {
     right: -28px;
@@ -317,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 2px;
     width: 50px;
     left: 0;
-    background-color: #009051; }
+    background-color: #44546a; }
 
 .widget-title {
   font-size: 25px;
@@ -332,7 +332,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 2px;
     width: 50px;
     left: 0;
-    background-color: #009051; }
+    background-color: #44546a; }
 
 .breadcrumb-section {
   background-image: url(../img/banner/s-5.jpg);
@@ -359,7 +359,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inherit;
     background-color: transparent; }
   .breadcrumb-section .breadcrumb-item {
-    background-color: #009051;
+    background-color: #44546a;
     color: #fff;
     padding: 5px 15px;
     font-size: 13px;
@@ -398,15 +398,15 @@ h1, h2, h3, h4, h5, h6 {
       content: '';
       height: 100%;
       width: 100%;
-      background: #009051;
-      background: -moz-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #009051), color-stop(100%, #4eb3bf));
-      background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #0071b0 100%);
-      background: -o-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: -ms-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: -webkit-gradient(linear, left top, right top, from(#009051), color-stop(51%, #009051), to(#009051));
-      background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: linear-gradient(to right, #009051 0%, #009051 51%, #009051 100%);
+      background: #44546a;
+      background: -moz-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #44546a), color-stop(100%, #4eb3bf));
+      background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #0071b0 100%);
+      background: -o-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: -ms-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: -webkit-gradient(linear, left top, right top, from(#44546a), color-stop(51%, #44546a), to(#44546a));
+      background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: linear-gradient(to right, #44546a 0%, #44546a 51%, #44546a 100%);
       background-size: 200% auto;
       left: 0;
       top: 0;
@@ -441,7 +441,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 100%;
     color: #fff;
     margin-left: 10px;
-    border: 2px solid #009051;
+    border: 2px solid #44546a;
     position: relative; }
     .cart-search li a {
       display: block;
@@ -461,7 +461,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: transparent;
     border: none;
     padding: 10px 20px;
-    color: #009051;
+    color: #44546a;
     -webkit-appearance: none;
     position: relative; }
   .select-lang:after {
@@ -541,7 +541,7 @@ h1, h2, h3, h4, h5, h6 {
     .header-info li i {
       font-size: 25px;
       line-height: 36px;
-      color:#009051; 
+      color:#44546a; 
     }
     .header-info li:after {
       position: absolute;
@@ -552,7 +552,7 @@ h1, h2, h3, h4, h5, h6 {
       top: 0;
       right: -20px; }
   .header-info .info-text {
-    color: #ff0000;
+    color: #43a047;
     font-size: 13px; }
 
 .mail-phone .info-icon {
@@ -562,14 +562,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 63px;
   text-align: center;
   float: left;
-  background-color: #009051; }
+  background-color: #44546a; }
   .mail-phone .info-icon i {
     font-size: 25px; }
 
 .mail-phone .info-id {
   font-size: 25px;
   font-weight: 700;
-  color: #009051;
+  color: #44546a;
   display: block; }
 
 .mail-phone .info-content {
@@ -578,7 +578,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left; }
 
 .nav-menu-4 {
-  background-color: #009051;
+  background-color: #44546a;
   border-radius: 4px;
   padding: 25px 20px 25px 20px;
   position: absolute;
@@ -680,7 +680,7 @@ h1, h2, h3, h4, h5, h6 {
       line-height: 48px;
       text-align: center;
       position: absolute;
-      background-color: #009051;
+      background-color: #44546a;
       border: none;
       color: #000; }
 
@@ -709,7 +709,7 @@ h1, h2, h3, h4, h5, h6 {
 .modal-header {
   padding: 0;
   position: relative;
-  background: linear-gradient(163deg, #009051 0%, #61CD7C 100%);
+  background: linear-gradient(163deg, #44546a 0%, #61CD7C 100%);
   /* background-image: url(../img/banner/pb.jpg);  */
 }
   .modal-header .gradient-bg, .modal-header .modal-body .nws-button button, .modal-body .nws-button .modal-header button, .modal-header .teacher-pic-content .teacher-img-content:after, .teacher-pic-content .modal-header .teacher-img-content:after, .modal-header .course-details-category li:hover, .course-details-category .modal-header li:hover {
@@ -795,8 +795,8 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     text-transform: uppercase;
     font-size: 16px; 
-    background-color: #009051;
-    background:linear-gradient(163deg, #009051 0%, #61CD7C 100%);
+    background-color: #44546a;
+    background:linear-gradient(163deg, #44546a 0%, #61CD7C 100%);
   }
   .modal-body p {
     margin-bottom: 5px; }
@@ -850,7 +850,7 @@ h1, h2, h3, h4, h5, h6 {
       .sub-menu li a:after {
         display: none; }
       .sub-menu li a:hover {
-        color: #009051 !important; }
+        color: #44546a !important; }
     .sub-menu li:last-child {
       border-bottom: none; }
   .sub-menu:before {
@@ -859,7 +859,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid #009051;
+    border-top: 10px solid #44546a;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -871,7 +871,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: scaleY(1); }
 
 .header-style-2 .sub-menu li a:hover {
-  color: #009051; }
+  color: #44546a; }
 
 .altranative-header {
   top: 0;
@@ -903,7 +903,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  color: #000;
+  color: #44546a;
   font-size: 30px;
   content: "\f0c9";
   line-height: 30px;
@@ -942,7 +942,7 @@ button.alt-menu-btn.float-left {
   min-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-  background: #151515;
+  background: #44546a;
   padding-bottom: 200px; }
 
 #menu-container .menu-list .alt-search input[type=search], #menu-container .menu-list .alt-search .register-form-area select[type=search], .register-form-area #menu-container .menu-list .alt-search select[type=search], #menu-container .menu-list .alt-search .register-form-area textarea[type=search], .register-form-area #menu-container .menu-list .alt-search textarea[type=search] {
@@ -971,7 +971,7 @@ button.alt-menu-btn.float-left {
   text-align: left;
   padding: 10px 15px;
   border: none;
-  background-color: #000;
+  background-color: #44546a;
   position: relative;
   color: #fff; }
 
@@ -1020,7 +1020,7 @@ button.alt-menu-btn.float-left {
     margin: 0px 10px; }
 
 .header_3.full-width-menu {
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
@@ -1067,7 +1067,7 @@ button.alt-menu-btn.float-left {
 
 #slider-item .genius-btn {
   width: 30%;
-  /* border: 2px solid #009051; */
+  /* border: 2px solid #44546a; */
   /* margin-top: 30px;  */
 }
 
@@ -1203,7 +1203,7 @@ button.alt-menu-btn.float-left {
     #slider-item .slider-course-category li:last-child:after {
       display: none; }
     #slider-item .slider-course-category li:hover {
-      color: #009051; }
+      color: #44546a; }
 
 #slider-item .third-slide {
   font-size: 60px; }
@@ -1223,7 +1223,7 @@ button.alt-menu-btn.float-left {
   text-align: center;
   display: inline-block;
   color: #fff;
-  border: 2px solid #009051;
+  border: 2px solid #44546a;
   border-radius: 8px; }
 
 .coming-countdown li:last-child {
@@ -1366,14 +1366,14 @@ button.alt-menu-btn.float-left {
     margin-left: 40px; }
   .home-secound-course-search .search-course input, .home-secound-course-search .search-course .register-form-area select, .register-form-area .home-secound-course-search .search-course select, .home-secound-course-search .search-course .register-form-area textarea, .register-form-area .home-secound-course-search .search-course textarea {
     background: #4273e1;
-    background: -moz-linear-gradient(left, #009051 0%, #4273e1 51%, #009051 100%);
+    background: -moz-linear-gradient(left, #44546a 0%, #4273e1 51%, #44546a 100%);
     background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #4273e1), color-stop(100%, #4eb3bf));
-    background: -webkit-linear-gradient(left, #009051 0%, #4273e1 51%, #0071b0 100%);
-    background: -o-linear-gradient(left, #009051 0%, #4273e1 51%, #009051 100%);
-    background: -ms-linear-gradient(left, #009051 0%, #4273e1 51%, #009051 100%);
-    background: -webkit-gradient(linear, left top, right top, from(#009051), color-stop(51%, #4273e1), to(#009051));
-    background: -webkit-linear-gradient(left, #009051 0%, #4273e1 51%, #009051 100%);
-    background: linear-gradient(to right, #009051 0%, #4273e1 51%, #009051 100%);
+    background: -webkit-linear-gradient(left, #44546a 0%, #4273e1 51%, #0071b0 100%);
+    background: -o-linear-gradient(left, #44546a 0%, #4273e1 51%, #44546a 100%);
+    background: -ms-linear-gradient(left, #44546a 0%, #4273e1 51%, #44546a 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#44546a), color-stop(51%, #4273e1), to(#44546a));
+    background: -webkit-linear-gradient(left, #44546a 0%, #4273e1 51%, #44546a 100%);
+    background: linear-gradient(to right, #44546a 0%, #4273e1 51%, #44546a 100%);
     background-size: 200% auto;
     color: #fff; }
   .home-secound-course-search .search-course input::-webkit-input-placeholder, .home-secound-course-search .search-course .register-form-area select::-webkit-input-placeholder, .register-form-area .home-secound-course-search .search-course select::-webkit-input-placeholder, .home-secound-course-search .search-course .register-form-area textarea::-webkit-input-placeholder, .register-form-area .home-secound-course-search .search-course textarea::-webkit-input-placeholder {
@@ -1391,7 +1391,7 @@ button.alt-menu-btn.float-left {
     font-size: 20px;
     color: #fff; }
   .home-secound-course-search .about-list li {
-    color: #009051;
+    color: #44546a;
     margin-left: 5px; }
     .home-secound-course-search .about-list li:before {
       width: 10px;
@@ -1432,7 +1432,7 @@ button.alt-menu-btn.float-left {
   .search-course-secound .counter-number span {
     color: #fff; }
   .search-course-secound .counter-number p {
-    color: #009051;
+    color: #44546a;
     margin: 0; }
 
 .search-course-third {
@@ -1455,7 +1455,7 @@ button.alt-menu-btn.float-left {
       -o-transition: .5s all ease-in-out;
       transition: .5s all ease-in-out; }
     .search-course-third .counter-icon-number:after {
-      background-color: #009051;
+      background-color: #44546a;
       width: 0; }
     .search-course-third .counter-icon-number:hover::after {
       width: 110%; }
@@ -1502,7 +1502,7 @@ button.alt-menu-btn.float-left {
     .course-meta span:last-child:after {
       display: none; }
   .course-meta .course-category, .latest-events .course-meta .course-author {
-    color: #009051; }
+    color: #44546a; }
   .course-meta .course-author {
     color: #333333; }
   .course-meta .course-rate li {
@@ -1548,7 +1548,7 @@ button.alt-menu-btn.float-left {
   border-radius: 4px;
   position: absolute; }
   .course-price span {
-    color: #009051; }
+    color: #44546a; }
 
 .course-details-btn {
   top: 25px;
@@ -1676,7 +1676,7 @@ button.alt-menu-btn.float-left {
       bottom: -30px;
       height: 2px;
       width: 50px;
-      background-color: #009051; }
+      background-color: #44546a; }
 
 .about-content-text p {
   font-size: 18px;
@@ -1696,7 +1696,7 @@ button.alt-menu-btn.float-left {
     top: 2px;
     border-radius: 100%;
     position: absolute;
-    background-color: #009051; }
+    background-color: #44546a; }
 
 
 .about-btn .genius-btn {
@@ -1705,7 +1705,7 @@ button.alt-menu-btn.float-left {
 
 .home-secound .about-resigter-form {
   background-image: url(../img/banner/image-1.png);
-  /* background: #009051; */
+  /* background: #44546a; */
   max-width: 420px;
   margin-top: 5px;
   padding: 50px;
@@ -1728,29 +1728,29 @@ button.alt-menu-btn.float-left {
     border-radius: 5px;
     left: -30px;
     z-index: -1;
-    background: #009051 ;
-    background: -moz-linear-gradient(left, #009051  0%, #009051  51%, #009051  100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #009051 ), color-stop(100%, #4eb3bf));
-    background: -webkit-linear-gradient(left, #009051  0%, #009051  51%, #0071b0 100%);
-    background: -o-linear-gradient(left, #009051  0%, #009051  51%, #009051  100%);
-    background: -ms-linear-gradient(left, #009051  0%, #009051  51%, #009051  100%);
-    background: -webkit-gradient(linear, left top, right top, from(#009051 ), color-stop(51%, #009051 ), to(#009051 ));
-    background: -webkit-linear-gradient(left, #009051  0%, #009051  51%, #009051  100%);
-    background: linear-gradient(to right, #009051  0%, #009051  51%, #009051  100%);
+    background: #44546a ;
+    background: -moz-linear-gradient(left, #44546a  0%, #44546a  51%, #44546a  100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #44546a ), color-stop(100%, #4eb3bf));
+    background: -webkit-linear-gradient(left, #44546a  0%, #44546a  51%, #0071b0 100%);
+    background: -o-linear-gradient(left, #44546a  0%, #44546a  51%, #44546a  100%);
+    background: -ms-linear-gradient(left, #44546a  0%, #44546a  51%, #44546a  100%);
+    background: -webkit-gradient(linear, left top, right top, from(#44546a ), color-stop(51%, #44546a ), to(#44546a ));
+    background: -webkit-linear-gradient(left, #44546a  0%, #44546a  51%, #44546a  100%);
+    background: linear-gradient(to right, #44546a  0%, #44546a  51%, #44546a  100%);
     background-size: 200% auto;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0; }
 
 .home-secound .register-form-area button {
-  background: #009051;
-  background: -moz-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #009051), color-stop(100%, #4eb3bf));
-  background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #0071b0 100%);
-  background: -o-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-  background: -ms-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-  background: -webkit-gradient(linear, left top, right top, from(#009051), color-stop(51%, #009051), to(#009051));
-  background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-  background: linear-gradient(to right, #009051 0%, #009051 51%, #009051 100%);
+  background: #44546a;
+  background: -moz-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #44546a), color-stop(100%, #4eb3bf));
+  background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #0071b0 100%);
+  background: -o-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+  background: -ms-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#44546a), color-stop(51%, #44546a), to(#44546a));
+  background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+  background: linear-gradient(to right, #44546a 0%, #44546a 51%, #44546a 100%);
   background-size: 200% auto; }
 
 .home-secound .bg-mockup {
@@ -1800,7 +1800,7 @@ button.alt-menu-btn.float-left {
   .about-teacher-2 .section-title-2 h2:after {
     display: none; }
   .about-teacher-2 .section-title-2 h2 b {
-    color: #009051;
+    color: #44546a;
     font-size: 14px;
     font-weight: 700; }
 
@@ -1885,7 +1885,7 @@ button.alt-menu-btn.float-left {
 
 .testimonial-slide .student-name-designation span {
   font-size: 13px;
-  color: #009051;
+  color: #44546a;
   margin-right: 25px;
   position: relative; }
   .testimonial-slide .student-name-designation span:before {
@@ -1895,7 +1895,7 @@ button.alt-menu-btn.float-left {
     height: 10px;
     right: -14px;
     position: absolute;
-    background-color: #009051; }
+    background-color: #44546a; }
   .testimonial-slide .student-name-designation span:last-child::before {
     display: none; }
 
@@ -2033,7 +2033,7 @@ button.alt-menu-btn.float-left {
 .view-all-btn {
   color: #333333; }
   .view-all-btn i {
-    color: #009051;
+    color: #44546a;
     margin-left: 5px; }
 
 .gradient-bdr {
@@ -2045,9 +2045,9 @@ button.alt-menu-btn.float-left {
   -webkit-transform: scale(1.06);
   -ms-transform: scale(1.06);
   transform: scale(1.06);
-  background: -o-linear-gradient(69deg, #009051, #009051);
-  background: linear-gradient(21deg, #009051, #009051);
-  background: -webkit-linear-gradient(69deg, #009051, #009051); }
+  background: -o-linear-gradient(69deg, #44546a, #44546a);
+  background: linear-gradient(21deg, #44546a, #44546a);
+  background: -webkit-linear-gradient(69deg, #44546a, #44546a); }
 
 .events-date {
   float: left;
@@ -2081,7 +2081,7 @@ button.alt-menu-btn.float-left {
   width: 40px;
   line-height: 40px;
   border-radius: 100%;
-  color: #009051;
+  color: #44546a;
   position: absolute;
   top: 50%;
   right: 0;
@@ -2205,7 +2205,7 @@ button.alt-menu-btn.float-left {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  background-color: #009051; }
+  background-color: #44546a; }
   .trend-badge-2 span {
     display: block; }
 
@@ -2240,7 +2240,7 @@ button.alt-menu-btn.float-left {
   top: -15px;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
-  border-top: 20px solid #009051;
+  border-top: 20px solid #44546a;
   -webkit-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
   transform: rotate(-180deg);
@@ -2360,7 +2360,7 @@ button.alt-menu-btn.float-left {
       left: -25px;
       bottom: 30px;
       position: absolute;
-      background-color: #009051; }
+      background-color: #44546a; }
     .teacher-img-content .teacher-img .course-price {
       font-weight: 400;
       top: auto;
@@ -2408,7 +2408,7 @@ button.alt-menu-btn.float-left {
         height: 30px;
         width: 30px;
         text-align: center;
-        border: 2px solid #009051;
+        border: 2px solid #44546a;
         line-height: 30px;
         color: #fff;
         margin: 0 2px;
@@ -2420,7 +2420,7 @@ button.alt-menu-btn.float-left {
       color: #333333; }
     .secound-teacher-section .teacher-img-text .teacher-designation {
       font-size: 13px;
-      color: #009051; }
+      color: #44546a; }
     .secound-teacher-section .teacher-img-text .teacher-img-social .blakish-overlay {
       border-radius: 100%;
       height: 190px;
@@ -2447,15 +2447,15 @@ button.alt-menu-btn.float-left {
     position: absolute;
     width: 210px;
     height: 210px;
-    background: #009051;
-    background: -moz-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #009051), color-stop(100%, #4eb3bf));
-    background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #0071b0 100%);
-    background: -o-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -ms-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -webkit-gradient(linear, left top, right top, from(#009051), color-stop(51%, #009051), to(#009051));
-    background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: linear-gradient(to right, #009051 0%, #009051 51%, #009051 100%);
+    background: #44546a;
+    background: -moz-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #44546a), color-stop(100%, #4eb3bf));
+    background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #0071b0 100%);
+    background: -o-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -ms-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#44546a), color-stop(51%, #44546a), to(#44546a));
+    background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: linear-gradient(to right, #44546a 0%, #44546a 51%, #44546a 100%);
     background-size: 200% auto;
     top: -5px;
     left: -5px;
@@ -2500,15 +2500,15 @@ button.alt-menu-btn.float-left {
     .genius-teacher-section-2 .teacher-img-content:after {
       position: absolute;
       content: '';
-      background: #009051;
-      background: -moz-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #009051), color-stop(100%, #4eb3bf));
-      background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #0071b0 100%);
-      background: -o-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: -ms-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: -webkit-gradient(linear, left top, right top, from(#009051), color-stop(51%, #009051), to(#009051));
-      background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: linear-gradient(to right, #009051 0%, #009051 51%, #009051 100%);
+      background: #44546a;
+      background: -moz-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #44546a), color-stop(100%, #4eb3bf));
+      background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #0071b0 100%);
+      background: -o-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: -ms-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: -webkit-gradient(linear, left top, right top, from(#44546a), color-stop(51%, #44546a), to(#44546a));
+      background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: linear-gradient(to right, #44546a 0%, #44546a 51%, #44546a 100%);
       background-size: 200% auto;
       top: 0;
       right: 0;
@@ -2554,7 +2554,7 @@ button.alt-menu-btn.float-left {
     margin-bottom: 5px; }
     .teacher-pic-content .teacher-social-name li {
       background-color: #fff;
-      color: #009051; }
+      color: #44546a; }
   .teacher-pic-content .teacher-next {
     height: 45px;
     width: 45px;
@@ -2606,7 +2606,7 @@ button.alt-menu-btn.float-left {
       color: #333333; }
     .teacher-pic-content .teacher-name-designation .teacher-designation {
       font-size: 13px;
-      color: #009051; }
+      color: #44546a; }
   .teacher-pic-content:hover .teacher-img-content::after {
     opacity: .8; }
   .teacher-pic-content:hover .teacher-hover-item {
@@ -2642,7 +2642,7 @@ button.alt-menu-btn.float-left {
   font-size: 15px;
   margin-top: 5px; }
   .teacher-details-text .teacher-deg span {
-    color: #009051; }
+    color: #44546a; }
 
 .teacher-desc-social {
   margin-bottom: 28px; }
@@ -2667,7 +2667,7 @@ button.alt-menu-btn.float-left {
       -o-transition: .3s all ease-in-out;
       transition: .3s all ease-in-out; }
     .teacher-desc-social li:hover {
-      background-color: #009051;
+      background-color: #44546a;
       color: #fff; }
       .teacher-desc-social li:hover i {
         color: #fff; }
@@ -2689,7 +2689,7 @@ button.alt-menu-btn.float-left {
     color: #fff;
     margin-right: 15px;
     float: left;
-    background-color: #009051; }
+    background-color: #44546a; }
   .teacher-address .address-details li .add-info {
     overflow: hidden;
     margin-top: 10px; }
@@ -2831,7 +2831,7 @@ button.alt-menu-btn.float-left {
     font-weight: 700;
     margin-top: 5px; }
     .best-product-section .price-start span {
-      color: #009051; }
+      color: #44546a; }
 
 .best-product-section.home_2 {
   padding: 50px 0px 100px; }
@@ -2855,15 +2855,15 @@ button.alt-menu-btn.float-left {
     width: 100%;
     height: 100%;
     content: '';
-    background: #009051;
-    background: -moz-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #009051), color-stop(100%, #4eb3bf));
-    background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #0071b0 100%);
-    background: -o-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -ms-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -webkit-gradient(linear, left top, right top, from(#009051), color-stop(51%, #009051), to(#009051));
-    background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: linear-gradient(to right, #009051 0%, #009051 51%, #009051 100%);
+    background: #44546a;
+    background: -moz-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #44546a), color-stop(100%, #4eb3bf));
+    background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #0071b0 100%);
+    background: -o-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -ms-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#44546a), color-stop(51%, #44546a), to(#44546a));
+    background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: linear-gradient(to right, #44546a 0%, #44546a 51%, #44546a 100%);
     background-size: 200% auto;
     -webkit-transition: .3s all ease-in-out;
     -o-transition: .3s all ease-in-out;
@@ -2958,7 +2958,7 @@ button.alt-menu-btn.float-left {
   height: 10px;
   width: 10px;
   border-radius: 100%;
-  background-color: #009051;
+  background-color: #44546a;
   border: none;
   cursor: pointer;
   outline: none;
@@ -3009,7 +3009,7 @@ button.alt-menu-btn.float-left {
     margin-right: 20px; }
   .best-sellers-pic-text .b-price {
     font-size: 12px;
-    color: #009051;
+    color: #44546a;
     font-weight: 700; }
 
 .best-sellers-item .couse-pagination {
@@ -3049,7 +3049,7 @@ ul.product-tab li:after {
   top: 30px;
   left: 0;
   opacity: 0;
-  background-color: #009051; }
+  background-color: #44546a; }
 
 ul.product-tab li.active {
   color: #333333; }
@@ -3089,15 +3089,15 @@ ul.product-tab li.active:after {
       content: '';
       height: 100%;
       width: 100%;
-      background: #009051;
-      background: -moz-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #009051), color-stop(100%, #4eb3bf));
-      background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #0071b0 100%);
-      background: -o-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: -ms-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: -webkit-gradient(linear, left top, right top, from(#009051), color-stop(51%, #009051), to(#009051));
-      background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-      background: linear-gradient(to right, #009051 0%, #009051 51%, #009051 100%);
+      background: #44546a;
+      background: -moz-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #44546a), color-stop(100%, #4eb3bf));
+      background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #0071b0 100%);
+      background: -o-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: -ms-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: -webkit-gradient(linear, left top, right top, from(#44546a), color-stop(51%, #44546a), to(#44546a));
+      background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+      background: linear-gradient(to right, #44546a 0%, #44546a 51%, #44546a 100%);
       background-size: 200% auto;
       left: 0;
       top: 0;
@@ -3118,7 +3118,7 @@ ul.product-tab li.active:after {
   .faq-secound-home-version .tab-content-1 {
     display: none; }
     .faq-secound-home-version .tab-content-1 p {
-      color: #009051; }
+      color: #44546a; }
 
 .faq_3 {
   padding-bottom: 40px; }
@@ -3142,7 +3142,7 @@ ul.product-tab li.active:after {
     top: -42px;
     content: '';
     background-color: #fff;
-    /* background-color: #009051; */
+    /* background-color: #44546a; */
     width: 3px;
     height: 0%;
     -webkit-transition: .3s all ease-in-out;
@@ -3197,7 +3197,7 @@ ul.product-tab li.active:after {
       -ms-transform: scale(1);
       transform: scale(1);
       color: #fff;
-      /* color: #009051;  */
+      /* color: #44546a;  */
     }
     .panel-group .panel-title .btn-link:after {
       content: "";
@@ -3211,11 +3211,11 @@ ul.product-tab li.active:after {
       -webkit-transition: all 0.5s;
       -o-transition: all 0.5s;
       transition: all 0.5s;
-      color: #009051; }
+      color: #44546a; }
     .panel-group .panel-title .btn-link:hover {
       text-decoration: none;
       color: #fff;
-      /* color: #009051;  */
+      /* color: #44546a;  */
     }
 
 .panel-group .btn-link.collapsed {
@@ -3255,15 +3255,15 @@ ul.product-tab li.active:after {
   .faq-page-section .panel-group .panel-title .btn-link:after {
     right: 0; }
   .faq-page-section .panel-group .panel-title .btn-link:after {
-    color: #009051; }
+    color: #44546a; }
   .faq-page-section .panel-group .panel-title .btn-link {
     font-size: 20px; 
-    color: #009051;
+    color: #44546a;
   }
   .faq-page-section .panel-group .panel-body:before {
     top: -50px; }
   .faq-page-section .panel-group .panel-title h3:before {
-    background-color: #009051;
+    background-color: #44546a;
     height: 22px;
   }
   .faq-page-section .panel-group .panel-body {
@@ -3318,15 +3318,15 @@ ul.product-tab li.active:after {
     width: 100%;
     height: 100%;
     content: '';
-    background: #009051;
-    background: -moz-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #009051), color-stop(100%, #4eb3bf));
-    background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #0071b0 100%);
-    background: -o-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -ms-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: -webkit-gradient(linear, left top, right top, from(#009051), color-stop(51%, #009051), to(#009051));
-    background: -webkit-linear-gradient(left, #009051 0%, #009051 51%, #009051 100%);
-    background: linear-gradient(to right, #009051 0%, #009051 51%, #009051 100%);
+    background: #44546a;
+    background: -moz-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #4eb3bf), color-stop(51%, #44546a), color-stop(100%, #4eb3bf));
+    background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #0071b0 100%);
+    background: -o-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -ms-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#44546a), color-stop(51%, #44546a), to(#44546a));
+    background: -webkit-linear-gradient(left, #44546a 0%, #44546a 51%, #44546a 100%);
+    background: linear-gradient(to right, #44546a 0%, #44546a 51%, #44546a 100%);
     background-size: 200% auto;
     -webkit-transition: .3s all ease-in-out;
     -o-transition: .3s all ease-in-out;
@@ -3367,7 +3367,7 @@ ul.product-tab li.active:after {
   
   /* background-image: url(../img/banner/background.png); */
   /* background: url(../img/banner/background.png), lightgray 0px -368.776px / 100% 183.908% no-repeat;\ */
-  /* background: linear-gradient(163deg, #009051 0%, #61CD7C 100%), url(../img/banner/background.png); */
+  /* background: linear-gradient(163deg, #44546a 0%, #61CD7C 100%), url(../img/banner/background.png); */
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/banner/background.png); */
   /* background: url(../img/banner/background.png);
   background-size: cover;
@@ -3381,7 +3381,7 @@ ul.product-tab li.active:after {
 }
 /* .container.extra-features-content{
   background: url(../img/banner/background.png), lightgray 0px -368.776px / 100% 183.908% no-repeat;
-  background: linear-gradient(163deg, #009051 0%, #61CD7C 100%);
+  background: linear-gradient(163deg, #44546a 0%, #61CD7C 100%);
   padding-top: 115px; 
   width: 100%;
 } */
@@ -3399,7 +3399,7 @@ ul.product-tab li.active:after {
   margin-right: 25px; 
 }
   .features-icon i {
-    color: #009051; 
+    color: #44546a; 
   }
 
 .features-text-title h3 {
@@ -3412,7 +3412,7 @@ ul.product-tab li.active:after {
   overflow: hidden;
   padding-top: 10px; }
   .features-text .features-text-dec {
-    /* color: #009051; */
+    /* color: #44546a; */
     color: #fff; 
   }
 
@@ -3435,7 +3435,7 @@ ul.product-tab li.active:after {
     text-align: center;
     line-height: 25px;
     font-weight: 700;
-    color: #009051;
+    color: #44546a;
     right: -10px;
     top: 25px;
     font-size: 13px; }
@@ -3472,8 +3472,8 @@ ul.product-tab li.active:after {
 .contact-area-section,
 .contact_secound_section {
   /* background-image: url(../img/banner/contact-b.jpg); */
-  /* background: linear-gradient(163deg, #009051 0%, #61CD7C 100%); */
-  background: linear-gradient(87deg, #009051 31.99%, rgba(97, 205, 124, 0.02) 81.83%);
+  /* background: linear-gradient(163deg, #44546a 0%, #61CD7C 100%); */
+  background: linear-gradient(87deg, #44546a 31.99%, rgba(97, 205, 124, 0.02) 81.83%);
   padding: 55px 0px 55px; 
   position: relative!important ;
 }
@@ -3499,9 +3499,9 @@ ul.product-tab li.active:after {
   margin-right: 0px;
   border: none;
   /* border: 4px solid transparent; */
-  /* -webkit-border-image: -webkit-linear-gradient(21deg, #009051, #009051);
-  -o-border-image: -o-linear-gradient(21deg, #009051, #009051);
-  border-image: linear-gradient(69deg, #009051, #009051); */
+  /* -webkit-border-image: -webkit-linear-gradient(21deg, #44546a, #44546a);
+  -o-border-image: -o-linear-gradient(21deg, #44546a, #44546a);
+  border-image: linear-gradient(69deg, #44546a, #44546a); */
   border-image-slice: 1;
   border-radius: 40px;
   background-origin: border-box;
@@ -3522,7 +3522,7 @@ ul.product-tab li.active:after {
   /* margin-bottom: 15px;
   padding-bottom: 15px; */
   display: inline-block;
-  /* border-bottom: 1px solid #ff0000 */
+  /* border-bottom: 1px solid #43a047 */
 }
   .contact-address-details:last-child {
     border-bottom: none; }
@@ -3695,7 +3695,7 @@ ul.product-tab li.active:after {
 
 .blog-button ul.product-tab li.active {
   color: #fff;
-  background-color: #009051; }
+  background-color: #44546a; }
 
 .blog-post-img-content {
   border-bottom: 1px solid #eeeeee;
@@ -3805,8 +3805,8 @@ ul.product-tab li.active:after {
     -o-transition: .3s all ease-in-out;
     transition: .3s all ease-in-out; }
     .side-bar-widget .tag-clouds li:hover {
-      background-color: #009051;
-      border-color: #009051;
+      background-color: #44546a;
+      border-color: #44546a;
       color: #fff; }
   .side-bar-widget .best-course-text {
     position: absolute;
@@ -3849,7 +3849,7 @@ ul.product-tab li.active:after {
     font-weight: 700;
     margin-right: 20px; }
     .blog-details-content .date-meta span i {
-      color: #009051; }
+      color: #44546a; }
 
 .blog-details-content h3 {
   font-size: 20px;
@@ -3886,7 +3886,7 @@ ul.product-tab li.active:after {
   transition: .3s all ease-in-out;
   border-radius: 4px; }
   .blog-details-content .blog-category li:hover {
-    background-color: #009051;
+    background-color: #44546a;
     color: #fff; }
 
 .blog-details-content .author-comment {
@@ -3905,7 +3905,7 @@ ul.product-tab li.active:after {
     font-size: 12px;
     font-weight: 700; }
     .blog-details-content .author-comment .author-designation-comment span {
-      color: #009051; }
+      color: #44546a; }
     .blog-details-content .author-comment .author-designation-comment p {
       font-size: 16px;
       color: #999999;
@@ -3924,7 +3924,7 @@ ul.product-tab li.active:after {
   margin-bottom: 35px; }
   .blog-details-content .next-prev-post i {
     margin: 0 5px;
-    color: #009051; }
+    color: #44546a; }
 
 .recent-post-item {
   padding-top: 32px; }
@@ -3967,7 +3967,7 @@ ul.product-tab li.active:after {
   display: inline-block;
   margin-top: 20px; }
   .blog-comment-area .author-name-rate span {
-    color: #009051; }
+    color: #44546a; }
 
 .blog-comment-area .time-comment {
   margin-right: 10px; }
@@ -4006,7 +4006,7 @@ ul.product-tab li.active:after {
     font-size: 12px;
     font-weight: 700;
     color: #333333;
-    border-bottom: 3px solid #009051; }
+    border-bottom: 3px solid #44546a; }
   .course-page-section tr {
     border-bottom: 1px solid #eee;
     -webkit-transition: .3s all ease-in-out;
@@ -4034,7 +4034,7 @@ ul.product-tab li.active:after {
       font-weight: 700;
       color: #333333; }
   .course-page-section .course-type-list span {
-    background-color: #009051;
+    background-color: #44546a;
     color: #fff;
     padding: 12px 20px;
     border-radius: 4px; }
@@ -4130,7 +4130,7 @@ ul.product-tab li.active:after {
   color: #eeeeee !important; }
 
 .affiliate-market-accordion .panel-group .panel-title .btn-link span {
-  color: #009051; }
+  color: #44546a; }
 
 .affiliate-market-accordion .leanth-course {
   position: absolute;
@@ -4155,7 +4155,7 @@ ul.product-tab li.active:after {
   bottom: 15px;
   left: 80px; }
   .course-by b {
-    color: #009051;
+    color: #44546a;
     font-size: 12px !important; }
 
 .affiliate-market-accordion .panel-group .panel:first-child {
@@ -4176,7 +4176,7 @@ ul.product-tab li.active:after {
   font-size: 50px;
   font-weight: 700;
   display: block;
-  color: #009051;
+  color: #44546a;
   margin: 10px 0px; }
 
 .avrg-rating li {
@@ -4195,7 +4195,7 @@ ul.product-tab li.active:after {
 .avrg-rating .rating-overview {
   margin-top: 5px; }
   .avrg-rating .rating-overview:hover .start-bar {
-    background-color: #009051; }
+    background-color: #44546a; }
 
 .review-option {
   display: inline-block;
@@ -4268,7 +4268,7 @@ ul.product-tab li.active:after {
   margin-bottom: 20px; }
   .course-side-bar-widget h3 span {
     font-weight: 700;
-    color: #009051; }
+    color: #44546a; }
 
 .like-course {
   height: 50px;
@@ -4288,7 +4288,7 @@ ul.product-tab li.active:after {
 
 .student-number {
   float: right;
-  color: #009051;
+  color: #44546a;
   font-size: 14px; }
 
 .enrolled-student {
@@ -4303,7 +4303,7 @@ ul.product-tab li.active:after {
   .couse-feature li {
     font-size: 17px;
     font-weight: 500;
-    color: #009051;
+    color: #44546a;
     position: relative;
     padding: 5px 0px;
     border: 1px solid #eeeeee;
@@ -4450,7 +4450,7 @@ ul.product-tab li.active:after {
     padding-left: 35px;
     display: block; }
     .checkbox label .sub-text b {
-      color: #009051; }
+      color: #44546a; }
 
 .save-credit {
   width: 80%;
@@ -4499,7 +4499,7 @@ ul.product-tab li.active:after {
 .terms-text {
   border-bottom: 1px solid #eee; }
   .terms-text b {
-    color: #009051; }
+    color: #44546a; }
 
 .sub-total-title {
   font-size: 12px;
@@ -4524,7 +4524,7 @@ ul.product-tab li.active:after {
     font-weight: 700;
     color: #333333; }
     .purchase-list .in-total span {
-      color: #009051;
+      color: #44546a;
       float: right; }
 
 /*---------------------------------------------------- */
@@ -4547,7 +4547,7 @@ ul.product-tab li.active:after {
     font-size: 17px; }
     .footer-menu li i {
       margin-right: 10px;
-      color: #009051; }
+      color: #44546a; }
 
 .footer-widget .photo-list li {
   position: relative;
@@ -4581,8 +4581,8 @@ ul.product-tab li.active:after {
   border-radius: 100%;
   line-height: 30px;
   margin-right: 0px;
-  /* border: 2px solid #009051; */
-  color: #009051;
+  /* border: 2px solid #44546a; */
+  color: #44546a;
   text-align: center; }
 
 .footer-social .widget-title,
@@ -4622,16 +4622,16 @@ ul.product-tab li.active:after {
 
 
 i.fas.fa-chevron-left {
-  color: #009051;
+  color: #44546a;
 }
 i.fas.fa-chevron-right {
-  color: #009051;
+  color: #44546a;
 }
 
 
 .slider-area.relative-position::before {
   content: '';
-  background: linear-gradient(179deg, rgba(0, 144, 81, 0.64) 0%, rgba(217, 217, 217, 0.00) 100%);
+  background: linear-gradient(179deg, #44546a8a 0%, rgba(217, 217, 217, 0.00) 100%);
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -4643,7 +4643,7 @@ i.fas.fa-chevron-right {
 }
 
 .text-green{
-  color: #009051 !important;
+  color: #44546a !important;
 }
 .green-custom-background::before {
   content: '';
@@ -4651,7 +4651,7 @@ i.fas.fa-chevron-right {
   height: 100%;
   position: absolute;
   background-image: url(../img/banner/background.png) !important;
-  background: linear-gradient(163deg, #009051 0%, #61CD7C 100%);
+  background: linear-gradient(163deg, #44546a 0%, #44546a 100%);
   background-size: 100% 100%;
   top: 0px;
   background-repeat: no-repeat;
@@ -4659,7 +4659,7 @@ i.fas.fa-chevron-right {
 
 .green-custom-background{
   position: relative;
-  background: linear-gradient(163deg, #009051 0%, #61CD7C 100%) !important;
+  background: linear-gradient(163deg, #44546a 0%, #44546a 100%) !important;
 }
 
 .contact-area-section::after {
@@ -4677,7 +4677,7 @@ i.fas.fa-chevron-right {
 
 button#button-addon3 {
     color: #fff !IMPORTANT;
-    background: #009051;
+    background: #44546a;
     border-radius: 0px 10px 10px 0px;
     text-decoration: none;
 }
@@ -4687,7 +4687,7 @@ button#button-addon3 {
   border-radius: 10px 0px 0px 10px;
 }
 a.checkAuth {
-  background: #009051;
+  background: #44546a;
   color: #fff;
   line-height: 25px;
   padding: 10px;
@@ -4695,7 +4695,7 @@ a.checkAuth {
 }
 
 .modal-body .nws-button button:hover{
-  background-color: #009051;
+  background-color: #44546a;
 }
 
 span.signupModal {
@@ -4703,7 +4703,7 @@ span.signupModal {
 }
 
 .faq-page-section.panel-group .panel-title .btn-link:hover{
-  color: #009051;
+  color: #44546a;
 }
 
 ul.typeahead.dropdown-menu {
