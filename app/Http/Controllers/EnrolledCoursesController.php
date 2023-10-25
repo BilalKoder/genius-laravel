@@ -10,11 +10,13 @@ use App\Blogs;
 use App\BlogCategories;
 use App\CourseCategories;
 use App\Categories;
+use App\Transaction;
 use Illuminate\Http\Request;
 use App\Traits\EmailTrait;
 use App\Traits\SlugTrait;
 use App\Traits\UploadTrait;
 use DB;
+use Stripe\Stripe;
 use Illuminate\Support\Facades\Hash;
 
 class EnrolledCoursesController extends Controller
@@ -51,19 +53,40 @@ class EnrolledCoursesController extends Controller
     public function enrollCourseAjax(Request $request)
     {
         try {
+            $course_details = Courses::findOrFail($request->courseId);
+            
             DB::beginTransaction();
             $course = new EnrolledCourses;
-            $course->course_id = $request->courseId;
-            $course->user_id = auth()->user()->id;
-            $course->name = $request->name;
-            $course->email = $request->email;
-            $course->phone = $request->phone;
-            $course->address = $request->address;
+            $course->course_id  = $course_details->id;
+            $course->user_id    = auth()->user()->id;
+            $course->name       = auth()->user()->name;
+            $course->email      = auth()->user()->email;
+            $course->phone      = auth()->user()->phone;
+            $course->address    = auth()->user()->address;
             $course->save();
+
+            $stripe = new Stripe;
+            $stripe::setApiKey(env('STRIPE_SECRET_KEY'));
+            $payment_intent = \Stripe\PaymentIntent::create([
+                'amount' => ($course_details->sale_price??$course_details->price)*100,
+                'currency' => 'usd',
+                // 'customer' => $user->stripe_id,
+                'payment_method' => $request->payment_method,
+                'off_session' => true,
+                'confirm' => true,
+            ]);
+                            
+            $transaction                = new Transaction;
+            $transaction->user_id       = auth()->user()->id;
+            // $transaction->course_id     = $course_details->id;
+            $transaction->type          = 'transaction';
+            $transaction->details       = json_encode($payment_intent);
+            // $transaction->registeration_id = $course->id;
+            $transaction->save();
 
             $course = Courses::find($request->courseId);
 
-            $this->enrolledCourse(['name' => auth()->user()->name, 'email' => auth()->user()->email, 'course' => $course->title], 'emails.enroll');
+            // $this->enrolledCourse(['name' => auth()->user()->name, 'email' => auth()->user()->email, 'course' => $course->title], 'emails.enroll');
 
             DB::commit();
             return response()->json(["Success"], 200);

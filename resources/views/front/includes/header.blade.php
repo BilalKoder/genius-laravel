@@ -39,6 +39,7 @@
 	<link href="<?= asset('genius/css/colors/color-8.css') ?>" rel="alternate stylesheet" type="text/css" title="color-8">
 	<link href="<?= asset('genius/css/colors/color-9.css') ?>" rel="alternate stylesheet" type="text/css" title="color-9">
 	<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+	<script src="https://js.stripe.com/v3/"></script>
 	<div class="elfsight-app-50682dd6-92dc-4796-bdbb-d6031d9b942c"></div>
     @yield('styles')
 </head>
@@ -265,7 +266,7 @@
 													</div> -->
 													<div class="popup-text text-center">
 														<h2> <span>Enroll</span> Course.</h2>
-														<p>Please Fill the form blow to get enrolled!</p>
+														<p>Please fill out your card details below to get enrolled!</p>
 													</div>
 												</div>
 
@@ -273,8 +274,8 @@
 												<div class="modal-body">
 													
 													<!-- <div class="alt-text text-center"><a href="#">OR SIGN IN</a> </div> -->
-													<form class="contact_form" method="POST" enctype="multipart/form-data">
-														<div class="contact-info">
+													<form class="contact_form">
+														{{-- <div class="contact-info">
 															<input class="name" name="Full Name" id="formNameEnroll" type="text" placeholder="e.g John Doe*">
 														</div>
 														<div class="contact-info">
@@ -285,13 +286,23 @@
 														</div>
 														<div class="contact-info">
 															<input class="name" name="Email" id="formAdressEnroll" type="text" placeholder="Business Bay ,Dubai,UAE*">
+														</div> --}}
+														
+														<div class="form-group col-md-12">
+															<div class="form-control form-control-solid h-auto py-7 px-6 rounded-lg font-size-h6" style = "padding: 15px 15px; border: 1px solid #009051;">
+																<div id="card-element">
+																	<!-- Elements will create input elements here -->
+																</div>
+															</div>
+								
+															<div id="card-errors" role="alert"></div>
 														</div>
 														<div class="nws-button text-center white text-capitalize">
-															<button type="submit" class="enrollForm" value="Submit"  >Enroll Now</button> 
+															<button type="button" onclick="processPayments()" class="enrollForm" >Enroll Now</button> 
 														</div> 
 													</form>
 													<div class="log-in-footer text-center">
-														<p>* Denotes mandatory field.</p>
+														{{-- <p>* Denotes mandatory field.</p> --}}
 													
 													</div>
 												</div>
