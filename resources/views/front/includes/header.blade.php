@@ -343,7 +343,7 @@
 						</button>
 
 						<div class="logo-area">
-							<a href="index-1.html">
+							<a href="{{route('home')}}">
 								<img src="<?= asset('genius/img/logo/RHMC-logo.png')?>" alt="Logo_not_found">
 							</a>
 						</div>
